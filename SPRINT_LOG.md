@@ -1,5 +1,38 @@
 # SPRINT LOG — unai-labs.com
 
+---
+
+## Sprint 2 — 2026-06-30
+
+### Sprint Goal
+Exit all "coming soon" modes, add course categories, write & publish Blog Post 1, build About and Courses pages.
+
+### Completed This Sprint
+- [x] Switched WooCommerce store from "Coming soon" → **Live**
+- [x] Launched site publicly — no more coming soon banners site-wide
+- [x] Added 3 course categories: **AI Literacy**, **Neuroplasticity**, **Brain Health**
+- [x] Assigned "AI Literacy" category to Course 1
+- [x] Published **Blog Post 1**: "What Neuroplasticity Actually Means (And Why It Changes Everything About How You Learn)"
+- [x] Populated **About page** with full brand story, beliefs, and teaching philosophy
+- [x] Populated **Courses page** with featured course + 2 coming-soon previews
+- [x] QA: Homepage, About, Blog Post, Courses archive all verified live ✅
+
+### Carry-Forward (Sprint 3)
+- [ ] Add course thumbnail image to Course 1
+- [ ] Connect unai-labs.com domain to WordPress staging (GoDaddy DNS — Manish action required)
+- [ ] Complete WooCommerce onboarding + set up Stripe/PayPal
+- [ ] Set up email capture + MailPoet for lead magnet
+- [ ] Create lead magnet PDF: "The Brain + AI Starter Guide"
+- [ ] Write Blog Post 2: "The 4 AI Tools With the Highest Cognitive ROI"
+- [ ] Add Manish photo + bio to About page
+- [ ] Configure Yoast SEO first-time setup
+
+Last updated: 2026-06-30
+
+---
+
+# SPRINT LOG — unai-labs.com
+
 ## Sprint 1 — 2026-06-30
 
 **Sprint Goal:** First run — assess site state, set up WordPress, build homepage, create Course 1 in Tutor LMS.
