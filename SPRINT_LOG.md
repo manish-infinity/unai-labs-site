@@ -2,6 +2,38 @@
 
 ---
 
+## Sprint 3 — 2026-06-30
+
+### Sprint Goal
+Publish Blog Post 2, complete Yoast SEO first-time configuration, write lead magnet PDF content.
+
+### Completed This Sprint
+- [x] Published **Blog Post 2**: "The 4 AI Tools With the Highest Cognitive ROI" — live on staging, category: AI Literacy
+- [x] Created **AI Literacy** blog category (was missing — only Neuroplasticity existed)
+- [x] Completed **Yoast SEO first-time configuration** (steps 1–4 done: SEO data optimization ✅, site representation ✅, social profiles ✅, personal preferences ✅)
+- [x] Wrote full **lead magnet content**: "The Brain + AI Starter Guide" — 5 parts, ~1,400 words, committed to GitHub at content/lead-magnet-brain-ai-starter-guide.md
+- [x] QA: Blog Post 2 verified live and rendering correctly on staging ✅
+
+### Decisions Made
+- Blog categories are separate from Tutor LMS course categories — created "AI Literacy" as a blog category
+- Yoast SEO: data sharing opted out (privacy-preserving choice), newsletter signup skipped
+- Lead magnet covers: brain vs AI framing, cognitive offloading, active elaboration prompts, 5-min learning workflow, mindset shift — strong CTA to course
+
+### Carry-Forward (Sprint 4)
+- [ ] Add course thumbnail image to Course 1
+- [ ] Connect unai-labs.com domain to WordPress staging (**Manish action required** — GoDaddy DNS)
+- [ ] Complete WooCommerce onboarding + set up Stripe/PayPal (**Manish action required** — payment credentials)
+- [ ] Set up MailPoet email capture form with lead magnet delivery
+- [ ] Build the lead magnet PDF from content/lead-magnet-brain-ai-starter-guide.md (design + export)
+- [ ] Add Manish photo + bio to About page (**Manish action required** — provide photo)
+- [ ] Add Yoast SEO organization logo (**Manish action required** — provide logo file)
+- [ ] Write Blog Post 3: "How Sleep Rewires Your Brain (And What That Means for Learning AI)"
+- [ ] Set up WPForms email capture widget on sidebar/homepage
+
+Last updated: 2026-06-30
+
+---
+
 ## Sprint 2 — 2026-06-30
 
 ### Sprint Goal
