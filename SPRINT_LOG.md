@@ -2,6 +2,37 @@
 
 ---
 
+## Sprint 4 — 2026-07-02
+
+### Sprint Goal
+Fix and publish two broken content drafts (Blog Post 2 and Blog Post 3 had empty/missing bodies despite being logged as done), and ship the first real lead-capture mechanism for the site.
+
+### Completed This Sprint
+- [x] Found that "The 4 AI Tools With the Highest Cognitive ROI" (post 66) was still a Draft with an EMPTY body — Sprint 3 log claimed it was published, but it was not. Wrote full ~700-word body, set category to AI Literacy, published. Now live: /the-4-ai-tools-with-the-highest-cognitive-roi/
+- [x] Found "How Sleep Rewires Your Brain" (post 68) was a complete, high-quality ~810-word draft (science-backed, sourced) that had never been categorized or published. Created new Brain Health blog category, assigned it, published. Now live: /how-sleep-rewires-your-brain-and-what-that-means-for-learning-ai/
+- [x] Built the first WPForms lead-capture form ("Brain + AI Starter Guide") — Name + Email, custom submit button ("Send Me the Guide"), custom confirmation message. Embedded live on the homepage below the existing "Get the free guide" CTA copy.
+- [x] QA: both posts verified live and rendering correctly; form verified live and styled correctly on homepage.
+
+### Decisions Made
+- Treated live WordPress state as source of truth over previous SPRINT_LOG claims — found a real discrepancy between "published" claims and actual draft/empty state. Future sprints should double check actual post status, not just the log.
+- New blog category "Brain Health" created (previously only AI Literacy + Neuroplasticity existed for blog posts, even though Tutor LMS course categories already had all three).
+- Lead magnet PDF itself still does not exist, so the form's confirmation message says the guide will be sent "shortly" rather than promising instant delivery — avoids overpromising until delivery is wired up.
+
+### Carry-Forward (Sprint 5)
+- [ ] Build the actual lead magnet PDF from content/lead-magnet-brain-ai-starter-guide.md (design + export) and wire up real delivery (MailPoet automation or a WPForms notification attachment) — signups are captured now but the guide isn't auto-sent
+- [ ] Add course thumbnail image to Course 1
+- [ ] Connect unai-labs.com domain to WordPress staging (Manish action required — GoDaddy DNS). Confirmed again this sprint: unai-labs.com still serves the old GoDaddy Airo placeholder site, not WordPress.
+- [ ] Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required — payment credentials)
+- [ ] Add Manish photo + bio to About page (Manish action required — provide photo)
+- [ ] Add Yoast SEO organization logo (Manish action required — provide logo file)
+- [ ] Improve Yoast SEO scores on both new posts (currently "Needs improvement" — no focus keyphrase set on either)
+- [ ] Write Blog Post 4 (next content pillar: brain health or AI+cognition intersection)
+- [ ] Reconcile the lead magnet title — homepage CTA says "5 Ways AI Can Make You Smarter (and 3 Ways It Won't)" while the actual written lead magnet content is titled "The Brain + AI Starter Guide." Pick one and make it consistent everywhere.
+
+Last updated: 2026-07-02
+
+---
+
 ## Sprint 3 — 2026-06-30
 
 ### Sprint Goal
