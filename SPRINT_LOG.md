@@ -2,6 +2,43 @@
 
 ---
 
+## Sprint 5 — 2026-07-02
+
+### Sprint Goal
+Deliver the lead magnet (PDF + real email delivery), reconcile the lead magnet title/price inconsistencies flagged in Sprint 4, get every published post to SEO "OK" with a focus keyphrase, fix a duplicate-content bug, and ship Blog Post 4.
+
+### Completed This Sprint
+- [x] Built the "Brain + AI Starter Guide" PDF from content/lead-magnet-brain-ai-starter-guide.md (6-page, branded, reportlab) and uploaded it to the WordPress media library.
+- [x] Wired up real delivery: WPForms Lite doesn't support multiple notifications or static attachments, so added the subscriber's email as a second recipient on the existing notification (alongside the site admin) and rewrote the email body to be subscriber-facing with a direct PDF download link. Updated the confirmation message from "we'll send it shortly" to "check your inbox, it's on its way" since delivery is now immediate.
+- [x] Reconciled the lead magnet title: homepage CTA said "5 Ways AI Can Make You Smarter (and 3 Ways It Won't)", actual guide is "The Brain + AI Starter Guide" — updated homepage heading to match.
+- [x] Found and fixed a real bug: course price on the homepage said $49, but the actual WooCommerce/Tutor LMS price is $35 (fixed back in Sprint 1). Updated homepage copy to $35.
+- [x] Found and fixed a duplicate-content bug: two separate, fully-written posts were both live under the title "The 4 AI Tools With the Highest Cognitive ROI" (post 66 from Sprint 4 at the canonical slug, post 67 an orphaned Sprint 3 draft that had been separately finished and published). Trashed post 67, kept post 66 live.
+- [x] Found "What Neuroplasticity Actually Means" (post 63) was published with zero categories despite being a complete, on-brand post — assigned it to the Neuroplasticity category.
+- [x] Set Yoast focus keyphrases on all 4 real content posts (previously all showed "Focus keyphrase not set" / "Needs improvement"). All 4 now show SEO "OK": "neuroplasticity", "AI and neuroplasticity", "AI tools cognitive ROI", "how sleep affects the brain".
+- [x] Wrote and published Blog Post 4: "Chronic Stress Is Quietly Wrecking Your Ability to Learn (Here's the Fix)" — new angle on the Brain Health pillar (cortisol/hippocampus mechanism, why AI-era pace compounds stress, three evidence-backed interventions), category Brain Health, keyphrase "stress and learning".
+- [x] QA: homepage verified live with corrected price and lead magnet title; new blog post verified live and rendering correctly; WPForms notification settings verified saved after reload.
+
+### Decisions Made
+- WPForms Lite has no multi-notification or attachment support (Pro-only). Chose to add the subscriber as a second "Send To" recipient on the single notification rather than upgrade or leave delivery broken — meaning admin and subscriber currently get the identical email. Pro would allow a cleaner separate subscriber-only notification; flagged as a nice-to-have, not a blocker.
+- Did not attempt to fix the "From Email domain mismatch" deliverability warning WPForms shows (recommends WP Mail SMTP plugin) — real risk of notification emails landing in spam, but out of scope for this sprint. Flagged for Manish/next sprint.
+- Left one duplicate/orphaned media file (brain-ai-starter-guide-1.pdf) in the Media Library — the in-editor delete confirmation dialog didn't complete via automation. Cosmetic only, does not affect the live PDF link.
+
+### Carry-Forward (Sprint 6)
+- [ ] Install WP Mail SMTP (or configure a proper From Email) to fix the domain-mismatch deliverability warning on WPForms notifications
+- [ ] Consider WPForms Pro (or an alternative) to get a real subscriber-only confirmation email instead of sharing the admin notification
+- [ ] Clean up orphaned brain-ai-starter-guide-1.pdf from Media Library
+- [ ] Add course thumbnail image to Course 1
+- [ ] Connect unai-labs.com domain to WordPress staging (Manish action required — GoDaddy DNS). Confirmed again this sprint: unai-labs.com still serves the old GoDaddy Airo placeholder site, not WordPress.
+- [ ] Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required — payment credentials)
+- [ ] Add Manish photo + bio to About page (Manish action required — provide photo)
+- [ ] Add Yoast SEO organization logo (Manish action required — provide logo file)
+- [ ] Write Blog Post 5 (next: nutrition or movement, to round out the Brain Health pillar; or the AI+cognition intersection angle not yet covered)
+- [ ] Audit remaining pages (About, Courses, Contact) for the same kind of stale-copy drift found on the homepage this sprint
+
+Last updated: 2026-07-02
+
+---
+
 ## Sprint 4 — 2026-07-02
 
 ### Sprint Goal
@@ -139,9 +176,9 @@ Last updated: 2026-06-30
 - [ ] Build Courses page to list Course 1 properly
 
 ---
-*Last updated: 2026-06-30 | Next sprint: as scheduled*# SPRINT LOG — unai-labs.com
+*Last updated: 2026-06-30 | Next sprint: as scheduled*
 
-## Sprint 1 — 2026-06-30
+## Sprint 1 (original assessment) — 2026-06-30
 
 **Sprint Goal:** First run — assess site state, create GitHub repo, write homepage and About copy, draft Course 1 outline.
 
