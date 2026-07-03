@@ -2,6 +2,47 @@
 
 ---
 
+## Sprint 7 — 2026-07-03
+
+### Sprint Goal
+ORIENT and reconcile against Sprint 6, then continue the priority-1 content queue (second AI Literacy post) — blocked mid-sprint when WordPress admin access turned out to be unavailable in this session's browser. Goal adjusted to: complete the fullest possible ORIENT/QA using public (non-admin) access, draft and commit the next blog post for a future sprint to publish, and document the access blocker clearly so it doesn't get mistaken for a content problem.
+
+### BLOCKER (read this first if you're the next sprint)
+This session's Claude in Chrome browser had no active WordPress session and no saved/autofillable credentials for https://1207249.us8.myftpupload.com/wp-admin/ — the login page loaded with empty fields and no autofill suggestion, and there was no admin toolbar even when browsing the logged-out front end. Per standing safety rules (never enter passwords/credentials manually, never attempt account/password recovery flows autonomously), this sprint did not attempt to log in and performed zero wp-admin actions. This means: no post/page/product was created, edited, or published this sprint, and nothing below should be read as a wp-admin change. If this recurs next sprint, it's likely the browser profile used for these automated sessions doesn't have a persistent WordPress login cookie — Manish may need to either (a) log in once in the persistent browser profile used by this automation with "Remember Me" checked, or (b) provide a way for the session to authenticate (e.g., an application password entered by Manish directly, not by the assistant).
+
+### Completed This Sprint (via public access only — GitHub + live front-end + WP REST API, no admin login)
+• Read SPRINT_LOG.md Sprints 1-6 in full and cross-checked every claimed post/page/course ID against the live site using unauthenticated WordPress REST API endpoints (/wp-json/wp/v2/posts, /wp-json/wp/v2/pages, /wp-json/wp/v2/courses), which are readable without login and return only published content — a reliable way to verify state without admin access.
+• Confirmed all 7 blog posts logged through Sprint 6 are live, published, and correctly categorized with no duplicates or drafts-masquerading-as-published: post 29 (Neuroplasticity), 63 (Neuroplasticity), 66 (AI Literacy), 68 (Brain Health), 83 (Brain Health), 90 (Brain Health), 96 (Brain Health). SPRINT_LOG's account of Sprint 6 is accurate.
+• Confirmed the single course (ID 30, "AI Literacy for Everyone", slug ai-literacy-for-everyday-people) is published, priced correctly ($35 USD / Rs 2,999 INR consistently across homepage, /our-courses/, and the single course page), and displays its featured thumbnail correctly on the single course page — matches Sprint 6's claim.
+• Confirmed /our-courses/ (page ID 25) renders correctly with the full marketing copy and correct CTAs — matches Sprint 6's bug-fix claim.
+• Confirmed the duplicate WooCommerce/GoDaddy artifact pages flagged in Sprint 6 are still present and still look like harmless standard duplicates: Cart (8) / Cart (12, slug cart-2), Checkout (9) / Checkout (13, slug checkout-2), Privacy Policy (19) / Privacy Policy (18, slug privacy-2), Terms and Conditions (17) / Terms and Conditions (16, slug terms-2). Also noted an unused default "Sample Page" (ID 2) still present — low-priority cleanup candidate. Not deleted this sprint (no admin access).
+• Re-confirmed unai-labs.com (root domain) still serves the GoDaddy Airo placeholder ("Empowering AI Solutions" generic template), not WordPress — domain-to-staging connection is still outstanding (Manish action, GoDaddy DNS).
+• Homepage front-end note: the live homepage renders with correct copy, correct $35 price, and a working lead-capture form, but is visually much plainer (no section backgrounds/imagery) than the Blog and Courses pages, which have real card-grid styling. Confirmed via network inspection that all Astra/theme CSS loads successfully (no broken assets, no console errors) — this is a content/layout choice from early sprints (plain paragraph/heading blocks), not a bug. Flagging as a QA & polish backlog item, not fixing blind without admin access to preview changes safely.
+• Drafted Blog Post 7: "Is That AI Answer Actually Right? A Practical Framework for Checking AI Output" — the second AI Literacy pillar post recommended as a carry-forward in Sprint 6 (AI Literacy previously had only 1 post vs. 2 for Neuroplasticity and 4 for Brain Health). Covers why LLM output is fluent-but-not-verified by construction, a 4-question triage framework for when to verify AI claims, and practical verification habits. Science-backed tone consistent with brand voice, cross-links to the existing "4 AI Tools" post and the course. Committed to GitHub at content/blog-post-7-evaluating-ai-output.md — ready for a future sprint (with wp-admin access) to publish as a new post, category AI Literacy, suggested Yoast keyphrase "evaluating AI output".
+
+### Decisions Made
+• Did not attempt any WordPress login workaround (password reset flow, guessing credentials, etc.) — treated missing admin access as a hard blocker per standing safety rules, not something to route around.
+• Chose to spend the sprint on the highest-value work still possible without admin access: a REST-API-based ORIENT/audit (arguably more rigorous than a manual admin skim, since it's a complete machine-readable dump of every published post/page ID) and drafting ready-to-publish content, rather than doing nothing or fabricating a "completed" sprint.
+• Did not modify SPRINT_LOG history for Sprints 1-6 despite finding them accurate — no correction was needed.
+
+### Carry-Forward (Sprint 8)
+• New, high priority: Restore WordPress admin access for the automated sprint browser session (persistent login / application password) — without this, no further BUILD/DEPLOY work is possible, only content drafting and public-facing QA. Manish action required.
+• Publish Blog Post 7 (drafted and in GitHub at content/blog-post-7-evaluating-ai-output.md) once admin access is available — set category AI Literacy, keyphrase "evaluating AI output", verify live.
+• Install WP Mail SMTP (or configure a proper From Email) to fix the domain-mismatch deliverability warning on WPForms notifications (carried from Sprint 5)
+• Consider WPForms Pro for a real subscriber-only confirmation email (carried from Sprint 5)
+• Improve post 83 "Chronic Stress..." Yoast SEO analysis from "Needs improvement" to "OK" (carried from Sprint 6)
+• Connect unai-labs.com domain to WordPress staging (Manish action required — GoDaddy DNS) — reconfirmed still not connected this sprint
+• Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required — payment credentials)
+• Add Manish photo + bio to About page (Manish action required — provide photo)
+• Add Yoast SEO organization logo (Manish action required — provide logo file)
+• Spot-check the duplicate Cart/Checkout/Privacy Policy/Terms pages and unused Sample Page — reconfirmed still present, still not yet confirmed harmless vs. needing cleanup (needs admin access to safely delete)
+• Consider homepage visual polish (section backgrounds, imagery) to bring it in line with the Blog/Courses page styling — not a bug, just visually flat; QA & polish tier
+• Sprint 10 should run the full content audit (Sprint 5's was skipped; see Sprint 6 Decisions Made)
+
+Last updated: 2026-07-03
+
+---
+
 ## Sprint 6 — 2026-07-02
 
 ### Sprint Goal
