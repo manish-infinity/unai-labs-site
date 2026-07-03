@@ -2,6 +2,39 @@
 
 ---
 
+## Sprint 8 — 2026-07-03
+
+### Sprint Goal
+With WordPress admin access restored via GoDaddy SSO, execute the highest-priority items from the Sprint 7 carry-forward list that don't require Manish's direct action (credentials, payment info, photos, or DNS changes).
+
+### Completed This Sprint
+• Fixed post 83 ("Chronic Stress Is Quietly Wrecking Your Ability to Learn") Yoast SEO from "Needs improvement" (9 problems, orange) to "OK" (green, 3 remaining problems) — set a custom SEO title ("Stress and Learning: How Chronic Stress Hurts Focus") and meta description containing the focus keyphrase "stress and learning", added an outbound citation link (Erickson et al., 2011, PNAS -> nature/PNAS DOI) and an internal link to the sleep post. Remaining 3 problems all need an image with alt text — no image asset available this sprint, carried forward.
+• Wrote and published the "Refund and Returns Policy" page (ID 15, live at /refund_returns/) — replaced the unedited WooCommerce default template (which had unfilled {email address}/{physical address} placeholders, a stray "This is a sample page." line, a physical-goods "Shipping returns" section, and a "downloadable software products are non-refundable" clause that directly contradicted the site's own 30-day course refund policy) with accurate content matching the 30-day money-back guarantee already stated on the courses page. Links to the Contact page for refund requests instead of inventing an unverified support email address.
+• Installed and activated the WP Mail SMTP plugin (carried from Sprint 5). The setup wizard requires choosing a mailer (Gmail, SendGrid, Postmark, SMTP2GO, etc.) and providing that provider's account credentials or API key — every option requires creating or OAuth-connecting a third-party account, which this automation does not do unattended. Plugin is installed and inert (falls back to default PHP mail, no behavior change) but not yet configured. Also worth noting: this fix is somewhat moot until the unai-labs.com domain is connected (Sprint 6/7 carry-forward, still pending), since SPF/DKIM authentication is tied to the sending domain.
+• Verified the live homepage still loads normally after the plugin install — no errors.
+
+### Decisions Made
+• Did not create a SendLayer/Gmail/SendGrid/etc. account or OAuth-connect one on Manish's behalf to finish WP Mail SMTP setup — account creation and entering credentials are both on the standing "won't do without the user" list.
+• Did not change post 83's slug despite Yoast flagging "keyphrase not in slug" — the post is already published and likely has some search visibility; changing a live post's slug without a redirect plan is a bigger SEO risk than the checklist item it would fix. Left as-is.
+• Did not build a site footer navigation menu even though linking the Refund Policy from the footer was suggested in Sprint 7 — checked the live footer and found there is no footer menu at all (just copyright text), so this is a larger, site-wide navigation change rather than a one-page tweak. Flagged as a new carry-forward instead of building a footer menu unreviewed.
+• Stopped after these three items rather than continuing through the rest of the carry-forward list — everything remaining (WPForms Pro purchase, WooCommerce/Stripe/PayPal onboarding, Manish's photo, Yoast logo, domain DNS, SMTP provider choice) requires Manish's direct action (payment, credentials, files, or account decisions), so there's no further unattended work available without that input. Checking in with Manish before running any further sprints, per plan.
+
+### Carry-Forward (Sprint 9+)
+• Configure WP Mail SMTP's mailer: Manish needs to pick a provider (Gmail is free and simplest for low volume) and either log in via Quick Connect or supply an API key.
+• Consider WPForms Pro for a real subscriber-only confirmation email (carried from Sprint 5)
+• Connect unai-labs.com domain to WordPress staging (Manish action required — GoDaddy DNS)
+• Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required — payment credentials)
+• Add Manish photo + bio to About page (Manish action required — provide photo)
+• Add Yoast SEO organization logo (Manish action required — provide logo file)
+• Add a featured image (with alt text containing the relevant keyphrase) to post 83 to close out its last 3 Yoast problems
+• New: build a footer navigation menu (Terms and Conditions, Privacy Policy, Refund and Returns Policy) — currently no footer menu exists at all on the live site
+• Consider homepage visual polish (section backgrounds, imagery) to bring it in line with the Blog/Courses page styling — not a bug, just visually flat; QA & polish tier
+• Sprint 10 should run the full content audit (Sprint 5's was skipped; see Sprint 6 Decisions Made)
+
+Last updated: 2026-07-03
+
+---
+
 ## Sprint 7 — 2026-07-03
 
 ### Sprint Goal
