@@ -2,6 +2,40 @@
 
 ---
 
+## Sprint 10 — 2026-07-04
+
+### Sprint Goal
+Since Sprint 10 is a multiple of 5, run the mandatory full content audit; reconcile SPRINT_LOG against live site state; close out post 83's remaining Yoast SEO gap; and continue the homepage's visual-polish pattern by applying it to the About page (carried forward from Sprint 9).
+
+### Completed This Sprint
+- **Full Content Audit** (mandatory every-5th-sprint check): reconciled every post, page, and course ID logged in SPRINT_LOG against live WordPress state via the REST API (/wp-json/wp/v2/posts, /pages, /courses, /categories) and direct front-end/admin inspection. Result: zero discrepancies found — all 8 blog posts, 15 pages, 1 course, and 3 categories match exactly what Sprint 9 logged. Domain connection, footer navigation, and homepage redesign all confirmed live and functioning correctly.
+- **Closed out post 83's Yoast SEO gap** (carried from Sprint 9): generated a custom on-brand featured image (navy gradient, neural-network + stress-waveform motif, on-brand typography) since no photo asset was available, uploaded it to the Media Library, set it as the post's featured image, and added descriptive alt text containing the focus keyphrase. Yoast now shows "Keyphrase in image alt attributes: Good job!" — down from 3 remaining problems to 1 minor Problem (keyphrase in subheading) and 2 minor Improvements (keyphrase in introduction, keyphrase in slug).
+- **About page visual-polish redesign** (page ID 26, carried forward from Sprint 9 as the first candidate for the homepage pattern): rebuilt all 5 sections as native Gutenberg Group/Columns blocks with color, spacing, and typography attributes — navy hero band (H1 + subhead), "My Story" section, "What We Believe" as a 2x2 accent-bordered card grid, "A Note on How We Teach" as a 2-column list, and a closing navy CTA band ("Ready to see what your brain can actually do?" + white "Browse Courses →" button linking to /our-courses/). All original copy preserved verbatim — only presentation changed. Disabled the redundant "About" page-title banner via Astra's Disable Banner Area setting, matching the homepage's treatment.
+- QA: verified the live About page front-end renders all 5 sections correctly with no regressions, no leftover/orphaned blocks, and no duplicate title banner.
+
+### Decisions Made
+- Mid-sprint, a block-editing race condition (chunked typing + cursor-position drift while building the About page's final CTA section) produced corrupted/misnested block markup ("Block contains unexpected or invalid content" error). Used WordPress's native "Attempt recovery" action to cleanly discard the corrupted content rather than hand-patching invalid block comments — rebuilt the CTA section from scratch afterward via pure visual-editor interactions. No data loss to any other section.
+- Did not act on a GoDaddy "Insecure Login Prevented — New Password Required" security modal that appeared unprompted during editing — dismissed via Escape without clicking "Reset Password", per the standing rule against initiating credential/password flows on Manish's behalf.
+- Did not enter credentials when a real wp-admin re-auth login page was encountered in a separate browser tab — abandoned that tab and continued in the already-authenticated tab instead.
+- Did not change post 83's slug despite Yoast still flagging "keyphrase not in slug" — consistent with Sprint 8's decision that changing a live, published post's slug without a redirect plan is a bigger SEO risk than the checklist item it would fix.
+
+### New Finding (needs investigation, not acted on)
+- While briefly opening the Home page (post 22) in the Code Editor to reference its existing color/style scheme for reuse on the About page, WordPress displayed a banner: "There is an autosave of this post that is more recent than the version below." No changes were made or saved to the Home page this sprint (navigated away without viewing or applying the autosave), but this suggests there may be an unpublished/unknown draft change to the homepage from a prior session. Flagging for the next sprint to investigate — check whether the autosave contains meaningful content before discarding it.
+
+### Carry-Forward (Sprint 11+)
+- Investigate the Home page (post 22) "autosave more recent than published version" notice — determine whether it contains unsaved legitimate work or can be safely discarded.
+- Manish to enter the WP Mail SMTP password and click Save to finish activating outgoing email.
+- Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required).
+- Add Manish's photo + bio to About page (Manish to share the photo).
+- Add Yoast SEO organization logo (Manish action required — provide logo file).
+- Apply the homepage/About visual-polish pattern to the Courses page next, if Manish likes the direction.
+- Decide whether to keep or cancel the GoDaddy Digital Marketing free trial before it converts to a paid plan (carried from Sprint 9 — still pending Manish's decision).
+- Resolve post 83's remaining minor Yoast items (keyphrase in subheading/introduction) — low priority, cosmetic.
+
+Last updated: 2026-07-04
+
+---
+
 ## Sprint 9 — 2026-07-04
 
 ### Sprint Goal
