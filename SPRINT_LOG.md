@@ -35,6 +35,35 @@ Since Sprint 10 is a multiple of 5, run the mandatory full content audit; reconc
 Last updated: 2026-07-04
 
 ---
+## Sprint 11 — 2026-07-04
+
+### Sprint Goal
+Answer Manish's question "how will you make all the features work?" with a real end-to-end audit — not a guess — of the contact form's email delivery, the course purchase/checkout flow, and the course content itself (including sample-chapter/preview capability). Fix anything fixable directly; flag anything that needs Manish's action or decision.
+
+### Completed This Sprint
+- **Confirmed homepage post-launch fixes are live**: the Course 1 card's heading and a new "View Course →" link now correctly point to /courses/ai-literacy-for-everyday-people/ (previously unlinked, which is what made the course "look broken" when clicked), and the hero's pill icons were swapped from mismatched emoji to a clean monochrome SVG set (activity/cpu/book/check), built with a Custom HTML block since Gutenberg's RichText strips raw \<svg\> tags from paragraph/heading content.
+- **Audited contact form email delivery — root cause confirmed**: this GoDaddy hosting plan has PHP's native `mail()` function disabled entirely (WP Mail SMTP's error log shows "Could not instantiate mail function"), so **no** WordPress email of any kind currently sends — not contact form notifications, not order confirmations, not password resets. WP Mail SMTP is already configured with the correct GoDaddy Professional Email SMTP host/port/TLS/username; the only missing piece is the mailbox password, intentionally left blank for Manish to enter himself (standing rule: no credential entry on his behalf). The contact form itself will submit fine — its confirmation email just won't go anywhere until that password is saved.
+- **Audited the course purchase/checkout flow end-to-end and found + fixed a real bug**: Tutor LMS has its own "Monetization" settings, separate from WooCommerce's Page Setup, and its Cart/Checkout page fields were stale — pointing at a trashed page (ID 8), which produced a 404 on "View Cart." Re-pointed both to the correct live Cart (ID 12) and Checkout (ID 13) pages and saved. Verified the fix by adding a course to cart and confirming it now displays correctly with a working "Proceed to Checkout" button leading to the real WooCommerce checkout page.
+- **Confirmed no payment gateway is active**: Stripe and GoDaddy Payments are both "Inactive," and PayPal/WooPayments aren't installed. Even with cart/checkout now wired correctly, a real purchase cannot complete until Manish activates a gateway (his own decision/account setup, previously flagged as his "last task").
+- **Confirmed guests must log in or register before purchasing**: clicking "Add to Cart" while logged out triggers a mandatory login/register modal — there is currently no true guest checkout.
+- **Audited actual course content of "AI Literacy for Everyone" (15 lessons across 4 modules)**: spot-checked lessons in both Module 1 and Module 2 ("The AI you've seen vs. the AI that actually exists," "How large language models work," "The art of the prompt") — all have completely empty Content editors: no text, no video, no exercise files. The course is a fully real, well-thought-out skeleton (genuine module/lesson titles and a real course description) but **zero lesson content has been written yet**.
+- **Confirmed sample-chapter/free-preview capability is Pro-gated**: Tutor LMS's "Lesson Preview" toggle — the mechanism for letting non-enrolled visitors sample a lesson for free — is grayed out with a "Pro" badge on the free/Lite version currently installed. This feature is unavailable until upgrading to Tutor LMS Pro.
+
+### Decisions Made
+- Did not enter the WP Mail SMTP password, activate any payment gateway, or write any lesson content — all four are either credential entry (against the standing rule) or decisions/content only Manish can make.
+- Did not execute any test purchase or enter payment details anywhere.
+
+### Carry-Forward (Sprint 12+)
+- Manish to enter the WP Mail SMTP password and save — this is the single blocker for all WordPress email (contact form, orders, password resets).
+- Manish to choose and activate a payment gateway (Stripe, PayPal, or GoDaddy Payments) — required before any real purchase can complete.
+- Decide whether to write the 15 lessons' actual content now, or launch the course page as a waitlist/"coming soon" while content is produced.
+- Decide whether to upgrade to Tutor LMS Pro to unlock "Lesson Preview" (free sample chapters) — not available on the current free tier.
+- Decide whether guest checkout should be enabled, or whether the login/register gate before purchase is acceptable.
+
+Last updated: 2026-07-04
+
+---
+
 
 ## Sprint 9 — 2026-07-04
 
