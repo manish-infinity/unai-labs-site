@@ -21,6 +21,7 @@ Audit GoDaddy account for existing assets (domain, email) before assuming setup 
   - Email opt-in section restyled as a dark CTA band with the signup form (WPForms shortcode, unchanged) inside a white card.
   - All original copy preserved verbatim — only presentation changed.
 - Verified the WPForms shortcode, footer links, and all page copy render correctly on the live front end after the rebuild (no regressions).
+- **Post-launch fixes (same day)**: user reported the new homepage wasn't visible and that clicking on a course looked broken. Root-caused the visibility issue to GoDaddy's server-side page cache serving a stale copy (flushed via GoDaddy Quick Links > Flush Cache, confirmed fresh via hard-reload). Root-caused the broken course click to the homepage's Course 1 card never being linked to the actual Tutor LMS course post (a pre-existing gap the redesign made more visible by making the card look clickable) — wired the card heading and added a "View Course \u2192" link to /courses/ai-literacy-for-everyday-people/. Also swapped the hero's colorful emoji icons for a consistent monochrome SVG icon set (via a Custom HTML block, since RichText strips raw <svg> tags) to better match the "science-first, hype-free" brand tone.
 
 ### Decisions Made
 - Used Astra's built-in Customizer Copyright element (with raw HTML links) for footer navigation rather than upgrading to Astra Pro, since the free tier's footer builder only allows a Copyright text element (no menu/widget element) — this achieves the same visual result at no cost.
