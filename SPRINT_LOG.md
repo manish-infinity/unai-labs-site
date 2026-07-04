@@ -1,6 +1,21 @@
 # SPRINT LOG — unai-labs.com
 
 ---
+## Pending Decisions & Backlog (Manish's Action Required)
+_This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context._
+
+- **Enter the WP Mail SMTP password and save.** Blocks ALL WordPress email — contact form notifications, order confirmations, password resets. Everything else about email sending is already configured correctly.
+- **Choose and activate a payment gateway** (Stripe, PayPal, or GoDaddy Payments). Currently none are active, so even though cart/checkout are wired correctly, no real purchase can complete.
+- **Decide on course content plan**: all 15 lessons of "AI Literacy for Everyone" currently have empty content (titles/outline only, no text or video). Either write the lesson content, or launch the course page as a waitlist/"coming soon" in the meantime.
+- **Decide whether to upgrade to Tutor LMS Pro.** Needed to unlock "Lesson Preview" (free sample chapters for non-enrolled visitors) — not available on the current free tier.
+- **Decide on guest checkout vs. login-gate.** Right now visitors must log in or register before they can add a course to cart — there's no guest checkout option.
+- **Share a photo + bio for the About page.**
+- **Provide a logo file for Yoast SEO's organization settings.**
+- **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to a paid plan.
+- Low priority / cosmetic: resolve post 83's remaining minor Yoast SEO items (keyphrase in subheading/introduction).
+
+---
+
 
 ## Sprint 10 — 2026-07-04
 
