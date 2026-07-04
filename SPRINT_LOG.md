@@ -2,6 +2,44 @@
 
 ---
 
+## Sprint 9 — 2026-07-04
+
+### Sprint Goal
+Audit GoDaddy account for existing assets (domain, email) before assuming setup work was needed, connect the real domain to WordPress, wire up transactional email, and address recurring user feedback that the site "looks like a book page" (no hero, no footer, flat stacked text).
+
+### Completed This Sprint
+- **GoDaddy account audit**: discovered the domain and a fully-authenticated professional mailbox (manish.singh@unai-labs.com, complete SPF/DKIM/DMARC/MX) already existed — no need to purchase or configure these from scratch. Also discovered unai-labs.com was pointed at an unrelated, empty GoDaddy "Websites + Marketing" placeholder instead of the real WordPress site.
+- **Connected the real domain**: switched unai-labs.com's DNS (A record) to point at the WordPress hosting IP via GoDaddy's domain-connect flow (with Manish's approval). Site is now fully live at unai-labs.com serving the actual WordPress site instead of the placeholder.
+- **Installed and configured WP Mail SMTP**: set up the "Other SMTP" mailer using the existing GoDaddy Professional Email account (host smtpout.secureserver.net, TLS, port 587, username/From Email manish.singh@unai-labs.com). Password field intentionally left for Manish to enter and save himself (standing rule: no credential entry on his behalf).
+- **Built a real site footer**: added a Terms and Conditions / Privacy Policy / Refund and Returns Policy / Contact navigation row to the footer via the Astra Customizer's Copyright element (edited directly through the wp.customize API since Astra's free tier doesn't include a footer widget/menu element). Previously the footer had no navigation at all.
+- **Homepage visual overhaul**: rebuilt the Home page (post 22) from a flat stack of headings/paragraphs into a structured, styled layout using native Gutenberg blocks (Group/Columns with color, spacing, and border attributes) — no plugin or custom theme code required:
+  - Dark navy hero section with large headline, subhead, white CTA button, and pill-styled value props (replacing the plain white "Home" title + stacked text top of page).
+  - Disabled the redundant "Home" page-title heading via Astra's site-post-title post meta.
+  - Centered intro section with improved typography hierarchy.
+  - Course section restyled as a 3-column card grid with accent borders and "Coming Soon" badges (light gray tint background band).
+  - "Science-first" section with tinted background and a styled pull-quote.
+  - Email opt-in section restyled as a dark CTA band with the signup form (WPForms shortcode, unchanged) inside a white card.
+  - All original copy preserved verbatim — only presentation changed.
+- Verified the WPForms shortcode, footer links, and all page copy render correctly on the live front end after the rebuild (no regressions).
+
+### Decisions Made
+- Used Astra's built-in Customizer Copyright element (with raw HTML links) for footer navigation rather than upgrading to Astra Pro, since the free tier's footer builder only allows a Copyright text element (no menu/widget element) — this achieves the same visual result at no cost.
+- Used native Gutenberg Group/Columns blocks with inline style attributes (color, spacing, border) for the homepage redesign instead of a page builder plugin or custom CSS/HTML blocks, so the page remains fully editable in the standard block editor going forward.
+- Left GoDaddy's "Digital Marketing - Visibility" trial product untouched — it's a paid SEO/AI-visibility + review-management suite (₹1,299/mo after a 26-day trial) that's more useful once the site has real traffic/customers; recommended Manish decide whether to keep or cancel before it bills.
+
+### Carry-Forward (Sprint 10+)
+- Manish to enter the WP Mail SMTP password and click Save to finish activating outgoing email.
+- Consider WPForms Pro only if a specific limitation is hit (e.g., richer confirmation emails or conditional logic) — not needed for current functionality.
+- Complete WooCommerce onboarding + set up Stripe/PayPal (Manish action required — confirmed as his last task, not urgent).
+- Add Manish's photo + bio to About page (Manish to share the photo).
+- Add Yoast SEO organization logo (Manish action required — provide logo file).
+- Add a featured image (with alt text) to post 83 to close out its last 3 Yoast problems.
+- Apply the same visual-polish treatment (hero/section structure) to other key pages (About, Courses) if Manish likes the homepage direction — homepage was the pilot.
+- Sprint 10 should run the full content audit (Sprint 5's was skipped).
+- Decide whether to keep or cancel the GoDaddy Digital Marketing free trial before it converts to a paid plan.
+
+---
+
 ## Sprint 8 — 2026-07-03
 
 ### Sprint Goal
