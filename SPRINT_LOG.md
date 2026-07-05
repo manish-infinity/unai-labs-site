@@ -6,7 +6,7 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 - **Enter the WP Mail SMTP password and save.** Blocks ALL WordPress email — contact form notifications, order confirmations, password resets. Everything else about email sending is already configured correctly.
 - **Choose and activate a payment gateway** (Stripe, PayPal, or GoDaddy Payments). Currently none are active, so even though cart/checkout are wired correctly, no real purchase can complete.
-- **Decide on course content plan**: all 15 lessons of "AI Literacy for Everyone" currently have empty content (titles/outline only, no text or video). Either write the lesson content, or launch the course page as a waitlist/"coming soon" in the meantime.
+- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Modules 2-4 (11 lessons, IDs 39-49) are still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
 - **Decide whether to upgrade to Tutor LMS Pro.** Needed to unlock "Lesson Preview" (free sample chapters for non-enrolled visitors) — not available on the current free tier.
 - **Decide on guest checkout vs. login-gate.** Right now visitors must log in or register before they can add a course to cart — there's no guest checkout option.
 - **Share a photo + bio for the About page.**
@@ -16,6 +16,34 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 12 — 2026-07-05
+
+### Sprint Goal
+Resolve the Home page (post 22) autosave flag carried from Sprint 10, then start closing the site's biggest content gap: write and publish real lesson content for Module 1 of "AI Literacy for Everyone" (course ID 30).
+
+### Completed This Sprint
+- **ORIENT reconciliation**: verified all 8 posts (29, 63, 66, 68, 83, 90, 96, 99), all 15 pages, and course 30 against SPRINT_LOG via the public REST API — zero discrepancies, no duplicates.
+- **Resolved the Home page (post 22) autosave notice** (carried from Sprint 10): inspected autosave revision 114 (2026-07-04 02:28) against the published version. The autosave was a stale mid-edit snapshot from the Sprint 11 session — hero pills as a plain paragraph (the approach that failed because RichText strips SVG) and MISSING the Course 1 card link + "View Course" fix. Restoring it would have undone Sprint 11's homepage fixes, so it contained no legitimate unsaved work. WordPress forbids deleting autosaves via REST, so the flag was cleared with a verified no-op re-save of byte-identical content (bumps post modified time past the autosave; content confirmed unchanged). Editor now loads clean with no banner.
+- **Published full lesson content for all 4 Module 1 lessons** (previously completely empty): Lesson 1.1 (lesson ID 35) "The AI you've seen vs. the AI that actually exists"; Lesson 1.2 (ID 36) "How large language models work"; Lesson 1.3 (ID 37) "A brief history of AI"; Lesson 1.4 (ID 38) "What AI cannot do". Each ~800-1,000 words, science-backed and hype-free per brand voice, ending with Key Takeaways + a short exercise (1.4 ends with the Week 1 exercise). Content was set via the classic editor's Code view programmatically + Update — avoiding the chunked-typing corruption risk hit in Sprint 10.
+- **Fixed stale copy on the course page** (course ID 30): the About Course description said "4 modules · 12 lessons" but the course has 15 lessons — corrected to "15 lessons" via REST. Verified live.
+- Committed content/course-01-module-1-lessons.md to GitHub (commit ce130bf) documenting lesson IDs, structure, and content summaries.
+- QA: lessons 35 and 38 verified rendering correctly in the Tutor LMS course player (sidebar shows Module 1 with all 4 lessons; module structure confirmed 4/4/4/3 = 15); course page verified showing "15 lessons".
+
+### Decisions Made
+- Wrote lessons as text-first ("Reading time" framing) since no video assets exist. Did not change the course page's "video + reading + exercises" format copy — flagged the video question in the Master Backlog instead of deciding it unilaterally.
+- Interpreted the standing "write lesson content" priority as authorization to write Module 1 now rather than waiting on the "course content plan" backlog decision — the content is additive and revisable, and the waitlist/"coming soon" option remains open.
+- Noted the GitHub outline (courses/course-01-ai-literacy.md, v1 draft: 13 lessons, different titles) does not match the actual WP build (15 lessons). Treated WordPress as source of truth; did not rewrite the outline file this sprint.
+
+### Carry-Forward (Sprint 13+)
+- Write Module 2 lesson content (IDs 39-42): The art of the prompt; AI for writing and communication; AI for research and learning; AI for creativity and brainstorming. Then Module 3 (IDs 43-46) and Module 4 (IDs 47-49).
+- Apply the homepage/About visual-polish pattern to the Courses page (/our-courses/, page 25) — still pending from Sprint 10.
+- Consider updating courses/course-01-ai-literacy.md in GitHub to match the real 15-lesson structure.
+- All standing Manish items remain in the Master Backlog above (SMTP password, payment gateway, Tutor LMS Pro, guest checkout, photo/bio, Yoast logo, GoDaddy trial).
+
+Last updated: 2026-07-05
+
+---
 
 ## Sprint 10 — 2026-07-04
 
