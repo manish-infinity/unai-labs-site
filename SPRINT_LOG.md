@@ -2,7 +2,7 @@
 
 ---
 ## Pending Decisions & Backlog (Manish's Action Required)
-_This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context._
+_This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context. Journey context lives in USER_JOURNEYS.md (created Sprint 12) — re-verify and update it every sprint alongside this list, and tie every new backlog/sprint item to the journey (J1-J6) it serves so no task is standalone._
 
 - **Enter the WP Mail SMTP password and save.** Blocks ALL WordPress email — contact form notifications, order confirmations, password resets. Everything else about email sending is already configured correctly.
 - **Choose and activate a payment gateway** (Stripe, PayPal, or GoDaddy Payments). Currently none are active, so even though cart/checkout are wired correctly, no real purchase can complete.
