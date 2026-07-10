@@ -6,13 +6,42 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
-- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) was written+published in Sprint 13; Modules 3-4 (7 lessons, IDs 43-49) are still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
+- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) in Sprint 13 and Module 3 (IDs 43-46) in Sprint 14 — all published; Module 4 (3 lessons, IDs 47-49) is still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
 - **Decide whether to upgrade to Tutor LMS Pro.** Needed to unlock "Lesson Preview" (free sample chapters for non-enrolled visitors) — not available on the current free tier.
 - **Decide on guest checkout vs. login-gate.** Right now visitors must log in or register before they can add a course to cart — there's no guest checkout option.
 - **Share a photo + bio for the About page.**
 - **Provide a logo file for Yoast SEO's organization settings.**
 - **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to a paid plan.
+- **Test the lead-magnet email end-to-end (2 min).** Sprint 14 verified form 71’s notification config and the guide PDF link (HTTP 200), but WPForms Lite stores no entries — Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both emails arrive (subscriber copy + admin copy).
 - Low priority / cosmetic: resolve post 83's remaining minor Yoast SEO items (keyphrase in subheading/introduction).
+
+---
+
+
+## Sprint 14 — 2026-07-10 (second run today)
+
+### Sprint Goal
+Write and publish full lesson text for all 4 Module 3 lessons (IDs 43-46) of "AI Literacy for Everyone" (course 30) — carried from Sprint 13 — and QA the WPForms lead-magnet email setup (J2).
+
+### Completed This Sprint
+- **ORIENT reconciliation**: verified via public REST + wp-admin — 8 posts (29, 63, 66, 68, 83, 90, 96, 99), 17 pages, and all 15 lessons (IDs 35-49, all published) match Sprint 13's log by ID. No duplicates, no discrepancies. Sprint 13 had already run earlier the same day; this session continued as Sprint 14 without redoing its work.
+- **Published full lesson content for all 4 Module 3 lessons** (previously outline-only/empty, via wp-admin classic editor): Lesson 3.1 (lesson ID 43) "Hallucinations, bias, and error" (~4.0KB — fluent≠true, why hallucinations are structural, confidence as style not signal, bias as mirror problem, where errors cluster); Lesson 3.2 (lesson ID 44) "Your brain on AI" (~4.3KB — cognitive offloading/Google effect, desirable difficulty + neuroplasticity, offload-the-output-not-the-understanding rule, AI as coach vs crutch); Lesson 3.3 (lesson ID 45) "The verification mindset" (~4.0KB — stakes-based checking tiers, 5-move verification toolkit, hallucination warning signs, before-I-paste habit); Lesson 3.4 (lesson ID 46) "AI ethics in everyday life" (~4.0KB — privacy/honesty/fairness/dependence, 5-commitment pocket code). All follow the Module 1-2 template (reading-time header, h2 sections, key takeaways, "Try this" exercise, next-lesson pointer).
+- QA: lessons 43 and 46 verified rendering correctly in the Tutor course player at /courses/ai-literacy-for-everyday-people/lessons/{slug}/ — Module 3 sidebar shows all 4 lessons as "Reading"; content, takeaways, and exercises render.
+- **QA'd the WPForms lead-magnet email setup (J2)** at config level (form 71 "Brain + AI Starter Guide"): notification enabled, sends to subscriber (Field #2 Email) + site admin, subject "Your Brain + AI Starter Guide from UnAI Labs", body contains the guide download link, and the PDF itself returns HTTP 200 (10.5KB) at /wp-content/uploads/2026/07/brain-ai-starter-guide.pdf; on-page confirmation message is set. NOT verified: an actual live submission end-to-end (WPForms Lite stores no entries, so only a real email proves delivery) — added as a 2-minute Manish item in the Master Backlog.
+- Re-verified Razorpay during ORIENT: still "Action needed / Complete setup" in WooCommerce > Payments (GoDaddy Payments and Stripe both Inactive) — keys not yet entered, backlog item unchanged.
+- Committed content/course-01-module-3-lessons.md to GitHub documenting Module 3 lesson IDs, structure, and content summaries.
+
+### Decisions Made
+- Course 30 now has 12 of 15 lessons with real content (Modules 1-3 complete). Module 4 (IDs 47-49) remains outline-only — next content priority.
+- Scoped lead-magnet QA to configuration + asset checks; deliberately did not submit the live form autonomously (form submissions are outside standing-run bounds), so the final end-to-end email check is Manish's.
+
+### Carry-Forward (Sprint 15+)
+- Write Module 4 lesson content (IDs 47-49): Mapping your AI use cases; Building your AI toolkit; Staying sharp. That completes all 15 lessons.
+- Sprint 15 is divisible by 5 — the mandatory full content audit is due next sprint.
+- Apply the visual-polish pattern to the Courses page (/our-courses/, page 25) — still pending from Sprint 10, not reached again this sprint.
+- All standing Manish items remain in the Master Backlog above.
+
+Last updated: 2026-07-10
 
 ---
 
