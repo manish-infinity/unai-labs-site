@@ -6,14 +6,52 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
-- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) in Sprint 13 and Module 3 (IDs 43-46) in Sprint 14 — all published; Module 4 (3 lessons, IDs 47-49) is still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
+- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) in Sprint 13 and Module 3 (IDs 43-46) in Sprint 14 — all published; Module 4 (IDs 47-49) COMPLETED in Sprint 15 — course 30 is now content-complete: all 15 lessons across all 4 modules carry full published content, none outline-only. Remaining course-content decision for Manish: whether/when to produce video versions (the course page promises "video + reading + exercises"). The course page promises "video + reading + exercises": decide whether/when to produce video versions.
 - **Decide whether to upgrade to Tutor LMS Pro.** Needed to unlock "Lesson Preview" (free sample chapters for non-enrolled visitors) — not available on the current free tier.
 - **Decide on guest checkout vs. login-gate.** Right now visitors must log in or register before they can add a course to cart — there's no guest checkout option.
 - **Share a photo + bio for the About page.**
 - **Provide a logo file for Yoast SEO's organization settings.**
 - **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to a paid plan.
 - **Test the lead-magnet email end-to-end (2 min).** Sprint 14 verified form 71’s notification config and the guide PDF link (HTTP 200), but WPForms Lite stores no entries — Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both emails arrive (subscriber copy + admin copy).
+- **Low priority / cosmetic (Sprint 15 audit).** (a) Naming mismatch: WooCommerce product 120 is "AI Literacy for Everyone" while the course + pages say "AI Literacy for Everyday People" — align to one name. (b) Legacy Tutor pages 121/122 remain Published (not in primary nav) — trash once confirmed unreferenced by Tutor settings.
 - Low priority / cosmetic: resolve post 83's remaining minor Yoast SEO items (keyphrase in subheading/introduction).
+
+---
+
+
+## Sprint 15 — 2026-07-10 (third run today)
+
+### Sprint Goal
+Complete the course: write and publish full lesson text for all 3 Module 4 lessons (IDs 47-49) of "AI Literacy for Everyone" (course 30) — the last outline-only module — plus the mandatory Sprint 15 full content audit (sprint number divisible by 5).
+
+### Completed This Sprint
+- **ORIENT reconciliation**: verified live state via wp-admin against SPRINT_LOG. 8 posts (29, 63, 66, 68, 83, 90, 96, 99 — all published + categorized), 17 pages (all published), 1 product (ID 120), and all 15 lessons (IDs 35-49, all published) match the log by ID. No duplicates, no drafts-logged-as-published, no discrepancies. Confirmed lessons 47/48/49 were empty (0 chars) before writing.
+- **Published full lesson content for all 3 Module 4 lessons** (previously outline-only/empty, via wp-admin classic editor, Text mode): Lesson 4.1 (lesson ID 47) "Mapping your AI use cases" (~4.3KB — build AI use from your real week, the four-question filter [value/verifiability/stakes/skill], Delegate/Assist/Keep-human buckets, red-zone tasks); Lesson 4.2 (lesson ID 48) "Building your AI toolkit" (~4.3KB — few tools well used, four tool categories, four selection checks, reusable prompt templates, draft-verify-decide workflow); Lesson 4.3 (lesson ID 49) "Staying sharp" (~4.6KB — cognitive-offloading & desirable-difficulty callback to Module 3, attempt-before-outsource / verify-actively / keep-skills-warm, weekly rhythm, over-reliance warning signs, course-completion close). All follow the Module 1-3 template (reading-time header, h2 sections, Key takeaways, "Try this" exercise, next-lesson/completion pointer).
+- **COURSE 30 IS NOW CONTENT-COMPLETE**: all 15 lessons across all 4 modules have full published content. No lessons remain outline-only.
+- QA: lesson 49 verified rendering on the live frontend at /courses/ai-literacy-for-everyday-people/lessons/staying-sharp/ — all 8 h2 sections, Key takeaways, and Try this render; no login/enrolment wall; publicly visible.
+
+### Sprint 15 Content Audit (mandatory — sprint divisible by 5)
+- **Posts (8, all Published, all categorized):** 29 (Neuroplasticity), 63 (Neuroplasticity), 66 (AI Literacy), 68 (Brain Health), 83 (Brain Health), 90 (Brain Health), 96 (Brain Health), 99 (AI Literacy). No duplicate/near-duplicate titles, no orphans (all categorized), none stuck in draft. 2 items in Trash (not live).
+- **Pages (17, all Published):** 26 About, 27 Blog, 12 Cart, 13 Checkout, 28 Contact, 25 Courses, 5 Dashboard, 22 Home (front), 7 Instructor Registration, 14 My account, 18 Privacy Policy, 15 Refund & Returns, 11 Shop, 6 Student Registration, 16 Terms & Conditions, 121 Tutor Cart (legacy, unused), 122 Tutor Checkout (legacy, unused). 6 in Trash. Active cart/checkout run on WooCommerce (12/13); Tutor legacy pages 121/122 remain published-but-renamed, not in the primary nav — low-priority cosmetic only.
+- **Products (1, Published):** ID 120 "AI Literacy for Everyone" — ₹2,999.00, In stock, linked to course 30. No duplicates.
+- **Lessons (15, all Published):** IDs 35-49, contiguous, no duplicates; all now carry full content.
+- **Stale-copy checks:** Homepage price "₹2,999 / $35" matches product 120 (₹2,999). Minor naming inconsistency: course/pages say "AI Literacy for Everyday People" while product 120 is "AI Literacy for Everyone" — same offering, cosmetic. No broken CTAs found on Home; lessons render publicly.
+- **Audit verdict:** CLEAN. No duplicates, no orphaned/stale critical content, no stuck drafts. Only cosmetic items (legacy Tutor pages; product-vs-course naming), logged to the Master Backlog as low priority.
+
+### Decisions Made
+- Wrote Module 4 as the course capstone (map → toolkit → staying sharp), reinforcing the "keep your own thinking sharp" thesis and calling back to Module 3's cognitive-offloading material for coherence.
+- Did NOT alter legacy Tutor pages 121/122: a prior sprint deliberately renamed rather than trashed them, so respected that and only flagged as low-priority cleanup.
+- Did NOT submit the live lead-magnet form (form submissions remain outside standing-run bounds) — final end-to-end email check stays Manish's.
+
+### Carry-Forward (Sprint 16+)
+- All AI-Literacy course lesson content is now written. Next content priorities: (a) build out course 2 "Neuroplasticity in Practice" and course 3 "Brain Health 101" (currently "COMING SOON" on Home) — outline then write; (b) new blog posts across the three pillars; (c) optional video versions of AI-Literacy lessons (Manish decision).
+- Next mandatory content audit due Sprint 20.
+
+### For Manish (unchanged this sprint)
+- Razorpay keys, lead-magnet email end-to-end test, About photo/bio, Yoast logo, Tutor LMS Pro / guest-checkout / GoDaddy-trial decisions, and the new video-versions decision all remain in the Master Backlog above.
+
+Last updated: 2026-07-10 (Sprint 15)
+
 
 ---
 
