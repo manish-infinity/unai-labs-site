@@ -6,7 +6,7 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
-- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Modules 2-4 (11 lessons, IDs 39-49) are still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
+- **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) was written+published in Sprint 13; Modules 3-4 (7 lessons, IDs 43-49) are still outline-only — future sprints will keep writing them unless Manish objects. The course page promises "video + reading + exercises": decide whether/when to produce video versions.
 - **Decide whether to upgrade to Tutor LMS Pro.** Needed to unlock "Lesson Preview" (free sample chapters for non-enrolled visitors) — not available on the current free tier.
 - **Decide on guest checkout vs. login-gate.** Right now visitors must log in or register before they can add a course to cart — there's no guest checkout option.
 - **Share a photo + bio for the About page.**
@@ -16,6 +16,31 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 13 — 2026-07-10
+
+### Sprint Goal
+Close the Module 2 content gap: write and publish full lesson text for all 4 Module 2 lessons (IDs 39-42) of "AI Literacy for Everyone" (course 30), carried forward from Sprint 12.
+
+### Completed This Sprint
+- **ORIENT reconciliation**: verified all 8 posts (29, 63, 66, 68, 83, 90, 96, 99 — all published), all 17 pages (15 + the 2 legacy Tutor cart/checkout pages from Sprint 12), course 30, and all 15 lessons (IDs 35-49) against SPRINT_LOG via public REST + wp-admin. No duplicates, no drafts-logged-as-published, no discrepancies. Lesson 39 confirmed empty before writing.
+- **Published full lesson content for all 4 Module 2 lessons** (previously empty, via wp-admin classic editor): Lesson 2.1 (lesson ID 39) "The art of the prompt" (~4.8KB — prompt-as-briefing, 4-part structure, iteration, pocket template); Lesson 2.2 (lesson ID 40) "AI for writing and communication" (~4.8KB — AI drafts/you decide, 5 moves, voice preservation, sincerity + privacy boundaries); Lesson 2.3 (lesson ID 41) "AI for research and learning" (~4.7KB — tutor moves, two-source rule, fluency illusion); Lesson 2.4 (lesson ID 42) "AI for creativity and brainstorming" (~4.6KB — divergent/convergent, 6 brainstorm moves, anchoring + five-minute rule). Each follows the Module 1 template: reading-time header, h2 sections, key takeaways, "Try this" exercise, next-lesson pointer.
+- QA: lessons 39 and 42 verified rendering correctly in the Tutor course player at /courses/ai-literacy-for-everyday-people/lessons/{slug}/ — sidebar shows Module 2 with all 4 lessons as "Reading", content + takeaways + exercises render. Note: lesson permalinks use /lessons/ (plural) — /lesson/ 404s.
+- Committed content/course-01-module-2-lessons.md to GitHub documenting Module 2 lesson IDs, structure, and content summaries.
+
+### Decisions Made
+- Kept the Module 1 text-first lesson template ("Reading time" framing) for consistency; video plan remains a Manish decision in the backlog.
+- Course 30 now has 8 of 15 lessons with real content (Modules 1-2 complete). Modules 3-4 (IDs 43-49) remain outline-only — next content priority.
+
+### Carry-Forward (Sprint 14+)
+- Write Module 3 lesson content (IDs 43-46): Hallucinations, bias, and error; Your brain on AI; The verification mindset; AI ethics in everyday life. Then Module 4 (IDs 47-49).
+- QA the WPForms lead-magnet email (J2) now that email sending works — carried from Sprint 12, not reached this sprint.
+- Apply the visual-polish pattern to the Courses page (/our-courses/, page 25) — still pending from Sprint 10.
+- All standing Manish items remain in the Master Backlog above (Razorpay keys, Module 1-2 content review + video plan, Tutor Pro, guest checkout, photo/bio, Yoast logo, GoDaddy trial).
+
+Last updated: 2026-07-10
+
+---
 
 ## Sprint 12 — 2026-07-05
 
