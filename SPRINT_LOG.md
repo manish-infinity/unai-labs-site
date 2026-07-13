@@ -4,6 +4,7 @@
 ## Pending Decisions & Backlog (Manish's Action Required)
 _This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context. Journey context lives in USER_JOURNEYS.md (created Sprint 12) — re-verify and update it every sprint alongside this list, and tie every new backlog/sprint item to the journey (J1-J6) it serves so no task is standalone._
 
+- **NEW 2026-07-13 (Sprint 17) — wp-admin/GoDaddy sessions expired; automation cannot publish until re-login.** wp-admin (unai-labs.com/wp-admin) redirected to wp-login with reauth=1 and empty fields, and the GoDaddy dashboard also required sign-in — so this sprint did ZERO WordPress publishing (content was drafted to GitHub instead). Manish: log into wp-admin once with **Remember Me** checked (and/or keep the GoDaddy dashboard signed in) in the browser profile the automation uses so the session persists; alternatively create a WordPress Application Password for the automation. Until then every wp-admin sprint item is blocked.
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
 - **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) in Sprint 13 and Module 3 (IDs 43-46) in Sprint 14 — all published; Module 4 (IDs 47-49) COMPLETED in Sprint 15 — course 30 is now content-complete: all 15 lessons across all 4 modules carry full published content, none outline-only. Remaining course-content decision for Manish: whether/when to produce video versions (the course page promises "video + reading + exercises"). The course page promises "video + reading + exercises": decide whether/when to produce video versions.
@@ -18,6 +19,50 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 17 — 2026-07-13
+
+### Sprint Goal
+Reconcile an unlogged run's work into the record, then — with wp-admin publishing blocked by an expired session — draft the next high-value content (a new AI Literacy blog post) to GitHub for a future authenticated sprint to publish.
+
+### Completed This Sprint
+- **ORIENT reconciliation (source of truth = live site via public REST):** verified live state against SPRINT_LOG. Found **9 published posts, not the 8 Sprint 15 logged** — new **post 132** "The Four Conditions That Decide Whether Your Brain Actually Rewires" (category Neuroplasticity, published 2026-07-11T04:18, ~611 words, Yoast OK) exists live but was **never logged**. It was created by an unlogged run on 2026-07-11 (recovered below as "Sprint 16"). Post 132 is complete, well-formed, on-brand, and cross-links the "Neuroplasticity in Practice" coming-soon course + the lead magnet — no fix needed, only logged. Pages (17), course (30, content-complete), and product (120) all unchanged from Sprint 15 and match by ID. No duplicates, no drafts-as-published, no other discrepancies.
+- **Access blocker hit (documented, not worked around):** wp-admin forced re-auth (reauth=1, empty login) and the GoDaddy dashboard also required sign-in. Per standing safety rules, did NOT enter credentials or click Sign In. Result: zero wp-admin changes this sprint — nothing here is a WordPress edit. GitHub was authenticated, so all work this sprint is via GitHub + public REST (same mode as Sprint 7's access-blocked run).
+- **Drafted the next AI Literacy blog post** and committed it to GitHub at content/blog-post-9-use-ai-without-dulling-your-brain.md: "Is AI Making You Sharper — or Just Faster? How to Use AI Without Dulling Your Brain" (~850 words). Chosen because AI Literacy was the weakest pillar (2 live posts vs 3 Neuroplasticity / 4 Brain Health) and it funnels to the only purchasable product (course 30). Covers cognitive offloading / the Google effect, desirable difficulty, and automation complacency, with an attempt-before-outsource habit set; cross-links posts 66 + 99 + 132 and the course. Science-backed, hype-free, brand-voice. **Ready to publish** (category AI Literacy, suggested Yoast keyphrase "using AI without losing critical thinking") — a future sprint with wp-admin access publishes it and records its post ID here.
+
+### Decisions Made
+- Numbered the recovered 2026-07-11 run as "Sprint 16" and this run as "Sprint 17" to keep the ID/audit trail honest (next mandatory content audit stays due at Sprint 20).
+- Did not full-rewrite SPRINT_LOG; applied surgical inserts only, preserving all historical entries byte-for-byte.
+- Did not attempt any login workaround (no password entry, no reset flow), consistent with Sprint 7/10 precedent.
+
+### Carry-Forward (Sprint 18+)
+- **Publish content/blog-post-9-use-ai-without-dulling-your-brain.md** as a new post (category AI Literacy) once wp-admin access is restored; record the post ID.
+- Build out course 2 "Neuroplasticity in Practice" and course 3 "Brain Health 101" (still COMING SOON) — outline then write (course-02 outline already exists at courses/course-02-neuroplasticity-learning.md).
+- Optional video versions of the AI-Literacy lessons (Manish decision).
+- Apply the visual-polish pattern to the Courses page (page 25) — pending since Sprint 10.
+- Next mandatory content audit due Sprint 20.
+
+For Manish: the wp-admin/GoDaddy re-login is now the top Master Backlog item (it blocks all publishing); all other standing items unchanged.
+
+Last updated: 2026-07-13 (Sprint 17)
+
+---
+
+## Sprint 16 — 2026-07-11 (recovered — was not logged when it ran)
+
+### What happened
+This run published one blog post and did not update SPRINT_LOG.md. Recovered and logged retroactively during Sprint 17's ORIENT from live-site state.
+
+### Completed
+- **Published Blog Post (post ID 132):** "The Four Conditions That Decide Whether Your Brain Actually Rewires" — category Neuroplasticity, live at /the-four-conditions-that-decide-whether-your-brain-actually-rewires/, published 2026-07-11T04:18, ~611 words, Yoast OK/indexable. Covers focused attention, effort/productive struggle, rest/consolidation, and spaced repetition; on-brand (science-backed, hype-free) and cross-links the "Neuroplasticity in Practice" coming-soon course + the Brain + AI Starter Guide lead magnet. Verified complete and well-formed via REST during Sprint 17.
+- No page/product/course changes in this run (pages still 17, product 120, course 30 unchanged).
+
+### Note
+No GitHub draft file was committed for post 132 (unlike posts 2–7). Content lives only in WordPress; a future sprint may optionally back it up to content/ for parity.
+
+Last updated (retroactively): 2026-07-13
+
+---
 
 ## Sprint 15 — 2026-07-10 (third run today)
 
