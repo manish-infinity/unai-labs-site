@@ -4,7 +4,7 @@
 ## Pending Decisions & Backlog (Manish's Action Required)
 _This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context. Journey context lives in USER_JOURNEYS.md (created Sprint 12) — re-verify and update it every sprint alongside this list, and tie every new backlog/sprint item to the journey (J1-J6) it serves so no task is standalone._
 
-- **UPDATED 2026-07-17 (Sprint 18) — wp-admin/GoDaddy re-login STILL required; publishing blocked a 2nd straight sprint.** wp-admin still forces reauth=1 with empty fields; per standing safety rules no credentials were entered. TWO publish-ready drafts are now queued in GitHub awaiting an authenticated sprint: content/blog-post-9-use-ai-without-dulling-your-brain.md (blog post, AI Literacy) and content/course-02-module-1-lessons.md (Course 2 "The Neuroplastic Learner" Module 1). Manish: log into wp-admin once with "Remember Me" (and/or keep the GoDaddy dashboard signed in) in the automation's browser profile, or create a WordPress Application Password, so the session persists.
+- **UPDATED 2026-07-18 (Sprint 19) — wp-admin/GoDaddy re-login STILL required; publishing blocked a 3rd straight sprint.** wp-admin (unai-labs.com/wp-admin) still redirects to wp-login with reauth=1 and empty fields; per standing safety rules no credentials were entered. THREE publish-ready drafts are now queued in GitHub awaiting an authenticated sprint: content/blog-post-9-use-ai-without-dulling-your-brain.md (blog post, AI Literacy), content/course-02-module-1-lessons.md (Course 2 "The Neuroplastic Learner" Module 1), and content/course-02-module-2-lessons.md (Course 2 Module 2). Manish: log into wp-admin once with "Remember Me" checked (and/or keep the GoDaddy dashboard signed in) in the automation's browser profile, or create a WordPress Application Password, so the session persists — this has now blocked all WordPress publishing for three consecutive sprints.
 - **NEW 2026-07-13 (Sprint 17) — wp-admin/GoDaddy sessions expired; automation cannot publish until re-login.** wp-admin (unai-labs.com/wp-admin) redirected to wp-login with reauth=1 and empty fields, and the GoDaddy dashboard also required sign-in — so this sprint did ZERO WordPress publishing (content was drafted to GitHub instead). Manish: log into wp-admin once with **Remember Me** checked (and/or keep the GoDaddy dashboard signed in) in the browser profile the automation uses so the session persists; alternatively create a WordPress Application Password for the automation. Until then every wp-admin sprint item is blocked.
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
@@ -20,6 +20,36 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 19 — 2026-07-18
+
+### Sprint Goal
+
+wp-admin publishing blocked for a third straight sprint (session still forces re-auth). Like Sprints 17 and 18, do the highest-value UNblocked work: reconcile live state, then advance the biggest standing content gap by drafting Course 2 ("The Neuroplastic Learner") Module 2 lesson content to GitHub for a future authenticated sprint to publish.
+
+### Completed This Sprint
+
+- **ORIENT reconciliation (source of truth = live site via public REST):** verified live state against SPRINT_LOG. 9 published posts (29, 63, 66, 68, 83, 90, 96, 99, 132), 17 pages (incl. legacy Tutor pages 121/122), and only course 30 (content-complete) — all match Sprint 18's log by ID. Courses 2 & 3 remain homepage "COMING SOON" cards only (no real course posts exist). No duplicates, no drafts-as-published, no discrepancies. The Sprint 17/18 drafts (blog-post-9, course-02-module-1-lessons) remain GitHub-only / unpublished, consistent with the publishing block.
+- **Access re-checked (blocked a 3rd time, not worked around):** unai-labs.com/wp-admin still redirects to wp-login with reauth=1 and empty fields. Per standing safety rules, did NOT enter credentials or click Log In. Zero wp-admin/WordPress changes this sprint — all work is via GitHub + public REST (same mode as Sprints 7/17/18).
+- **Wrote Course 2 "The Neuroplastic Learner" Module 2 lesson content** and committed it to GitHub at content/course-02-module-2-lessons.md (commit "Sprint 19: add Course 2 (Neuroplastic Learner) Module 2 lesson content draft"). Full, publish-ready bodies for all 4 Module 2 lessons + the Week 2 exercise, built from the courses/course-02-neuroplasticity-learning.md outline and following the Course 1 / Course 2 Module 1 lesson template (reading-time header, h2 sections, Key takeaways, "Try this" exercise, next-lesson pointer): 2.1 "Retrieval Practice", 2.2 "Spaced Repetition", 2.3 "Interleaving", 2.4 "Elaborative Interrogation and Self-Explanation". Each lesson explicitly calls back to Module 1's model (forgetting curve, three memory stages, desirable difficulty) so the techniques feel inevitable rather than arbitrary. Science-backed, hype-free, brand-voice. QA'd via GitHub's editor render (210 lines) — headings/bold/italics/numbered lists all clean, no bracket corruption, correct em-dashes. No WordPress post/page/product/course IDs created this sprint (course 2 does not yet exist in Tutor).
+
+### Decisions Made
+
+- Chose Course 2 Module 2 content as the highest-value unblocked deliverable, continuing directly from Sprint 18's Module 1 draft — it advances the biggest standing content gap (two coming-soon courses) and queues a second full module for a future authenticated sprint to paste into a new Tutor course.
+- Left the work as a GitHub draft since course 2 does not yet exist in WP/Tutor; the file header documents exactly how a future sprint should create the course and record the new course + lesson IDs.
+- Did not attempt any login workaround (no password entry, no reset flow), consistent with Sprint 7/17/18 precedent.
+- Updated the top wp-admin Master Backlog item to reflect a third consecutive blocked sprint and the now-three queued drafts. No other backlog items became moot, so no pruning was warranted.
+
+### Carry-Forward (Sprint 20+)
+
+- **Publishing is blocked** until wp-admin access is restored. Once it is, a sprint should: (1) publish content/blog-post-9-use-ai-without-dulling-your-brain.md (category AI Literacy) and record its post ID; (2) create the Course 2 "The Neuroplastic Learner" Tutor course and paste in Module 1 (content/course-02-module-1-lessons.md) and Module 2 (content/course-02-module-2-lessons.md) lessons, recording the new course + lesson IDs.
+- Write Course 2 Modules 3-4 lesson content (outline exists at courses/course-02-neuroplasticity-learning.md); then build Course 3 "Brain Health 101".
+- Apply the visual-polish pattern to the Courses page (page 25) — pending since Sprint 10.
+- **Sprint 20 is divisible by 5 — the mandatory full content audit is due next sprint.**
+
+Last updated: 2026-07-18 (Sprint 19)
+
+---
 
 ## Sprint 18 — 2026-07-17
 
