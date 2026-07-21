@@ -4,9 +4,9 @@
 ## Pending Decisions & Backlog (Manish's Action Required)
 _This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context. Journey context lives in USER_JOURNEYS.md (created Sprint 12) — re-verify and update it every sprint alongside this list, and tie every new backlog/sprint item to the journey (J1-J6) it serves so no task is standalone._
 
-- **READ FIRST — 2026-07-20 (Sprint 21): the Sprint 21 entry and its Master Backlog changes live in sprints/SPRINT_21.md, NOT below.** The GitHub web editor hung while editing this file mid-sprint and the edit was lost, so Sprint 21 was logged to its own file instead. Sprint 22 must merge that file into this one, apply the backlog changes it lists (the two wp-admin blocker items below are now MOOT and should be deleted; three new items need adding), then delete it. Headline: wp-admin access is RESTORED, blog post 135 is published, and Course 2 exists as draft course 124 with Modules 1-2 now content-complete (lessons 126-128 and 137-140).
-- - **UPDATED 2026-07-19 (Sprint 20) — wp-admin/GoDaddy re-login STILL required; publishing blocked a 4th straight sprint.** wp-admin (unai-labs.com/wp-admin) still redirects to wp-login with reauth=1 and empty fields; per standing safety rules no credentials were entered. FOUR publish-ready drafts are now queued in GitHub awaiting an authenticated sprint: content/blog-post-9-use-ai-without-dulling-your-brain.md (blog post, AI Literacy), content/course-02-module-1-lessons.md (Course 2 "The Neuroplastic Learner" Module 1), content/course-02-module-2-lessons.md (Course 2 Module 2), and content/course-02-module-3-lessons.md (Course 2 Module 3). Manish: log into wp-admin once with "Remember Me" checked (and/or keep the GoDaddy dashboard signed in) in the automation's browser profile, or create a WordPress Application Password, so the session persists — this has now blocked all WordPress publishing for four consecutive sprints.
-- **NEW 2026-07-13 (Sprint 17) — wp-admin/GoDaddy sessions expired; automation cannot publish until re-login.** wp-admin (unai-labs.com/wp-admin) redirected to wp-login with reauth=1 and empty fields, and the GoDaddy dashboard also required sign-in — so this sprint did ZERO WordPress publishing (content was drafted to GitHub instead). Manish: log into wp-admin once with **Remember Me** checked (and/or keep the GoDaddy dashboard signed in) in the browser profile the automation uses so the session persists; alternatively create a WordPress Application Password for the automation. Until then every wp-admin sprint item is blocked.
+- **RESOLVED 2026-07-20 (Sprint 21): wp-admin access is back and the entire 4-sprint publishing queue has been cleared.** Blog post 9 published as post 135, Course 2 Module 2 built as lessons 137-140, and (Sprint 22) Course 2 Module 3 built as lessons 141-143. Nothing needed from Manish right now; if the automation session expires again, log into wp-admin once with Remember Me checked in its browser profile, or create a WordPress Application Password.
+- **Decide when to publish Course 2 "Neuroplasticity in Practice" (course 124).** Still a Draft: Modules 1-3 now carry full content (lessons 126-128, 137-140, 141-143); only Module 4 (topic 131) remains an empty shell. Manish: confirm the default plan of publishing only once all four modules are written, and decide its price plus whether it needs its own WooCommerce product the way course 30 does.
+- **Course 2's GitHub outline does not match the live course.** courses/course-02-neuroplasticity-learning.md describes "The Neuroplastic Learner" with different modules/lessons than WP course 124 "Neuroplasticity in Practice". Sprints 21-22 treated the live site as source of truth. Manish: no action needed unless you prefer the outline's structure — say so and the course will be rebuilt to match it.
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
 - **Choose the payment path (UPDATED 2026-07-05 — the picture changed).** Discovered Tutor LMS uses its NATIVE eCommerce engine (not WooCommerce — the store has zero Woo products; WooCommerce gateway pages are irrelevant to course sales). On Tutor free tier the only automated gateway is PayPal (which cannot take domestic Indian payments) plus "Manual Payment"; Stripe/Razorpay native gateways are Tutor Pro. Manish must pick one: (a) Tutor Pro upgrade -> native Razorpay/Stripe; (b) switch Tutor Monetization engine to WooCommerce -> install free official Razorpay/Stripe Woo plugin and connect account (re-test cart/checkout after engine switch); (c) enable Tutor Manual Payment (bank/UPI instructions) as a free interim; (d) PayPal only if targeting international buyers. Store context is now correctly India/Karnataka + INR everywhere. RESOLVED PATH (same day): Manish chose option (b) and it is now fully built — Tutor engine switched to WooCommerce, Woo product 120 ("AI Literacy for Everyone", Rs 2,999, virtual, For Tutor) created and linked to course 30, official Razorpay for WooCommerce plugin installed + activated, Tutor auto-complete-orders + auto-redirect-to-courses enabled, and the cart/checkout flow QA-passed end-to-end at Rs 2,999. ONLY REMAINING STEP FOR MANISH: connect Razorpay — create/log into razorpay.com account, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order.
 - **Review Module 1 lesson content + decide the video plan.** Sprint 12 wrote and published full text content for all 4 Module 1 lessons (IDs 35-38) of "AI Literacy for Everyone". Module 2 (IDs 39-42) in Sprint 13 and Module 3 (IDs 43-46) in Sprint 14 — all published; Module 4 (IDs 47-49) COMPLETED in Sprint 15 — course 30 is now content-complete: all 15 lessons across all 4 modules carry full published content, none outline-only. Remaining course-content decision for Manish: whether/when to produce video versions (the course page promises "video + reading + exercises"). The course page promises "video + reading + exercises": decide whether/when to produce video versions.
@@ -21,6 +21,65 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 22 — 2026-07-21
+
+### Sprint Goal
+With wp-admin access confirmed still live, (1) complete the housekeeping Sprint 21 deferred — merge sprints/SPRINT_21.md into this log, apply its Master Backlog changes, delete the standalone file; and (2) advance the biggest content gap by writing Course 2 (course 124) Module 3 lesson content.
+
+### Completed This Sprint
+- ORIENT reconciliation (wp-admin + public REST): live state matches the log with zero drift. 10 published posts (29, 63, 66, 68, 83, 90, 96, 99, 132, 135); course 30 "AI Literacy for Everyone" published + content-complete; course 124 "Neuroplasticity in Practice" DRAFT with Modules 1 (126-128) and 2 (137-140) content-complete and Modules 3 (topic 130) / 4 (topic 131) empty shells. Verified lesson 137 and the full curriculum directly in the Tutor Course Builder. No duplicates, no drafts-as-published, no discrepancies. wp-admin confirmed still authenticated — no re-login needed.
+- Merged the Sprint 21 entry (above) into SPRINT_LOG.md, applied the three Master Backlog changes it specified (removed the two stale wp-admin blocker items and the READ FIRST pointer; added the RESOLVED wp-admin item, the Course 2 publish-decision item, and the Course 2 outline-mismatch item), and deleted sprints/SPRINT_21.md.
+- Built Course 2 Module 3 — three new lessons (IDs 141, 142, 143) under topic 130 "Module 3 — Focus & Attention as Trainable Skills", via tutor_save_lesson (technique per Sprint 21's note): 141 "Attention is a muscle: the neuroscience of focus" (~4.9KB), 142 "Rebuilding a focus span in a distraction economy" (~5.0KB), 143 "Deep work sessions, done deliberately" (~5.2KB). House template (reading-time header, h2 sections, Key takeaways, Try this, next-lesson pointer); each builds on the previous, calls back to Module 1's four conditions and Module 2's memory model, and lesson 143 hands off to Module 4. Rewrote topic 130's summary to drop the stale "coming in a future course update" promise.
+- QA: verified all three lessons saved with full content via /wp-admin/post.php?post=ID (4890 / 4956 / 5201 chars, correct titles) and confirmed all three render in order under Module 3 in the Course Builder. Backed up the Module 3 content to GitHub at content/course-124-module-3-lessons.md.
+- Course 2 status: course 124 still a DRAFT (correct — Module 4 remains empty). Modules 1-3 now carry ten lessons of full content; only Module 4 (topic 131; planned lessons: Stress, cortisol, and the plastic brain / Movement, sleep, and novelty as plasticity drivers / Your weekly brain-plasticity routine capstone) stands between it and publishable.
+
+### Decisions Made
+- Picked Module 3 content as the highest-value unblocked deliverable (top Sprint 21 carry-forward; closes one of the two remaining course-content gaps).
+- Performed the SPRINT_LOG merge as a single programmatic full-file edit (compute new content in-browser, set the editor value, commit) rather than interactive typing, to avoid the large-file editor hang that forced Sprint 21 into a separate file.
+- Left course 124 unpublished until Module 4 is written, consistent with Sprint 21.
+
+### Carry-Forward (Sprint 23+)
+- Write Course 2 Module 4 lessons under topic 131 "Module 4 — Resilience & Cognitive Longevity" (3 planned lessons) — that completes course 124 and makes it publishable.
+- Once content-complete: publish course 124, set its price, create its WooCommerce product mirroring product 120, and replace the homepage COMING SOON card with a real course card.
+- Re-verify WooCommerce product 120 in wp-admin (unverified since Sprint 15). Apply visual-polish to the Courses page (page 25). Back up post 132 to content/ folder. Then build Course 3 "Brain Health 101".
+- Next mandatory content audit due Sprint 25.
+
+Last updated: 2026-07-21 (Sprint 22)
+
+---
+
+## Sprint 21 — 2026-07-20
+
+### Sprint Goal
+wp-admin access was RESTORED after four consecutive blocked sprints. Clear the backed-up publishing queue and reconcile the state drift accumulated while the log and live site were out of contact: full ORIENT via wp-admin (not public REST alone), publish the queued blog post, advance Course 2 with real lesson content.
+
+### Completed This Sprint
+- ORIENT reconciliation — TWO significant discrepancies found, both resolved. Public REST showed exactly what Sprint 20 logged (9 posts, 17 pages, 1 course); wp-admin showed more. FIRST: the Courses list has TWO courses — course 124 "Neuroplasticity in Practice" exists as a DRAFT, created by the unlogged 2026-07-11 run (recovered as "Sprint 16"), invisible to public REST because drafts are not exposed. Sprints 18-20 all believed Course 2 did not exist. SECOND: course 124 already contained three published Module 1 lessons from that same unlogged run, never recorded: lesson 126 "What neuroplasticity really is (and what it isn't)", 127 "The four conditions for rewiring: attention, effort, rest, repetition", 128 "Myths, hype, and what the science actually supports" (~3.4-3.7KB each). Topic IDs: 125 (M1), 129 (M2), 130 (M3), 131 (M4); Modules 2-4 were topic-description-only with zero lessons. Everything else matched Sprint 20 by ID (posts 29, 63, 66, 68, 83, 90, 96, 99, 132; 17 pages).
+- Structural conflict identified and decided. The Course 2 content drafted in Sprints 18-20 was written against courses/course-02-neuroplasticity-learning.md ("The Neuroplastic Learner"), whose modules/lessons do NOT match live course 124 "Neuroplasticity in Practice". Per the standing rule that the live site is source of truth, and because the homepage COMING SOON card advertises "Neuroplasticity in Practice", the WP structure was kept and new content written to fit it. The three GitHub drafts remain as raw material.
+- Published Blog Post 9 (post ID 135): "Is AI Making You Sharper — or Just Faster? How to Use AI Without Dulling Your Brain". Category AI Literacy (28), slug use-ai-without-dulling-your-brain, live. Queued in GitHub since Sprint 17, blocked four sprints. Cross-links posts 66, 99, 132 and course 30. QA'd live.
+- Built Course 2 Module 2 — four new lessons (IDs 137, 138, 139, 140) under topic 129 "Module 2 — Learning Faster & Remembering Longer": 137 "Why forgetting is a feature: the science of memory", 138 "Spaced repetition — the highest-leverage learning tool there is", 139 "Active recall and desirable difficulty", 140 "Building a personal learning system that sticks". House template. Topic 129 summary rewritten to remove the "coming in a future course update" promise.
+- Course 2 status: course 124 still a DRAFT, deliberately NOT published. Modules 1 (126-128) and 2 (137-140) content-complete; Modules 3-4 empty. Publishing half-empty would be worse than the COMING SOON card.
+
+### Technical Note For Future Sprints
+- Tutor LMS lessons/topics are NOT in the WP REST API — only courses are. Create/update via /wp-admin/admin-ajax.php with actions tutor_save_lesson and tutor_save_topic, using the _tutor_nonce from the Course Builder page HTML.
+- CRITICAL: for tutor_save_lesson the content parameter is "description" (NOT "lesson_content") and the title is "title" (NOT "lesson_title"). Wrong names return a success message while saving nothing. For tutor_save_topic use "title" and "summary". Creating a lesson needs lesson_id 0 + topic_id + course_id; updating needs the real lesson_id. Always verify a save by fetching /wp-admin/post.php?post=ID&action=edit.
+
+### Decisions Made
+- Kept the live WP course structure for Course 2 rather than restructuring to match the GitHub outline (live site is source of truth; homepage markets that name). Mismatch logged to Master Backlog.
+- Left course 124 a Draft rather than publishing half-complete.
+- Did not create a new Course 2 — found and extended the existing draft (the exact duplicate-content failure ORIENT exists to prevent).
+
+### Carry-Forward
+- Write Module 3 (topic 130) and Module 4 (topic 131) lessons to complete course 124 and make it publishable.
+- Once content-complete: publish course 124, set price, create its WooCommerce product mirroring product 120, replace the homepage COMING SOON card.
+- Re-verify WooCommerce product 120 in wp-admin (unverified since Sprint 15). Apply visual-polish to Courses page (page 25). Back up post 132 to content/ folder. Next mandatory audit due Sprint 25.
+
+_Note: this entry was originally logged to sprints/SPRINT_21.md because the web editor hung mid-edit on the large SPRINT_LOG.md; merged here by Sprint 22, which then deleted that file._
+
+Last updated: 2026-07-20 (Sprint 21)
+
+---
 
 ## Sprint 20 — 2026-07-19
 
