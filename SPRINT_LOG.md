@@ -4,7 +4,7 @@
 ## Pending Decisions & Backlog (Manish's Action Required)
 _This is the single running list of everything blocked on Manish. Updated at the start and end of every sprint — see individual sprint entries below for narrative context. Journey context lives in USER_JOURNEYS.md (created Sprint 12) — re-verify and update it every sprint alongside this list, and tie every new backlog/sprint item to the journey (J1-J6) it serves so no task is standalone._
 
-- **BLOCKER — still blocked Sprint 27 (2026-07-29); originally re-opened Sprint 23 (2026-07-22): the wp-admin automation session has EXPIRED again; there was no wp-admin access this sprint (blocked Sprints 17-20, 23-27).** wp-login redirected with reauth=1, and entering a password is out of scope for automation. This blocks publishing Tutor lessons (so Course 2 Module 4 and Course 3 Modules 1-3 are staged in GitHub, not published), re-verifying WooCommerce product 120, and all other admin-side work; the Tutor course/lesson layer also cannot be verified because it is not exposed in the public REST API. Manish: log into https://unai-labs.com/wp-admin once in the automation browser profile with **Remember Me** checked, OR create a WordPress Application Password, so the session stops lapsing between sprints. (History: access was restored Sprint 21 and the whole queue cleared — posts through 135, Course 2 lessons 126-128 / 137-140 / 141-143 — then lapsed again by Sprint 23.)
+- **BLOCKER — still blocked Sprint 28 (2026-07-31); originally re-opened Sprint 23 (2026-07-22): the wp-admin automation session has EXPIRED again; there was no wp-admin access this sprint (blocked Sprints 17-20, 23-28).** wp-login redirected with reauth=1, and entering a password is out of scope for automation. This blocks publishing Tutor lessons (so Course 2 Module 4, Course 3 Modules 1-4, and Blog Post 10 are staged in GitHub, not published), re-verifying WooCommerce product 120, and all other admin-side work; the Tutor course/lesson layer also cannot be verified because it is not exposed in the public REST API. Manish: log into https://unai-labs.com/wp-admin once in the automation browser profile with **Remember Me** checked, OR create a WordPress Application Password, so the session stops lapsing between sprints. (History: access was restored Sprint 21 and the whole queue cleared — posts through 135, Course 2 lessons 126-128 / 137-140 / 141-143 — then lapsed again by Sprint 23.)
 - **Decide when to publish Course 2 "Neuroplasticity in Practice" (course 124) — now one paste from content-complete.** Still a Draft. Modules 1-3 are live (lessons 126-128, 137-140, 141-143). Module 4 (topic 131 "Resilience & Cognitive Longevity") lesson content is now WRITTEN and staged in GitHub at content/course-124-module-4-lessons.md (3 publish-ready lessons, Sprint 23) but NOT yet in WordPress because wp-admin was down — a future sprint pastes the three lessons under topic 131 to make course 124 content-complete. Manish: confirm the plan to publish only once all four modules are live, and decide its price plus whether it needs its own WooCommerce product the way course 30 does.
 - **Course 2's GitHub outline does not match the live course.** courses/course-02-neuroplasticity-learning.md describes "The Neuroplastic Learner" with different modules/lessons than WP course 124 "Neuroplasticity in Practice". Sprints 21-22 treated the live site as source of truth. Manish: no action needed unless you prefer the outline's structure — say so and the course will be rebuilt to match it.
 - **RESOLVED 2026-07-05 — WordPress email is now WORKING.** GoDaddy Managed WordPress blocks outbound SMTP entirely (smtpout.secureserver.net failed on both 587/TLS and 465/SSL — connection-level, password irrelevant). Fixed by switching WP Mail SMTP to GoDaddy's internal relay: relay-hosting.secureserver.net, port 25, no encryption, no auth. Test email sent AND confirmed received in Manish's Gmail inbox (2026-07-05) — email journey verified end-to-end, nothing further needed from Manish. If deliverability proves poor over time, switch to an API mailer (e.g. Brevo free tier). Next sprint: QA the WPForms lead-magnet email (J2) now that sending works.
@@ -23,6 +23,37 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 ---
 
+
+## Sprint 28 — 2026-07-31
+
+### Sprint Goal
+
+All three courses' content is now drafted to completion (Sprint 27 finished the last module), and wp-admin publishing has been blocked for a 9th time (Sprints 17-20, 23-28; session expired, reauth=1). Per Sprint 27's own carry-forward — "the next new-content frontier is more blog posts or a Course 4 topic" — did the highest-value UNblocked work: wrote and staged a net-new blog post (Blog Post 10, attention/focus) to GitHub for a future authenticated sprint to publish. Reconciled live state during ORIENT first.
+
+### Completed This Sprint
+
+- ORIENT reconciliation (public REST; source of truth = live site): live state matches the log with zero drift. 10 published posts (29, 63, 66, 68, 83, 90, 96, 99, 132, 135) with categories intact (Neuroplasticity 17: 29/63/132; AI Literacy 28: 66/99/135; Brain Health 29: 68/83/90/96); only course 30 exposed publicly (course 124 remains a Draft, not in public REST). No duplicates, no drafts-as-published, no discrepancies.
+- Access re-checked (blocked a 9th time, not worked around): unai-labs.com/wp-admin redirected to wp-login with reauth=1. Per standing safety rules, did NOT enter credentials or click Log In. Zero wp-admin/WordPress changes this sprint — all work is via GitHub (authenticated) + public REST, same mode as Sprints 17-20/23-27.
+- Checked the GitHub content/ folder before building (duplicate-prevention): existing blog-post files are 2, 3, 4, 6, 7, 9 (AI tools, sleep, stress, nutrition, evaluating AI output, AI-without-dulling). No attention/focus post existed anywhere — so this sprint's work is net-new, not a duplicate.
+- Wrote Blog Post 10 "Your Attention Span Isn't Broken — It's Untrained: The Neuroscience of Rebuilding Focus" and committed it to GitHub at content/blog-post-10-train-your-attention.md (10,262 bytes): full, publish-ready post following the house template (reading-time header, h2 sections, Key takeaways, Go deeper). Planned category Neuroplasticity (17); slug train-your-attention-neuroscience-of-focus. Science-backed, hype-free; covers the three attention networks, the distraction/AI-offloading pressure, attention as a neuroplastic skill, the sleep/stress/movement substrate, and a practical focus-training protocol. Cross-links five published posts (135, 132, 68, 83, 90) and course 30, and funnels to the upcoming Course 2. WP post ID recorded as TBD until an authenticated sprint publishes it.
+- QA: verified the committed file on raw.githubusercontent.com — HTTP 200, 10,262 bytes, title + Key-takeaways + Go-deeper sections present, all six internal links checked against live permalinks via REST (posts 68 and 83 slugs were corrected before commit), em-dashes clean, no encoding corruption.
+
+### Decisions Made
+
+- Picked a net-new blog post (attention/focus) as the highest-value unblocked deliverable: all course content is drafted to completion, so per Sprint 27's carry-forward the content frontier is now blog posts. Attention was the clearest gap — none of the 10 posts covers it, it bridges all four pillars, and it funnels to Course 2 (Focus & Attention module).
+- Categorized it Neuroplasticity (attention as a trainable/rewirable skill) rather than Brain Health, to cross-link the four brain-health posts as supports while keeping it distinct from the stress post (83).
+- Verified every internal link's slug against the live REST API before committing (caught and fixed two guessed slugs, for posts 68 and 83) to avoid shipping broken links.
+- Committed via GitHub's file-upload input rather than the web text editor, to avoid the large-file editor hang and any paste/encoding corruption; verified byte counts after commit.
+- Did not attempt any login workaround (no password entry, no reset flow), consistent with prior blocked sprints.
+
+### Carry-Forward (Sprint 29+)
+
+- FIRST, once wp-admin access is restored, clear the publishing queue: (1) publish Blog Post 10 (content/blog-post-10-train-your-attention.md), category Neuroplasticity, record its post ID. (2) Create the Course 3 Tutor course from courses/course-03-brain-health.md and paste Modules 1-4 (content/course-03-module-1/-2/-3/-4-lessons.md), record course/topic/lesson IDs, set price, mirror product 120 with a WooCommerce product, replace the homepage COMING SOON card (align "four pillars" to the five levers). (3) Paste Course 2 Module 4 lessons (content/course-124-module-4-lessons.md) under topic 131 of course 124, publish course 124, set price, create its WooCommerce product.
+- Re-verify WooCommerce product 120 in wp-admin (unverified since Sprint 15); fix the product-120 name mismatch; trash legacy Tutor pages 121/122 once confirmed unreferenced; back up post 132 to content/.
+- Next new-content frontier (unblocked) remains more blog posts (candidates: habit formation, cognitive offloading, prompting-as-structured-thinking) or a Course 4 topic.
+- Next mandatory content audit due Sprint 30.
+
+Last updated: 2026-07-31 (Sprint 28)
 
 ## Sprint 27 — 2026-07-29
 ### Sprint Goal
