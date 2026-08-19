@@ -7,21 +7,23 @@ Single, ordered checklist of everything drafted in GitHub and waiting on a WordP
 Category IDs: **Neuroplasticity = 17**, **AI Literacy = 28**, **Brain Health = 29**.
 For each blog post, title / slug / suggested Yoast keyphrase / meta description are in the file's own frontmatter. All internal links in these drafts already point only to PUBLISHED destinations, so publishing in any order is safe — but the order below keeps the newest/highest-value content first.
 
-## 1. Blog posts (9 drafted, all unpublished)
+## 1. Blog posts — ✅ ALL PUBLISHED (Sprint 37, 2026-08-18)
 
-Publish each as a WordPress post, set the category, copy the frontmatter's slug + meta description into Yoast, remove the YAML frontmatter block from the body, then record the new WP post ID next to it here and in SPRINT_LOG.md.
+All 9 drafted posts were published to the live site via the authenticated WordPress REST API (correct categories, clean Gutenberg blocks, per-slug duplicate check). WP post IDs:
 
-| Order | File | Category | Notes |
-|---|---|---|---|
-| 1 | content/blog-post-18-sleep-debt.md | Brain Health (29) | Newest (Sprint 36). Sleep-debt recovery how-to. |
-| 2 | content/blog-post-17-memory-palace.md | Neuroplasticity (17) | Method of loci how-to. |
-| 3 | content/blog-post-16-why-you-forget.md | Neuroplasticity (17) | Memory system + forgetting curve. Once live, post 17's conceptual reference to it can be upgraded to a hyperlink. |
-| 4 | content/blog-post-15-mental-downtime.md | Brain Health (29) | Default mode network. References post 10 conceptually — once post 10 is live, add its link. |
-| 5 | content/blog-post-14-cognitive-reserve.md | Neuroplasticity (17) | Brain aging / cognitive longevity. |
-| 6 | content/blog-post-13-how-to-actually-learn-with-ai.md | AI Literacy (28) | AI study workflow. |
-| 7 | content/blog-post-12-prompting-is-thinking.md | AI Literacy (28) | Prompting as structured thinking. |
-| 8 | content/blog-post-11-neuroscience-of-habits.md | Neuroplasticity (17) | Habit formation. |
-| 9 | content/blog-post-10-train-your-attention.md | Neuroplasticity (17) | Attention/focus. After it's live, add its link into post 15. |
+| # | File | Category | WP Post ID | Slug |
+|---|------|----------|-----------|------|
+| 1 | content/blog-post-18-sleep-debt.md | Brain Health (29) | 144 | how-to-recover-from-sleep-debt |
+| 2 | content/blog-post-17-memory-palace.md | Neuroplasticity (17) | 145 | how-to-build-a-memory-palace |
+| 3 | content/blog-post-16-why-you-forget.md | Neuroplasticity (17) | 146 | why-you-forget-and-how-to-remember |
+| 4 | content/blog-post-15-mental-downtime.md | Brain Health (29) | 147 | why-your-brain-needs-mental-downtime |
+| 5 | content/blog-post-14-cognitive-reserve.md | Neuroplasticity (17) | 148 | cognitive-reserve-why-some-brains-stay-sharp |
+| 6 | content/blog-post-13-how-to-actually-learn-with-ai.md | AI Literacy (28) | 149 | how-to-actually-learn-with-ai |
+| 7 | content/blog-post-12-prompting-is-thinking.md | AI Literacy (28) | 150 | prompting-is-thinking |
+| 8 | content/blog-post-11-neuroscience-of-habits.md | Neuroplasticity (17) | 151 | neuroscience-of-building-habits-that-stick |
+| 9 | content/blog-post-10-train-your-attention.md | Neuroplasticity (17) | 152 | train-your-attention-neuroscience-of-focus |
+
+Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forward-link was skipped: no clean anchor in post 147.)
 
 ## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124, currently Draft)
 
@@ -39,7 +41,7 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 
 ## 4. Cleanup / verification (needs wp-admin)
 
-- Re-verify WooCommerce product 120 (unverified in wp-admin since Sprint 15).
+- ✅ Re-verified WooCommerce product 120 (Sprint 37): "AI Literacy for Everyone", ₹2,999, live via Store API.
 - Fix product-120 name mismatch: product says "AI Literacy for Everyone", course + pages say "AI Literacy for Everyday People" — align to one name.
 - Trash legacy Tutor pages 121/122 ("...-legacy-unused") once confirmed unreferenced by Tutor settings.
 - Connect Razorpay (Manish): WooCommerce > Settings > Payments > Razorpay > enter Key ID + Secret > Enable + Save, then place one live test order. Until then no real purchase can complete.
