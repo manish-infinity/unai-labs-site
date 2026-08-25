@@ -25,7 +25,11 @@ All 9 drafted posts were published to the live site via the authenticated WordPr
 
 Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forward-link was skipped: no clean anchor in post 147.)
 
-## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124, currently Draft)
+**New since Sprint 37:** Blog Post 19 (content/blog-post-19-circadian-rhythm.md, Brain Health 29, slug how-your-body-clock-controls-your-brain) is written + staged and awaiting publish — publish it and record its WP ID. Separately, post 160 "how-generative-ai-actually-works" (AI Literacy) was published directly on the live site outside this queue (no content/ source file) — recorded for tracking, no action needed.
+
+## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED (verify Module 4 + price)
+
+**Status (Sprint 38): course 124 is now Published — verified live via public REST. It was promoted from Draft outside this queue while wp-admin was blocked, so Module 4 (topic 131) completeness and the price/WooCommerce product are UNVERIFIED. Next authenticated sprint: confirm all four modules' lessons are present and set/confirm price + product.**
 
 Modules 1–3 are already live (lessons 126-128, 137-140, 141-143). To finish:
 1. Paste the 3 lessons in `content/course-124-module-4-lessons.md` under **topic 131** ("Resilience & Cognitive Longevity"). Record each lesson ID.
@@ -48,4 +52,4 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 - Submit the "Brain + AI Starter Guide" lead-magnet form once on the live site and confirm both emails arrive (WPForms Lite stores no entries, so this needs a manual submit).
 
 ---
-Last updated: 2026-08-15 (Sprint 36). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
+Last updated: 2026-08-25 (Sprint 38). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.

@@ -6,7 +6,8 @@ _This is the single running list of everything blocked on Manish. Updated at the
 
 - **wp-admin access was RESTORED Sprint 37 (2026-08-18) after being blocked Sprints 17-20 & 23-36 — but the session is NOT durable.** Sprint 37 used the live session to publish the entire 9-post blog queue (posts 144-152). The session has lapsed 17 times before and will likely expire again. Manish: to make it durable, log into https://unai-labs.com/wp-admin once in the automation browser profile with **Remember Me** checked, OR create a WordPress Application Password — otherwise every sprint risks re-blocking on publishing.
 - **Activate a payment gateway so real purchases can complete.** Tutor monetization runs on WooCommerce; Woo product 120 ("AI Literacy for Everyone", ₹2,999) is live (re-verified Sprint 37) and the cart/checkout flow QA-passed, and the official Razorpay-for-WooCommerce plugin is installed + active. ONLY REMAINING STEP — Manish: create/log into razorpay.com, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order. No gateway is connected yet, so no real payment can be taken.
-- **Course 2 "Neuroplasticity in Practice" (course 124) — one paste from content-complete, still a Draft.** Modules 1-3 live (lessons 126-128/137-140/141-143); Module 4 content is written and staged at content/course-124-module-4-lessons.md but not yet in WordPress. Next authenticated sprint: paste the 3 lessons under topic 131, publish course 124, set price, decide whether it needs its own WooCommerce product like course 30. Manish: confirm price + publish plan.
+- **Blog Post 19 (circadian rhythm / body clock) is written + staged in GitHub but not yet published (wp-admin blocked).** File content/blog-post-19-circadian-rhythm.md, category Brain Health (29), slug how-your-body-clock-controls-your-brain. Publish and record its WP post ID once access is restored. (Separately: post 160 "how-generative-ai-actually-works", AI Literacy, was already published live outside this log — recorded for tracking, no action needed.)
+- **Course 2 "Neuroplasticity in Practice" (course 124) is now PUBLISHED (verified live via public REST, Sprint 38) — but Module 4 completeness and price are UNVERIFIED.** It was promoted from Draft to Published outside this log while wp-admin was blocked (most likely by Manish directly). Whether Module 4 lessons (content/course-124-module-4-lessons.md, topic 131) were actually pasted, and whether a price / dedicated WooCommerce product exist, could not be checked without wp-admin. Manish: confirm all four modules' lessons are present, set/confirm a price, and decide whether course 124 needs its own WooCommerce product (mirror product 120).
 - **Course 3 "Brain Health 101" — CONTENT-COMPLETE IN DRAFT (all 4 modules written, Sprint 27), not yet in WordPress.** Outline (courses/course-03-brain-health.md) + Modules 1-4 (content/course-03-module-1..4-lessons.md) staged. Next authenticated sprint: build the Tutor course, set price, mirror product 120 with a WooCommerce product, replace the homepage COMING SOON card (align its "four pillars" copy to the outline's FIVE levers — adds Connection). Manish: confirm price.
 - **Decide whether to upgrade to Tutor LMS Pro** — unlocks free "Lesson Preview" sample chapters for non-enrolled visitors (not on the free tier).
 - **Decide on guest checkout vs. login-gate** — visitors must currently log in/register before adding a course to cart; no guest checkout.
@@ -16,6 +17,44 @@ _This is the single running list of everything blocked on Manish. Updated at the
 - **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to paid.
 - **Test the lead-magnet email end-to-end (2 min).** WordPress email is confirmed working (GoDaddy internal relay, verified 2026-07-05); WPForms Lite stores no entries, so Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both the subscriber copy and admin copy arrive.
 - **Low priority / cosmetic:** (a) legacy Tutor pages 121/122 ("...-legacy-unused", not in nav) — trash once confirmed unreferenced by Tutor settings; (b) product 120 slug is ai-literacy-for-everyday-people while its display name is "AI Literacy for Everyone" — keep the slug as-is (all blog CTAs link to it); (c) post 83's minor Yoast items (keyphrase in subheading/intro); (d) homepage Course 3 card "four pillars" vs. the five-lever outline — align when the card is replaced.
+
+---
+
+## Sprint 38 — 2026-08-25
+
+### Sprint Goal
+
+wp-admin FULL publishing is blocked again (the Sprint 37 session lapsed — /wp-admin/edit.php?post_type=courses redirected to wp-login.php with reauth=1 and empty fields). Sprint 38 is not divisible by 5 (next audit Sprint 40). ORIENT surfaced REAL drift this time (first non-zero drift in many sprints): two things are LIVE that this log never recorded — a 20th blog post (post 160, "how generative AI actually works") and the promotion of course 124 from Draft to Published. Resolved that drift first, then did the highest-value UNblocked work: wrote + staged a net-new blog post (Blog Post 19, circadian rhythm / the body clock) to GitHub.
+
+### Completed This Sprint
+
+- ORIENT reconciliation (public REST; source of truth = live site) — DRIFT FOUND and recorded:
+  - Public post count is now 20 (was 19 at end of Sprint 37). The new one is post 160 "how-generative-ai-actually-works" (status publish, category AI Literacy 28) — NOT in this log and NOT staged in content/. It matches the Sprint 37 carry-forward's #1 Blog Post 19 candidate, and the last GitHub commit was still Sprint 37 with no content/ source file for it, so it was almost certainly published directly by Manish. Category is correct; recorded here so no future sprint re-creates it. No action needed.
+  - Course 124 "Neuroplasticity in Practice" is now Published (public via wp/v2/courses) — every prior sprint logged it as a Draft. Promotion was unlogged (again, likely Manish). Its Module 4 (topic 131) completeness and its price/WooCommerce product could NOT be verified because wp-admin is blocked — flagged for Manish in the Master Backlog.
+  - Everything else matches by ID: the 10 original posts (29,63,66,68,83,90,96,99,132,135) plus the 9 Sprint 37 posts (144-152) are all live with correct categories; only courses 30 + 124 are public (Course 3 still not built). GitHub content/ folder verified via the contents API before building.
+- Access re-checked (blocked, not worked around): /wp-admin/edit.php?post_type=courses redirected to wp-login.php with reauth=1 and empty fields. Per standing safety rules, did NOT enter credentials or click Log In. All work is via GitHub (authenticated as manish-infinity) + public REST.
+- Duplicate-prevention check: listed the full content/ folder via the GitHub contents API — no circadian / body-clock / light-timing post existed anywhere. Blog Post 19 is net-new, and deliberately distinct from the two sleep posts: post 68 = WHY sleep matters (mechanism), post 144 = HOW MUCH / recovering a deficit; Blog Post 19 = WHEN, i.e. the circadian timing system and light.
+- Wrote Blog Post 19 "Your Body Clock Runs Your Brain: How Light and Timing Quietly Shape Your Focus, Mood, and Sleep" and committed it to GitHub at content/blog-post-19-circadian-rhythm.md (13,065 bytes on main): full, publish-ready post on the house template (frontmatter, 8 H2 sections, Key takeaways, CTA, medical disclaimer). Planned category Brain Health (29); slug how-your-body-clock-controls-your-brain. Science-backed, hype-free; covers the SCN master clock, light as the dominant zeitgeber, morning-light vs. evening-light hygiene, meal/activity timing, chronotypes, and "social jetlag" as a timing (not quantity) mismatch. Cross-links four PUBLISHED posts (68, 144, 147, 90) and course 30; funnels to Course 1. WP post ID recorded as TBD until an authenticated sprint publishes it.
+- Updated PUBLISHING_QUEUE.md: added Blog Post 19 as the new staged item, recorded post 160 as published-outside-the-queue, and moved Course 2 / course 124 to "published — verify Module 4 + price."
+- QA: byte-verified the committed Blog Post 19 via the GitHub contents API + raw against main — 13,065 bytes, title + "### Key takeaways" + CTA + medical disclaimer present, 8 H2 sections; all four internal post links resolve to PUBLISHED destinations (68/144/147/90) plus course 30, so no broken links.
+
+### Decisions Made
+
+- Treated the ORIENT drift as top priority per the workflow ("resolve discrepancies BEFORE starting new work"): recorded post 160 and the course-124 promotion in the log + Master Backlog rather than trusting the log. Did not "fix" anything on the live site — both are correct and live — beyond flagging the unverifiable course-124 completeness/price for Manish.
+- Picked a net-new blog post (circadian rhythm / body clock) as the deliverable: all course content is drafted/stuck on wp-admin and post 160 already took the "how generative AI works" slot, so the next-strongest gap was the circadian timing system — the major brain-health lever the two sleep posts don't cover. Categorized Brain Health (29).
+- Committed via the GitHub web upload flow with a JS-synthesized File on the manual-file-chooser input (the manifest-upload path), byte-verified after commit — the same in-browser method prior blocked sprints used, since no API token is available.
+- Did not attempt any login workaround (no password entry, no reset flow), consistent with prior blocked sprints.
+
+### Carry-Forward (Sprint 39+)
+
+- Once wp-admin FULL access is restored, publish Blog Post 19 (content/blog-post-19-circadian-rhythm.md, category Brain Health 29) and record its WP post ID.
+- Verify course 124 in wp-admin: confirm Module 4 lessons (topic 131) are actually present, set/confirm a price, and decide on a dedicated WooCommerce product (mirror product 120). It is live/Published but completeness could not be verified via public REST this sprint.
+- Build the Course 3 Tutor course from courses/course-03-brain-health.md + Modules 1-4, set price, mirror product 120 with a WooCommerce product, replace the homepage COMING SOON card (align "four pillars" to the five levers).
+- Consider back-filling a content/ source file for post 160 (how-generative-ai-actually-works) so the archive is complete — currently none exists.
+- Next new-content frontier if course work stays blocked: Blog Post 20 candidates — AI for spaced repetition as its own how-to, the gut-brain axis, dopamine/motivation, or a Course 4 topic.
+- Next mandatory content audit due Sprint 40.
+
+Last updated: 2026-08-25 (Sprint 38)
 
 ---
 
