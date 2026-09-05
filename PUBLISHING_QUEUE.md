@@ -27,6 +27,8 @@ Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forwa
 
 **New since Sprint 37:** Blog Post 19 (content/blog-post-19-circadian-rhythm.md, Brain Health 29, slug how-your-body-clock-controls-your-brain) is written + staged and awaiting publish — publish it and record its WP ID. Separately, post 160 "how-generative-ai-actually-works" (AI Literacy) was published directly on the live site outside this queue (no content/ source file) — recorded for tracking, no action needed.
 
+**New since Sprint 38:** Blog Post 20 (content/blog-post-20-dopamine-motivation.md, Neuroplasticity 17, slug how-dopamine-and-motivation-actually-work) is written + staged and awaiting publish — publish it and record its WP ID. It is the neuroscience of motivation / the dopamine reward system; distinct from posts 151 (habits), 152 (attention), 132 (four conditions for rewiring).
+
 ## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED (verify Module 4 + price)
 
 **Status (Sprint 38): course 124 is now Published — verified live via public REST. It was promoted from Draft outside this queue while wp-admin was blocked, so Module 4 (topic 131) completeness and the price/WooCommerce product are UNVERIFIED. Next authenticated sprint: confirm all four modules' lessons are present and set/confirm price + product.**
@@ -52,4 +54,4 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 - Submit the "Brain + AI Starter Guide" lead-magnet form once on the live site and confirm both emails arrive (WPForms Lite stores no entries, so this needs a manual submit).
 
 ---
-Last updated: 2026-08-25 (Sprint 38). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
+Last updated: 2026-09-05 (Sprint 39). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
