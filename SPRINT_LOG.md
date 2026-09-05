@@ -7,6 +7,7 @@ _This is the single running list of everything blocked on Manish. Updated at the
 - **wp-admin access was RESTORED Sprint 37 (2026-08-18) after being blocked Sprints 17-20 & 23-36 — but the session is NOT durable.** Sprint 37 used the live session to publish the entire 9-post blog queue (posts 144-152). The session has lapsed 17 times before and will likely expire again. Manish: to make it durable, log into https://unai-labs.com/wp-admin once in the automation browser profile with **Remember Me** checked, OR create a WordPress Application Password — otherwise every sprint risks re-blocking on publishing.
 - **Activate a payment gateway so real purchases can complete.** Tutor monetization runs on WooCommerce; Woo product 120 ("AI Literacy for Everyone", ₹2,999) is live (re-verified Sprint 37) and the cart/checkout flow QA-passed, and the official Razorpay-for-WooCommerce plugin is installed + active. ONLY REMAINING STEP — Manish: create/log into razorpay.com, get Key ID + Key Secret, enter at WooCommerce > Settings > Payments > Razorpay > Enable + Save, then place one live test order. No gateway is connected yet, so no real payment can be taken.
 - **Blog Post 19 (circadian rhythm / body clock) is written + staged in GitHub but not yet published (wp-admin blocked).** File content/blog-post-19-circadian-rhythm.md, category Brain Health (29), slug how-your-body-clock-controls-your-brain. Publish and record its WP post ID once access is restored. (Separately: post 160 "how-generative-ai-actually-works", AI Literacy, was already published live outside this log — recorded for tracking, no action needed.)
+- **Blog Post 20 (dopamine / the neuroscience of motivation) is written + staged in GitHub but not yet published (wp-admin blocked Sprint 39).** File content/blog-post-20-dopamine-motivation.md (13,724 bytes on main), category Neuroplasticity (17), slug how-dopamine-and-motivation-actually-work. Publish and record its WP post ID once access is restored.
 - **Course 2 "Neuroplasticity in Practice" (course 124) is now PUBLISHED (verified live via public REST, Sprint 38) — but Module 4 completeness and price are UNVERIFIED.** It was promoted from Draft to Published outside this log while wp-admin was blocked (most likely by Manish directly). Whether Module 4 lessons (content/course-124-module-4-lessons.md, topic 131) were actually pasted, and whether a price / dedicated WooCommerce product exist, could not be checked without wp-admin. Manish: confirm all four modules' lessons are present, set/confirm a price, and decide whether course 124 needs its own WooCommerce product (mirror product 120).
 - **Course 3 "Brain Health 101" — CONTENT-COMPLETE IN DRAFT (all 4 modules written, Sprint 27), not yet in WordPress.** Outline (courses/course-03-brain-health.md) + Modules 1-4 (content/course-03-module-1..4-lessons.md) staged. Next authenticated sprint: build the Tutor course, set price, mirror product 120 with a WooCommerce product, replace the homepage COMING SOON card (align its "four pillars" copy to the outline's FIVE levers — adds Connection). Manish: confirm price.
 - **Decide whether to upgrade to Tutor LMS Pro** — unlocks free "Lesson Preview" sample chapters for non-enrolled visitors (not on the free tier).
@@ -17,6 +18,42 @@ _This is the single running list of everything blocked on Manish. Updated at the
 - **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to paid.
 - **Test the lead-magnet email end-to-end (2 min).** WordPress email is confirmed working (GoDaddy internal relay, verified 2026-07-05); WPForms Lite stores no entries, so Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both the subscriber copy and admin copy arrive.
 - **Low priority / cosmetic:** (a) legacy Tutor pages 121/122 ("...-legacy-unused", not in nav) — trash once confirmed unreferenced by Tutor settings; (b) product 120 slug is ai-literacy-for-everyday-people while its display name is "AI Literacy for Everyone" — keep the slug as-is (all blog CTAs link to it); (c) post 83's minor Yoast items (keyphrase in subheading/intro); (d) homepage Course 3 card "four pillars" vs. the five-lever outline — align when the card is replaced.
+
+---
+
+## Sprint 39 — 2026-09-05
+
+### Sprint Goal
+
+wp-admin FULL publishing is blocked again (~19th time; /wp-admin/edit.php redirected to wp-login.php with reauth=1 and empty fields — a clean session-expired block). Sprint 39 is not divisible by 5 (next audit Sprint 40). ORIENT found ZERO drift this sprint (live state exactly matches the Sprint 38 end state). Did the highest-value UNblocked work: wrote + staged a net-new blog post (Blog Post 20, the neuroscience of motivation / dopamine) to GitHub.
+
+### Completed This Sprint
+
+- ORIENT reconciliation (public REST; source of truth = live site) — ZERO drift:
+- Public post count is 20, exactly matching Sprint 38: posts 29,63,66,68,83,90,96,99,132,135 (original 10) + 144-152 (Sprint 37's 9) + 160 (how-generative-ai-actually-works). Blog Post 19 (circadian rhythm) still NOT published (no new post ID) — remains staged only.
+- Courses: only 30 (AI Literacy) and 124 (Neuroplasticity in Practice) are public/published — matches Sprint 38. Course 3 (Brain Health 101) still not built.
+- Access re-checked (blocked, not worked around): /wp-admin/edit.php redirected to wp-login.php with reauth=1 and empty fields. Per standing safety rules, did NOT enter credentials or click Log In. All work via GitHub (authenticated as manish-infinity) + public REST.
+- Duplicate-prevention check: listed the full content/ folder via the GitHub contents API — blog posts 2-19 present, no dopamine / motivation / reward-system / gut-brain / spaced-repetition post existed anywhere. Blog Post 20 is net-new, and deliberately distinct from post 151 (habit loops / basal ganglia), post 152 (directed attention), and post 132 (four conditions for rewiring): it centers the WANTING/drive system (dopamine as anticipation not pleasure, reward prediction error, baseline vs. spikes, variable-reward hijacking, trainable effort).
+- Wrote Blog Post 20 "The Neuroscience of Motivation: How Dopamine Actually Works — and How to Work With It" and committed it to GitHub at content/blog-post-20-dopamine-motivation.md (13,724 bytes on main): full, publish-ready post on the house template (frontmatter, 6 H2 sections + "The takeaway", Key takeaways, CTA, medical disclaimer). Planned category Neuroplasticity (17); slug how-dopamine-and-motivation-actually-work. Science-backed, hype-free; covers wanting-vs-liking, reward prediction error, dopamine baseline vs. peaks (the "dopamine detox" misconception), variable-ratio reinforcement in feeds/notifications/instant-answer AI, effort as trainable, and a 6-step protocol. Cross-links five PUBLISHED posts (132, 135, 90, 152, 151) and course 30; funnels to Course 1. WP post ID recorded as TBD until an authenticated sprint publishes it.
+- Updated PUBLISHING_QUEUE.md: added Blog Post 20 as a new staged item.
+- QA: byte-verified the committed Blog Post 20 via raw against main — 13,724 bytes source; title + "### Key takeaways" + CTA + medical disclaimer present, 6 body hyperlinks all resolving to PUBLISHED destinations (132/135/90/152/151 + course 30), so no broken links; no encoding corruption.
+
+### Decisions Made
+
+- wp-admin blocked again, so per the established blocked-mode pattern the deliverable is net-new, high-value staged content. Chose dopamine/motivation — the strongest remaining brain-science gap (no existing post covers the reward system or the science of motivation), with a natural AI angle (variable-reward feeds and instant-answer tools) that funnels to Course 1.
+- Categorized Neuroplasticity (17): motivation is reinforcement learning shaping behavior, and it sits alongside the habits (151) and attention (152) "how your brain's systems work" cluster.
+- Committed via the GitHub web upload flow with a JS-synthesized File dropped on the file-attachment element (the manual-file-chooser input rejected programmatic .files assignment; a synthetic drop event worked), byte-verified after commit. Updated this SPRINT_LOG in-browser (CORS fetch of raw + string edits + re-upload as a synthesized File) because the CM6 web editor virtualizes this ~312KB file.
+- Did NOT create the post-160 (how-generative-ai-actually-works) content/ backfill this sprint to keep scope tight and the upload flow reliable — carried forward.
+- Did not attempt any login workaround (no password entry, no reset flow).
+
+### Carry-Forward (Sprint 40+)
+
+- Once wp-admin FULL access is restored, clear the publish queue per PUBLISHING_QUEUE.md: publish Blog Post 19 (circadian rhythm, Brain Health 29) and Blog Post 20 (dopamine/motivation, Neuroplasticity 17), recording their WP post IDs; verify course 124 Module 4 + price + WooCommerce product; build the Course 3 Tutor course + product + homepage card.
+- Consider back-filling a content/ source file for post 160 (how-generative-ai-actually-works) so the archive is complete — still none exists.
+- Next new-content frontier if course work stays blocked: Blog Post 21 candidates — the gut-brain axis, AI for spaced repetition as its own how-to, flow states, or a Course 4 topic.
+- Sprint 40 IS divisible by 5 — the mandatory full content audit is due next sprint.
+
+Last updated: 2026-09-05 (Sprint 39)
 
 ---
 
