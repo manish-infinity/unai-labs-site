@@ -29,7 +29,9 @@ Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forwa
 
 **New since Sprint 38:** Blog Post 20 (content/blog-post-20-dopamine-motivation.md, Neuroplasticity 17, slug how-dopamine-and-motivation-actually-work) is written + staged and awaiting publish — publish it and record its WP ID. It is the neuroscience of motivation / the dopamine reward system; distinct from posts 151 (habits), 152 (attention), 132 (four conditions for rewiring).
 
-## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED (verify Module 4 + price)
+**New since Sprint 40:** Blog Post 21 (content/blog-post-21-gut-brain-axis.md, Brain Health 29, slug how-your-gut-shapes-your-brain) is written + staged and awaiting publish — publish it and record its WP ID. It is the gut–brain axis / microbiome; distinct from post 96 (nutrients for the brain) — this centers the microbial ecosystem and the gut↔brain communication channel.
+
+## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED; product/price DONE (Woo product 157, ₹2,999) — verify Module 4 lesson bodies
 
 **Status (Sprint 38): course 124 is now Published — verified live via public REST. It was promoted from Draft outside this queue while wp-admin was blocked, so Module 4 (topic 131) completeness and the price/WooCommerce product are UNVERIFIED. Next authenticated sprint: confirm all four modules' lessons are present and set/confirm price + product.**
 
