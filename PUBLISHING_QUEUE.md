@@ -37,6 +37,8 @@ Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forwa
 
 **New since Sprint 43:** Blog Post 24 (content/blog-post-24-feynman-technique.md, AI Literacy 28, slug the-feynman-technique-learn-by-explaining) is written + staged and awaiting publish — publish it and record its WP ID. It is the standalone how-to on the Feynman technique (learn by explaining it in plain words); distinct from post 149 (the general learning-with-AI workflow) and post 150 (prompting is thinking) — this covers the single named technique, the science behind it (generation effect, self-explanation, illusion of explanatory depth), and the rule for using AI as your study partner without letting it write your explanation. Cross-links posts 146, 149, 135, 150 + course 30.
 
+**New since Sprint 44:** Blog Post 25 (content/blog-post-25-decision-fatigue.md, Brain Health 29, slug the-science-of-decision-fatigue) is written + staged and awaiting publish — publish it and record its WP ID. It is the science of decision fatigue / protecting judgment; distinct from post 147 (mental downtime), post 83 (chronic stress), and post 151 (habits) — it centers the cost of accumulated choices on judgment quality, is candid about the failed-replication science (ego depletion; the parole-judges scheduling confound), and lands on defensible practical levers plus an automation-bias caution on using AI to shed trivial choices. Cross-links posts 151, 147, 83, 135 + course 30.
+
 ## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED; product/price DONE (Woo product 157, ₹2,999) — verify Module 4 lesson bodies
 
 **Status (Sprint 38): course 124 is now Published — verified live via public REST. It was promoted from Draft outside this queue while wp-admin was blocked, so Module 4 (topic 131) completeness and the price/WooCommerce product are UNVERIFIED. Next authenticated sprint: confirm all four modules' lessons are present and set/confirm price + product.**
@@ -62,4 +64,4 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 - Submit the "Brain + AI Starter Guide" lead-magnet form once on the live site and confirm both emails arrive (WPForms Lite stores no entries, so this needs a manual submit).
 
 ---
-Last updated: 2026-09-09 (Sprint 42). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
+Last updated: 2026-09-12 (Sprint 44). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
