@@ -39,6 +39,8 @@ Post 145 now hyperlinks "how memory works" -> post 146. (The post 147->152 forwa
 
 **New since Sprint 44:** Blog Post 25 (content/blog-post-25-decision-fatigue.md, Brain Health 29, slug the-science-of-decision-fatigue) is written + staged and awaiting publish — publish it and record its WP ID. It is the science of decision fatigue / protecting judgment; distinct from post 147 (mental downtime), post 83 (chronic stress), and post 151 (habits) — it centers the cost of accumulated choices on judgment quality, is candid about the failed-replication science (ego depletion; the parole-judges scheduling confound), and lands on defensible practical levers plus an automation-bias caution on using AI to shed trivial choices. Cross-links posts 151, 147, 83, 135 + course 30.
 
+**New since Sprint 45:** Blog Post 26 (content/blog-post-26-multitasking-context-switching.md, AI Literacy 28, slug the-real-cost-of-multitasking) is written + staged and awaiting publish — publish it and record its WP ID. It is the myth of multitasking / the real cost of context-switching; distinct from post 152 (training the attention muscle in general) and Blog Post 23-staged (the flow state) — it centers the switch cost itself (the brain time-slices rather than parallel-processes deliberate tasks), attention residue (Leroy), and how an always-on AI assistant is the most frictionless context-switch ever built. Science-honest: flags the contested "media multitasking wrecks filtering" finding (mixed replication, unclear causation) and the overstated "40% productivity loss" stat, and lands on a design-not-willpower fix (single-thread, make switches expensive, batch interruptions, give AI a scheduled slot). Chosen to rebalance the thinnest pillar (AI Literacy). Cross-links posts 152, 147, 135, 151 + course 30.
+
 ## 2. Course 2 — "Neuroplasticity in Practice" (WP course 124) — now PUBLISHED; product/price DONE (Woo product 157, ₹2,999) — verify Module 4 lesson bodies
 
 **Status (Sprint 38): course 124 is now Published — verified live via public REST. It was promoted from Draft outside this queue while wp-admin was blocked, so Module 4 (topic 131) completeness and the price/WooCommerce product are UNVERIFIED. Next authenticated sprint: confirm all four modules' lessons are present and set/confirm price + product.**
@@ -64,4 +66,4 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 - Submit the "Brain + AI Starter Guide" lead-magnet form once on the live site and confirm both emails arrive (WPForms Lite stores no entries, so this needs a manual submit).
 
 ---
-Last updated: 2026-09-12 (Sprint 44). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
+Last updated: 2026-09-13 (Sprint 45). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
