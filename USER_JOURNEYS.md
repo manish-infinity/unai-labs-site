@@ -8,7 +8,7 @@ Created Sprint 12 (2026-07-05). This is the product map that gives backlog items
 Visitor lands (search/social/direct) -> Homepage -> Blog post or About -> forms trust impression.
 
 Positive path status: [PARTIAL]
-- Homepage hero, course cards, science-first section: live and polished (Sprint 9). 8 quality blog posts across all pillars. About page redesigned (Sprint 10).
+- Homepage hero, course cards, science-first section: live and polished (Sprint 9). 20 published blog posts across all three pillars (plus 9 more written and staged in GitHub — Blog Posts 19-27 — awaiting an authenticated publish; deeper content strengthens this trust step). About page redesigned (Sprint 10).
 Negative scenarios / gaps:
 - N1a. Visitor checks About for a real human -> finds no photo/bio -> credibility gap for a "science-backed" brand. -> BACKLOG: Manish photo + bio.
 - N1b. Homepage claims "Join 1,000+ learners" -> site has no verified subscriber base of that size -> if untrue this contradicts the hype-free brand promise. NEW ITEM surfaced by this map: verify or soften this claim.
@@ -81,3 +81,5 @@ New items surfaced by this mapping (added to Master Backlog / sprint queue as ap
 
 Recommended unblock order for Manish: SMTP password -> payment gateway -> (meanwhile sprints finish Modules 2-4) -> guest-checkout + Pro decisions -> launch.
 —
+
+Last re-verified: 2026-09-14 (Sprint 46) — journey statuses unchanged this sprint: J2/J4/J6 remain [BROKEN] (SMTP + payment gateway, both blocked on Manish), J1/J3/J5 remain [PARTIAL]. Sprint 46 was a blocked sprint (wp-admin session expired); work was net-new staged content (Blog Post 27, deliberate practice — serves J1 trust + J3a preview-value) plus the post-160 archive back-fill, neither of which changes a live journey status. No new journeys or dead ends surfaced.
