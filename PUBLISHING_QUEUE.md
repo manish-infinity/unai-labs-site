@@ -1,6 +1,6 @@
 # PUBLISHING QUEUE — unai-labs.com
 
-**New since Sprint 49 (staged course content, not a blog post):** Course 4 “Deep Focus — Reclaiming Attention in the Age of AI” — outline `courses/course-04-deep-focus.md` + `content/course-04-module-1-lessons.md` (Module 1, 3 lessons) staged in GitHub. Modules 2–4 lesson content + Tutor course build + WooCommerce product (mirror product 120) + homepage/Courses card all pending wp-admin. See SPRINT_LOG Sprint 49 + Master Backlog.
+**New since Sprint 49 (staged course content, not a blog post):** Course 4 “Deep Focus — Reclaiming Attention in the Age of AI” — outline `courses/course-04-deep-focus.md` + `content/course-04-module-1-lessons.md` (Module 1, 3 lessons) + `content/course-04-module-2-lessons.md` (Module 2, 3 lessons, NEW Sprint 50) staged in GitHub. Modules 3–4 lesson content + Tutor course build + WooCommerce product (mirror product 120) + homepage/Courses card all pending wp-admin. See SPRINT_LOG Sprint 49 + Master Backlog.
 
 Single, ordered checklist of everything drafted in GitHub and waiting on a WordPress-authenticated sprint to publish. Created Sprint 36 (2026-08-15) to make clearing the backlog mechanical once wp-admin access is restored. Keep this in sync with SPRINT_LOG.md's Master Backlog — this file is the "how to publish" companion; the Master Backlog is the "what's blocked on Manish" list.
 
@@ -74,4 +74,4 @@ Fully drafted: outline `courses/course-03-brain-health.md` + all four modules `c
 - Submit the "Brain + AI Starter Guide" lead-magnet form once on the live site and confirm both emails arrive (WPForms Lite stores no entries, so this needs a manual submit).
 
 ---
-Last updated: 2026-09-18 (Sprint 49). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
+Last updated: 2026-09-19 (Sprint 50). When an item ships, strike it here and record the WP ID in SPRINT_LOG.md.
