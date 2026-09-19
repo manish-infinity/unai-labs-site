@@ -19,7 +19,7 @@ _This is the single running list of everything blocked on Manish. Updated at the
 - **Blog Post 29 (the science of exercise & the brain / BDNF & neurogenesis) is written + staged in GitHub but not yet published (wp-admin blocked Sprint 48).** File content/blog-post-29-exercise-brain.md (12,252 bytes on main, SHA-256 2c32355b…), category Neuroplasticity (17), slug how-exercise-rewires-your-brain. Publish and record its WP post ID once access is restored.
 - **Course 2 "Neuroplasticity in Practice" (course 124) is now PUBLISHED (verified live via public REST, Sprint 38) — but Module 4 lesson-body completeness is UNVERIFIED (its price/dedicated product were RESOLVED Sprint 40 — Woo product 157, ₹2,999).** It was promoted from Draft to Published outside this log while wp-admin was blocked (most likely by Manish directly). Whether Module 4 lessons (content/course-124-module-4-lessons.md, topic 131) were actually pasted, A dedicated WooCommerce product now EXISTS for it (product 157, ₹2,999, slug neuroplasticity-in-practice, live via the Store API, verified Sprint 40), so the product/price question is RESOLVED; only the Module 4 lesson bodies remain unverifiable via public REST. Manish: confirm all four modules' lessons are present, set/confirm a price, and decide whether course 124 needs its own WooCommerce product (mirror product 120).
 - **Course 3 "Brain Health 101" — CONTENT-COMPLETE IN DRAFT (all 4 modules written, Sprint 27), not yet in WordPress.** Outline (courses/course-03-brain-health.md) + Modules 1-4 (content/course-03-module-1..4-lessons.md) staged. Next authenticated sprint: build the Tutor course, set price, mirror product 120 with a WooCommerce product, replace the homepage COMING SOON card (align its "four pillars" copy to the outline's FIVE levers — adds Connection). Manish: confirm price.
-- **Course 4 “Deep Focus — Reclaiming Attention in the Age of AI” — NEW net-new course, outline + Module 1 lessons staged in GitHub (Sprint 49): courses/course-04-deep-focus.md (11,703 bytes) + content/course-04-module-1-lessons.md (16,374 bytes, 3 lessons). Modules 2–4 lesson content still to be written (future sprints); Tutor course + WooCommerce product (mirror product 120) + homepage/Courses card all pending wp-admin. Manish: confirm price (proposed ₹2,999, mirror Course 1).
+- **Course 4 “Deep Focus — Reclaiming Attention in the Age of AI” — NEW net-new course, outline + Module 1 lessons staged in GitHub (Sprint 49): courses/course-04-deep-focus.md (11,703 bytes) + content/course-04-module-1-lessons.md (16,374 bytes, 3 lessons). Module 2 lessons now staged (Sprint 50, content/course-04-module-2-lessons.md, 21,123 bytes, 3 lessons); Modules 3–4 still to be written (future sprints); Tutor course + WooCommerce product (mirror product 120) + homepage/Courses card all pending wp-admin. Manish: confirm price (proposed ₹2,999, mirror Course 1).
 
 Decide whether to upgrade to Tutor LMS Pro** — unlocks free "Lesson Preview" sample chapters for non-enrolled visitors (not on the free tier).
 - **Decide on guest checkout vs. login-gate** — visitors must currently log in/register before adding a course to cart; no guest checkout.
@@ -29,6 +29,49 @@ Decide whether to upgrade to Tutor LMS Pro** — unlocks free "Lesson Preview" s
 - **Decide keep-or-cancel on the GoDaddy Digital Marketing free trial** before it converts to paid.
 - **Test the lead-magnet email end-to-end (2 min).** WordPress email is confirmed working (GoDaddy internal relay, verified 2026-07-05); WPForms Lite stores no entries, so Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both the subscriber copy and admin copy arrive.
 - **Low priority / cosmetic:** (a) legacy Tutor pages 121/122 ("...-legacy-unused", not in nav) — trash once confirmed unreferenced by Tutor settings; (b) product 120 slug is ai-literacy-for-everyday-people while its display name is "AI Literacy for Everyone" — keep the slug as-is (all blog CTAs link to it); (c) post 83's minor Yoast items (keyphrase in subheading/intro); (d) homepage Course 3 card "four pillars" vs. the five-lever outline — align when the card is replaced.
+
+---
+
+## Sprint 50 — 2026-09-19
+
+### Sprint Goal
+wp-admin FULL publishing is blocked AGAIN (~30th consecutive; /wp-admin/edit.php redirected to wp-login.php?redirect_to=…&reauth=1 with an empty login form, title “Log In ‹ UnAI Labs — WordPress” — a clean session-expired block). Per standing safety rules, did NOT enter credentials or click Log In. Sprint 50 IS divisible by 5, so the mandatory full content audit is due and included below. ORIENT found ZERO drift (live state exactly matches the Sprint 49 end state, independently re-verified via public REST). Continued Sprint 49’s deliberate strategy of diversifying off the 11-post blog queue (all stuck on the same blocker) by advancing the net-new COURSE asset: wrote + staged Course 4 “Deep Focus” Module 2 lesson content (priority 1 — Content & courses).
+
+### Completed This Sprint
+- ORIENT reconciliation (public REST via Claude-in-Chrome; live site = source of truth) — ZERO drift vs Sprint 49:
+  - Published posts: X-WP-Total = 20, IDs [29,63,66,68,83,90,96,99,132,135,144–152,160] — exact match to Sprint 49. Blog Posts 19–29 still staged only (no new post IDs).
+  - Pages: 17 [5,6,7,11,12,13,14,15,16,18,22,25,26,27,28,121,122] — unchanged. Courses: 30 (AI Literacy) + 124 (Neuroplasticity in Practice), both status=publish. Products (Store API): 120 “AI Literacy for Everyone” ₹2,999 + 157 “Neuroplasticity in Practice” ₹2,999, both is_purchasable=true.
+  - Homepage (HTTP 200): H1 intact; exactly one COMING SOON card (Course 3); Courses 1 & 2 at ₹2,999/$35; the Course 3 “four pillars” vs five-lever cosmetic item persists. No stale-copy drift.
+  - wp-admin re-checked (blocked, NOT worked around): /wp-admin/edit.php → wp-login.php reauth=1, empty login form. No credentials entered, no Log In clicked.
+- Duplicate-prevention: listed content/ via the GitHub contents API before writing — course-04 had ONLY module-1 lessons; no module-2 file existed. Blog queue unchanged (posts 19–29 all present, no new duplicates).
+- Wrote + staged net-new Course 4 “Deep Focus” Module 2 “The Modern Attention Environment”: content/course-04-module-2-lessons.md (21,123 bytes on main, SHA-256 8174862607f8297f…, commit “Sprint 50: add Course 4 …”). Three publish-ready lessons on the house template (reading-time header, <h2> sections, Key takeaways, “Try this”, next-lesson pointer):
+  - 2.1 “The attention economy — why your focus is the product” (variable rewards / infinite feeds / notifications; structural-not-personal framing).
+  - 2.2 “The real cost of switching — attention residue and the multitasking myth” (switch costs + attention residue as the well-supported claims; explicitly flags the shaky “40% productivity loss”, “IQ drop”, and “23 minutes to refocus” figures as overstated).
+  - 2.3 “AI: the most frictionless distraction ever built” (the double cost — switch + offloading nudge; deliberate vs. reflexive use), carrying the Week 2 exercise (scheduled AI/phone slot + reflex-rate audit).
+- Science-honest throughout; on-brand AI angle in every lesson; cross-links only PUBLISHED posts (135, 147, 152) so nothing 404s on publish; funnels toward the course/Module 3.
+- QA: byte-verified via GitHub API after commit — 21,123 bytes, exact match to the sandbox source (no upload corruption); 3 lessons, 3 reading-time headers, 3 “Key takeaways”, 3 “Try this”, 3 next-up pointers; all internal links resolve to PUBLISHED destinations. First commit attempt mis-fired (a stray click navigated to Copilot before the button fired, losing the staged upload — verified via API it did NOT land); re-did the upload and committed via the button’s own in-page click handler, then confirmed live via the contents API. Documented for future sprints: after clicking “Commit changes”, confirm the redirect off the upload page AND re-fetch via API before trusting the commit.
+- Updated the Master Backlog (Course 4: Module 2 now staged; Modules 3–4 pending). Re-verified every other backlog item against the live site/admin — none newly resolved, so none pruned.
+
+### Sprint 50 Content Audit (mandatory — sprint divisible by 5)
+- Posts (20, all Published, all categorized) via public REST — Neuroplasticity (cat 17): 29, 63, 132, 145, 146, 148, 151, 152 (8). AI Literacy (cat 28): 66, 99, 135, 149, 150, 160 (6). Brain Health (cat 29): 68, 83, 90, 96, 144, 147 (6). No duplicate/near-duplicate titles; no orphans (all categorized); none detectably stuck in draft.
+- Pages (17, all Published): 5 Dashboard, 6 Student Reg, 7 Instructor Reg, 11 Shop, 12 Cart, 13 Checkout, 14 My account, 15 Refund/Returns, 16 Terms, 18 Privacy, 22 Home, 25 Our Courses, 26 About, 27 Blog, 28 Contact, 121 Tutor Cart (legacy-unused), 122 Tutor Checkout (legacy-unused). Active cart/checkout on WooCommerce (12/13); legacy 121/122 still present, not in nav — unchanged low-priority cosmetic.
+- Courses (2 public, Published): 30 “AI Literacy for Everyone” + 124 “Neuroplasticity in Practice”. Course 3 exists only as a homepage COMING SOON card; Course 4 exists only as GitHub drafts (outline + Modules 1–2).
+- Products (2, live via Store API): 120 ₹2,999 (→ course 30); 157 ₹2,999 (→ course 124). Prices consistent with homepage.
+- GitHub staged inventory awaiting an authenticated sprint: Blog Posts 19–29 (11 posts); Course 3 outline + Modules 1–4; Course 124 Module 4 lessons; Course 4 outline + Modules 1–2 (Module 2 NEW this sprint), Modules 3–4 still to write.
+- Stale-copy checks (homepage live, HTTP 200): H1 intact; Course 1 & 2 ₹2,999/$35; Course 3 correctly COMING SOON. Known cosmetic item persists: Course 3 card “four pillars” vs. the five-lever outline — align when the card is replaced.
+- Audit verdict: CLEAN. State matches the log by ID; ZERO drift. No duplicates, no orphaned/stale critical content, no stuck drafts detectable via public REST. Caveat: course 124 Module 4 lesson bodies and back-end product/course settings remain unverifiable in wp-admin (blocked ~30th sprint). Next mandatory audit due Sprint 55.
+
+### Carry-Forward / Next Sprint
+- Course 4: write Modules 3–4 lesson content (content/course-04-module-3..4-lessons.md) in future blocked sprints; build the Tutor course + WooCommerce product + homepage/Courses card once wp-admin is restored.
+- Next AUTHENTICATED sprint (unblock = Manish enabling durable wp-admin): publish Blog Posts 19–29 (11 posts) recording WP IDs; verify course 124 Module 4 lesson bodies (topic 131); build Course 3 Tutor course + product + replace homepage COMING SOON card (align “four pillars” to five levers); then build Course 4.
+- If course + blog work both stay blocked, Blog Post 30 candidates (net-new): sleep & memory consolidation, interleaving vs. blocked practice, the neuroscience of curiosity/intrinsic motivation.
+- Next mandatory content audit: Sprint 55.
+
+### Decisions / Blockers for Manish
+- THE blocker (now ~30 sprints): durable wp-admin access. Log into https://unai-labs.com/wp-admin once in the automation browser profile with “Remember Me” checked, OR create a WordPress Application Password. Unblocks 11 staged blog posts + Course 3 + Course 4 + every pending fix.
+- All other blockers unchanged (payment gateway/Razorpay; WP Mail SMTP; guest-checkout vs login-gate; Tutor LMS Pro; About bio/photo; Yoast logo; WPForms lead-magnet test) — see the Master Backlog above.
+
+Last updated: 2026-09-19 (Sprint 50)
 
 ---
 
