@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --bg:#F7FAFF; --card:#FFFFFF; --panel:#E4EBF5; --border:#C9D6EA;
+    --ink:#12203A; --slate:#3F4B60; --blue:#2F6DF0; --blue2:#2159D6;
+    --green:#1FA971; --red:#E5484D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--bg);}
+  #stage{position:relative;width:1920px;height:1080px;background:var(--bg);overflow:hidden;
+    font-family:"Inter","Inter Display",sans-serif;color:var(--ink);}
+  .scene{position:absolute;inset:0;opacity:0;}
+  .safe{position:absolute;left:150px;right:150px;top:110px;bottom:110px;}
+  .center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .headline{font-weight:800;color:var(--ink);line-height:1.08;letter-spacing:-0.5px;}
+  .h1{font-size:92px;} .h2{font-size:66px;} .h3{font-size:46px;color:var(--slate);font-weight:700;}
+  /* caption pill */
+  #cap{position:absolute;left:50%;bottom:72px;transform:translateX(-50%);
+    background:var(--card);border:2px solid var(--border);border-radius:16px;
+    padding:18px 34px;max-width:1500px;box-shadow:0 10px 30px rgba(18,32,58,.10);
+    font-size:46px;font-weight:700;color:var(--ink);text-align:center;opacity:0;}
+  .chip{display:inline-flex;align-items:center;gap:18px;background:var(--card);border:2px solid var(--border);
+    border-radius:18px;padding:22px 34px;font-size:48px;font-weight:700;color:var(--ink);
+    box-shadow:0 8px 24px rgba(18,32,58,.08);}
+  .iconlabel{display:flex;flex-direction:column;align-items:center;gap:22px;font-size:40px;font-weight:700;color:var(--ink);width:360px;}
+  .row{display:flex;gap:90px;align-items:flex-start;justify-content:center;}
+  .qmark{font-size:120px;font-weight:800;color:var(--blue);}
+  .wordmark{font-size:104px;font-weight:800;color:var(--ink);letter-spacing:-1px;}
+  .wordmark .un{color:var(--blue);}
+  .strike{position:relative;display:inline-block;}
+  .strike .bar{position:absolute;left:-6px;right:-6px;top:54%;height:8px;background:var(--red);border-radius:6px;transform-origin:left center;}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- SCENE 1: HOOK -->
+  <div class="scene" id="s1">
+    <div class="safe center" style="gap:50px;">
+      <div style="display:flex;gap:40px;align-items:center;" id="s1marks">
+        <span class="qmark">?</span>
+        <!-- flat line robot head -->
+        <svg width="260" height="300" viewBox="0 0 260 300" fill="none" id="s1robot">
+          <rect x="60" y="70" width="140" height="150" rx="26" stroke="var(--slate)" stroke-width="7"/>
+          <circle cx="100" cy="135" r="16" fill="var(--red)"/>
+          <circle cx="160" cy="135" r="16" fill="var(--red)"/>
+          <rect x="92" y="178" width="76" height="12" rx="6" fill="var(--slate)"/>
+          <line x1="130" y1="40" x2="130" y2="70" stroke="var(--slate)" stroke-width="7"/>
+          <circle cx="130" cy="32" r="12" fill="var(--slate)"/>
+          <line x1="60" y1="110" x2="30" y2="110" stroke="var(--slate)" stroke-width="7"/>
+          <line x1="200" y1="110" x2="230" y2="110" stroke="var(--slate)" stroke-width="7"/>
+        </svg>
+        <span class="qmark">?</span>
+      </div>
+      <div class="headline h1" id="s1h">What do you picture?</div>
+    </div>
+  </div>
+
+  <!-- SCENE 2: REFRAME -->
+  <div class="scene" id="s2">
+    <div class="safe center" style="gap:56px;">
+      <!-- friendly laptop with chat bubble -->
+      <svg width="340" height="250" viewBox="0 0 340 250" id="s2laptop">
+        <rect x="70" y="40" width="200" height="140" rx="16" fill="var(--card)" stroke="var(--blue)" stroke-width="7"/>
+        <rect x="40" y="180" width="260" height="20" rx="10" fill="var(--panel)" stroke="var(--border)" stroke-width="3"/>
+        <rect x="100" y="70" width="120" height="26" rx="13" fill="var(--blue)"/>
+        <rect x="100" y="110" width="80" height="20" rx="10" fill="var(--panel)"/>
+        <circle cx="250" cy="55" r="26" fill="var(--green)"/>
+        <path d="M240 55 l7 7 l13 -15" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="headline h2" id="s2h">A tool, not a robot overlord.</div>
+    </div>
+  </div>
+
+  <!-- SCENE 3: WHAT IT IS -->
+  <div class="scene" id="s3">
+    <div class="safe center" style="gap:64px;">
+      <div class="headline h3" id="s3h">It reads and writes text.</div>
+      <div class="row" id="s3row">
+        <div class="iconlabel" id="s3a">
+          <svg width="120" height="120" viewBox="0 0 120 120"><rect x="14" y="26" width="92" height="68" rx="10" fill="var(--card)" stroke="var(--blue)" stroke-width="7"/><path d="M18 32 L60 66 L102 32" stroke="var(--blue)" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+          <span>Draft an email</span>
+        </div>
+        <div class="iconlabel" id="s3b">
+          <svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="50" r="30" fill="none" stroke="var(--blue)" stroke-width="7"/><rect x="46" y="80" width="28" height="18" rx="5" fill="var(--blue)"/><line x1="60" y1="8" x2="60" y2="18" stroke="var(--blue)" stroke-width="6" stroke-linecap="round"/><line x1="100" y1="50" x2="110" y2="50" stroke="var(--blue)" stroke-width="6" stroke-linecap="round"/><line x1="10" y1="50" x2="20" y2="50" stroke="var(--blue)" stroke-width="6" stroke-linecap="round"/></svg>
+          <span>Explain an idea</span>
+        </div>
+        <div class="iconlabel" id="s3c">
+          <svg width="120" height="120" viewBox="0 0 120 120"><rect x="18" y="26" width="84" height="72" rx="10" fill="var(--card)" stroke="var(--blue)" stroke-width="7"/><line x1="18" y1="48" x2="102" y2="48" stroke="var(--blue)" stroke-width="7"/><line x1="40" y1="16" x2="40" y2="34" stroke="var(--blue)" stroke-width="7" stroke-linecap="round"/><line x1="80" y1="16" x2="80" y2="34" stroke="var(--blue)" stroke-width="7" stroke-linecap="round"/><circle cx="60" cy="74" r="10" fill="var(--green)"/></svg>
+          <span>Plan your week</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 4: DEMYSTIFY -->
+  <div class="scene" id="s4">
+    <div class="safe center" style="gap:50px;">
+      <div class="row" style="gap:60px;">
+        <span class="chip strike" id="s4a">Not alive<span class="bar" id="s4abar"></span></span>
+        <span class="chip strike" id="s4b">Not plotting<span class="bar" id="s4bbar"></span></span>
+      </div>
+      <div class="headline h2" id="s4h" style="margin-top:20px;">No tech background needed.</div>
+    </div>
+  </div>
+
+  <!-- SCENE 5: PROMISE -->
+  <div class="scene" id="s5">
+    <div class="safe center" style="gap:34px;">
+      <div class="headline h3" id="s5h" style="margin-bottom:20px;">In this course, you'll learn:</div>
+      <div class="chip" id="s5a" style="width:820px;justify-content:flex-start;gap:28px;"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="var(--green)"/><path d="M15 27 l8 8 l15 -18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>What AI really is</div>
+      <div class="chip" id="s5b" style="width:820px;justify-content:flex-start;gap:28px;"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="var(--green)"/><path d="M15 27 l8 8 l15 -18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>What it can do for you</div>
+      <div class="chip" id="s5c" style="width:820px;justify-content:flex-start;gap:28px;"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="var(--green)"/><path d="M15 27 l8 8 l15 -18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>How to stay in charge</div>
+    </div>
+  </div>
+
+  <!-- SCENE 6: END CARD -->
+  <div class="scene" id="s6">
+    <div class="safe center" style="gap:30px;">
+      <div class="wordmark" id="s6w"><span class="un">Un</span>AI Labs</div>
+      <svg width="60" height="80" viewBox="0 0 60 80" id="s6arrow"><line x1="30" y1="6" x2="30" y2="60" stroke="var(--blue)" stroke-width="8" stroke-linecap="round"/><path d="M12 44 L30 64 L48 44" stroke="var(--blue)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="headline h3" id="s6h" style="color:var(--ink);font-weight:800;">Full lesson below</div>
+    </div>
+  </div>
+
+  <div id="cap"></div>
+</div>
+
+<script>
+const E = id => document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>t<0?0:t>1?1:1-Math.pow(1-t,3);          // easeOutCubic
+const seg=(t,s,d)=>ease(clamp((t-s)/d,0,1));           // 0..1 ramp starting at s over d
+// pop/slide helper -> sets opacity + translateY
+function appear(el,t,s,d=0.5,dy=40){const p=seg(t,s,d);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;}
+function popIn(el,t,s,d=0.5){const p=seg(t,s,d);el.style.opacity=p;el.style.transform=`scale(${0.7+0.3*p})`;}
+
+// scene windows [start,end]
+const SC={s1:[0,7.2],s2:[7.0,14.3],s3:[14.0,25.3],s4:[25.0,32.5],s5:[32.2,43.1],s6:[42.8,44.97]};
+function sceneOpacity(el,t,win){const [a,b]=win;const fin=seg(t,a,0.4);const fout=1-seg(t,b-0.4,0.4);el.style.opacity=Math.min(fin,fout)*(t>=a-0.01&&t<=b+0.4?1:0);}
+
+// captions: [start,end,text]
+const CAPS=[
+ [0.2,3.7,"When you hear “AI,” what do you picture?"],
+ [3.7,7.0,"A robot? A movie villain? A mind like a human?"],
+ [7.2,14.1,"Real AI is far less scary — and more useful — than the movies."],
+ [14.2,19.4,"What you’ll use is a tool that reads and writes text."],
+ [19.5,25.1,"Draft an email · explain an idea · plan your week."],
+ [25.2,30.0,"It’s not alive. It’s not plotting anything."],
+ [30.1,32.4,"And you don’t need a tech background."],
+ [32.5,39.3,"We’ll show you what AI really is, and what it does for you."],
+ [39.4,42.7,"And how to stay in charge."],
+ [42.9,44.97,"The full lesson’s right below — let’s start there."],
+];
+
+function seek(t){
+  // scenes
+  sceneOpacity(E('s1'),t,SC.s1); sceneOpacity(E('s2'),t,SC.s2); sceneOpacity(E('s3'),t,SC.s3);
+  sceneOpacity(E('s4'),t,SC.s4); sceneOpacity(E('s5'),t,SC.s5); sceneOpacity(E('s6'),t,SC.s6);
+  // S1
+  popIn(E('s1marks'),t,0.2,0.6); appear(E('s1h'),t,0.9,0.6);
+  // S2
+  popIn(E('s2laptop'),t,7.3,0.6); appear(E('s2h'),t,7.8,0.6);
+  // S3
+  appear(E('s3h'),t,14.3,0.5,30);
+  popIn(E('s3a'),t,19.4,0.45); popIn(E('s3b'),t,20.9,0.45); popIn(E('s3c'),t,22.6,0.45);
+  // S4
+  popIn(E('s4a'),t,25.3,0.4); popIn(E('s4b'),t,26.6,0.4);
+  E('s4abar').style.transform=`scaleX(${seg(t,27.3,0.5)})`;
+  E('s4bbar').style.transform=`scaleX(${seg(t,28.2,0.5)})`;
+  appear(E('s4h'),t,30.0,0.5);
+  // S5
+  appear(E('s5h'),t,32.5,0.5); appear(E('s5a'),t,34.0,0.5,30); appear(E('s5b'),t,36.6,0.5,30); appear(E('s5c'),t,39.0,0.5,30);
+  // S6
+  popIn(E('s6w'),t,43.0,0.6); appear(E('s6arrow'),t,43.5,0.5,-20); appear(E('s6h'),t,43.8,0.5);
+  // caption
+  const cap=E('cap'); let txt='',op=0;
+  for(const [s,e,x] of CAPS){ if(t>=s&&t<=e){ txt=x; op=Math.min(seg(t,s,0.25),1-seg(t,e-0.25,0.25)); break; } }
+  cap.textContent=txt; cap.style.opacity=op;
+}
+window.__seek=seek;
+window.__duration=44.97;
+seek(0);
+// optional preview playback when opened in a browser
+if(!window.__render){let start=null;function loop(ts){if(!start)start=ts;let t=(ts-start)/1000;if(t>window.__duration)start=ts,t=0;seek(t);requestAnimationFrame(loop);}requestAnimationFrame(loop);}
+</script>
+</body>
+</html>
