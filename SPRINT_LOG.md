@@ -21,6 +21,20 @@ _This is the single running list of everything blocked on Manish. Updated at the
 - Test the lead-magnet email end-to-end (2 min). WordPress email confirmed working. WPForms Lite stores no entries, so Manish: submit the "Brain + AI Starter Guide" form once on the live site and confirm both the subscriber copy and admin copy arrive.
 - Low priority / cosmetic: (a) legacy Tutor pages 121/122 ("...-legacy-unused", not in nav) — trash once confirmed unreferenced; (b) product 120 slug is ai-literacy-for-everyday-people while its display name is "AI Literacy for Everyone" — keep as-is (all blog CTAs link to it); (c) post 83 minor Yoast items.
 
+## Sprint 72 (daily build) - 2026-10-26
+### Completed
+- **All 16 module quizzes built in Tutor LMS from the staged banks (80 questions, 5 per module, one correct answer each, verified via tutor_quiz_details).** Settings: passing grade 80%, unlimited attempts, questions in listed order, no time limit.
+  - AI Literacy (course 30): 338, 343, 344, 345 (topics 31-34)
+  - Neuroplasticity (course 124): 339, 340, 341, 342 (topics 125, 129, 130, 131)
+  - Deep Focus (course 209): 349, 350, 351, 352 (topics 210, 214, 218, 222)
+  - Brain Health 101 (course 232): 256 (existing 2-question quiz, rewritten in place), 346, 347, 348 (topics 233-236)
+- Built via the course-builder ajax action `tutor_quiz_builder_save` from the logged-in wp-admin tab.
+### Notes / limits
+- Answer explanations from the banks were NOT stored: Tutor 4.1.3 free has no explanation field (ignored server-side). Needs Tutor Pro, or explanations could be added to each module's next lesson.
+- Em-dashes in question/answer text replaced with colons/commas (house style).
+- Capstone rubrics (not quizzes) still to add as lessons.
+- Quiz attempts not started (avoid polluting results as admin). Mobile layout not re-verified (window resize not honoured).
+
 ## Sprint 71 — 2026-10-19
 ### Sprint Goal
 
