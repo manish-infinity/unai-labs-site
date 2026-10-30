@@ -186,3 +186,37 @@ Body: Template 3c, fact line: "Congratulations on Lupin's Great Place To Work ce
 **Q6. Glenmark** via glenmarkpharma.com/contact-us, attn CHRO (ask for forwarding)
 Subject: Focus, sleep and stress: a free session for Glenmark's wellbeing calendar
 Body: Template 3c, fact line: "Glenmark was named among India's Best Workplaces in Health & Wellness 2026." Add first line: "Could you pass this to the person who leads employee wellbeing?"
+
+## 9. Decisions 30 Oct (Manish, live)
+
+- **Prices APPROVED and live on /pricing/ (page 269):** single course Rs 2,999 (launch sale Rs 1,999 until 30 Nov, set 25 Oct); All-Access Rs 5,999 = 4 courses + eBook via link /?unai_bundle=all-access (Code Snippet #14 adds all five to cart and applies an "All-Access bundle saving" so the total is Rs 5,999; verified in cart and checkout, test cart cleared); Founding Learner coupon FOUNDING100 (Woo coupon 354, Rs 1,000 off each course, 100 uses, one per person, excludes sale items so it starts working when the launch sale ends); Teams Rs 1,499/seat from 10, Rs 999 from 100; Campus Rs 499/student, min 50, free guest lecture first.
+- **Budget cap:** Rs 3,000 per platform for the whole push (Meta, Google/YouTube, LinkedIn, Amazon KDP Ads). Stop rule stays: pause a platform if cost per sale > Rs 1,000 for 7 days.
+- **LinkedIn:** standing approval to post 3 times a week on the UnAI Labs company page. BLOCKED: no company page exists yet and LinkedIn will not let the logged-in profile create one until workplace verification is done ("Feature not available. Please verify your workplace"). Only Manish can verify (it ties to his identity/work email).
+- **India paperback:** KDP has no India print centre, so the KDP paperback is not sold properly on Amazon.in. Route chosen: separate India edition on Notion Press (Amazon.in + Flipkart) using the RRRNA government ISBN. Manish creates the Notion Press login; Claude fills the listing and uploads files.
+- **Outreach sender:** drafts live in the business Gmail unailabs1@gmail.com (Drafts folder). Manish reviews and clicks Send. New scheduled task "UnAI daily outreach drafts (15/day)" (Mon-Sat 11:13 IST) adds 15 new researched drafts each day plus follow-ups.
+
+## 10. Outreach log
+
+| Date | Org | Email | Status |
+|---|---|---|---|
+| 30 Oct | BML Munjal University | wellness.cell@bmu.edu.in (cc info@) | Draft in Gmail |
+| 30 Oct | Ramaiah Univ. of Applied Sciences | studentaffairs@msruas.ac.in | Draft |
+| 30 Oct | UPES | see.helpdesk@ddn.upes.ac.in (cc wellbeing contact) | Draft |
+| 30 Oct | Chandigarh University | dsaa@cumail.in | Draft |
+| 30 Oct | MAHE Manipal | dsa.mahe@manipal.edu | Draft |
+| 30 Oct | Central University of Haryana | deanstudentswelfare@cuh.ac.in | Draft |
+| 30 Oct | Doon University | registrar@doonuniversity.ac.in | Draft |
+| 30 Oct | Ashoka University | well.being@ashoka.edu.in | Draft |
+| 30 Oct | JIIT Noida | Dean SW (published address) | Draft |
+| 30 Oct | NMIMS | counselling team (published address) | Draft |
+| 30 Oct | CHRIST University | mail@christuniversity.in | Draft |
+| 30 Oct | Lupin | info@lupin.com | Draft |
+| 30 Oct | Glenmark | mediarelations@glenmarkpharma.com | Draft |
+| 30 Oct | Godrej Enterprises | media@godrej.com | Draft |
+| 30 Oct | HDFC Bank | corporate communications head (published) | Draft |
+
+Reserve (no published email found yet): Chitkara, Scope Global Skills Univ., Bajaj Finserv, Kissht, Titan, Savills India, Symbiosis, Bennett, SBI (open tender for an employee mental-health programme, June 2026: worth a contact-form approach).
+
+## 11. Notion Press India edition: listing sheet (Claude fills once the account exists)
+
+Title: How to Be a Hippie | Subtitle: The Ancient Art of Getting Free in a World Designed to Keep You Distracted, Overstimulated, Rewired, and Perpetually Enslaved by the Noise | Author: Manish Kumar Singh | Imprint: UnAI Labs | ISBN: RRRNA India ISBN (Manish to share the number) | Format: paperback, ~116 pages, interior PDF from the KDP print file (WeasyPrint), cover re-sized to Notion Press spine width | Category: Self-help / Mind, body, spirit | India MRP: Rs 299 (proposed, needs yes) | Description: reuse the Amazon description.
