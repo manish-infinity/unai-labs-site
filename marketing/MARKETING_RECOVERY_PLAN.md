@@ -220,3 +220,24 @@ Reserve (no published email found yet): Chitkara, Scope Global Skills Univ., Baj
 ## 11. Notion Press India edition: listing sheet (Claude fills once the account exists)
 
 Title: How to Be a Hippie | Subtitle: The Ancient Art of Getting Free in a World Designed to Keep You Distracted, Overstimulated, Rewired, and Perpetually Enslaved by the Noise | Author: Manish Kumar Singh | Imprint: UnAI Labs | ISBN: RRRNA India ISBN (Manish to share the number) | Format: paperback, ~116 pages, interior PDF from the KDP print file (WeasyPrint), cover re-sized to Notion Press spine width | Category: Self-help / Mind, body, spirit | India MRP: Rs 299 (proposed, needs yes) | Description: reuse the Amazon description.
+
+### Batch 2 (written 30 Oct, waiting for GoDaddy webmail sign-in; full text in GitHub marketing/outreach-batch-2.json)
+| Org | Email | Why now |
+|---|---|---|
+| BITS Pilani Hyderabad | swd@hyderabad.bits-pilani.ac.in | Compulsory Social Conduct / well-being course, Apr 2026 |
+| Ahmedabad University | wellness@ahduni.edu.in | Prof Chaudhary founding member of IAIRO, Jan 2026 |
+| FLAME University | enquiry@flame.edu.in | National Conference of Psychology (AI at work), Mar 2026 |
+| SRM Univ. Delhi-NCR | studentcounsellor@srmuniversity.ac.in | FDP on AI/ML/IoT, Jan 2026 |
+| Krea University | mental.wellbeing@krea.edu.in | 2026-27 Student Wellbeing Handbook |
+| Symbiosis Intl. | head_studentwelfare@siu.edu.in | Road to AI Impact Summit (Dubai), Feb 2026 |
+| Anurag University | info@anurag.edu.in | AHCSSC'26 AI expo, Aug 2026 |
+| Sharda University | abhivyakti.wellnessclinic@sharda.ac.in | Peer counselling batch 2, Nov 2025 |
+| Delhivery | corporateaffairs@delhivery.com | Abhayam welfare programme, Jun 2026 |
+| IndiGo | corporate@goindigo.in | AI/data-based pilot training, Nov 2025 (careful tone) |
+| Ujjivan SFB | corporate.communications@ujjivan.com | GPTW Health & Wellness #9, Aug 2026 |
+| Shriram Finance | venesa.b@shriramfinance.in (GM Corp Comms, published) | GPTW Health & Wellness, 3rd year |
+| Niva Bupa | Abhinav.kumar@nivabupa.com (media contact, published) | GPTW Health & Wellness 2026 |
+| L&T Finance | neelasribarman@ltfs.com (media contact, published) | GPTW Health & Wellness 2026 |
+| Uno Minda | communicationdesk@unominda.com | GPTW Health & Wellness #10 |
+
+Next-batch source: GPTW India "Best Workplaces in Health & Wellness 2026" (20 Aug 2026) lists ~40 non-IT firms (Flipkart, PGP Glass, DCB Bank, TVS Credit, Universal Sompo, Muthoot Fincorp, Kohler India, Lifestyle). Each still needs an email from its own site.
