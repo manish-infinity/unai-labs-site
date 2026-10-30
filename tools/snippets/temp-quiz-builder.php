@@ -1,6 +1,6 @@
 <?php
 /**
- * UnAI temp: Tutor quiz builder (Claude, 2026-10-31). DEACTIVATE AFTER USE.
+ * UnAI temp: Tutor quiz builder (Claude, 2026-10-30). DEACTIVATE AFTER USE.
  * Admin-only REST routes (manage_options + REST nonce). No public surface.
  *  GET  /wp-json/unai-tmp/v1/quiz-inspect?course=ID
  *  POST /wp-json/unai-tmp/v1/quiz-build  {topic_id, course_id, title, order, questions:[{title,type,explanation,answers:[{t,c}]}]}

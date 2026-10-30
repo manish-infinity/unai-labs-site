@@ -3401,7 +3401,7 @@ Last updated: 2026-06-30
 ---
 Last updated: 2026-06-30 | Next sprint: as scheduled
 
-## 2026-10-31 daily build (Claude)
+## 2026-10-30 (b) daily build (Claude)
 - Smoke test: all buy-path pages 200, registration form renders, Anyone can register ON, Store API add-to-cart works (Razorpay). 0 new sign-ups in ~24h (bot shield holding).
 - Quizzes: verified LIVE, 16 published (IDs 256, 338-352), 80 questions, each exactly one correct answer + explanation, 0 attempts. Temporary inspector snippet #12 used read-only and deactivated.
 - Snippet #13 (tools/snippets/seo-privacy-sitemap.php): author archives redirect home, author links point home, Yoast author sitemap removed (it published the admin login); lessons/quizzes/assignments removed from sitemap and noindex,follow (login-walled to visitors). Course pages, posts, products unchanged (index).

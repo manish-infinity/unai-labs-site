@@ -1,6 +1,6 @@
 <?php
 /**
- * UnAI: hide admin username + keep login-walled pages out of Google (Claude, 2026-10-31)
+ * UnAI: hide admin username + keep login-walled pages out of Google (Claude, 2026-10-30)
  * Code Snippet #13. Switch off in Snippets to revert. No effect on cart, checkout, registration or course access.
  *
  * 1. Author archives (/author/<login>/) redirect home, and author links point home,
