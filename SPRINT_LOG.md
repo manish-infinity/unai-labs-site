@@ -3406,3 +3406,10 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Quizzes: verified LIVE, 16 published (IDs 256, 338-352), 80 questions, each exactly one correct answer + explanation, 0 attempts. Temporary inspector snippet #12 used read-only and deactivated.
 - Snippet #13 (tools/snippets/seo-privacy-sitemap.php): author archives redirect home, author links point home, Yoast author sitemap removed (it published the admin login); lessons/quizzes/assignments removed from sitemap and noindex,follow (login-walled to visitors). Course pages, posts, products unchanged (index).
 - Residual: Tutor instructor link on course pages uses /profile/<author slug>/; fix needs Manish to approve changing the WP author slug (nicename).
+
+## 2026-10-31 daily build (scheduled)
+- Smoke test passed before and after (/, /courses/, course page, /cart/, /checkout/, /my-account/, /student-registration/ all 200; registration ON; Store API add-to-cart OK for 120, 157, 286, 356x10, 357x50; Razorpay only gateway; /wp/v2/users 401).
+- Snippet #16 (live): empty-cart button now "Browse courses" -> /courses/ (was sending buyers to draft Shop page -> a single product).
+- Snippet #6 extended to product + courses; Yoast meta descriptions set on products 120, 157, 249 and course 209 (209 previously showed "Course Overview Tagline:").
+- Mobile QA (390px): /pricing/, /courses/, /cart/ no horizontal overflow; thumbnails render.
+- Watch: 0 new sign-ups since 2026-10-30 03:02 UTC; hosting-expired banner still shown in wp-admin.
