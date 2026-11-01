@@ -3413,3 +3413,9 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Snippet #6 extended to product + courses; Yoast meta descriptions set on products 120, 157, 249 and course 209 (209 previously showed "Course Overview Tagline:").
 - Mobile QA (390px): /pricing/, /courses/, /cart/ no horizontal overflow; thumbnails render.
 - Watch: 0 new sign-ups since 2026-10-30 03:02 UTC; hosting-expired banner still shown in wp-admin.
+
+## 2026-11-01 daily build (scheduled)
+- Mac folder not connected (3rd run); used project KB + live site.
+- Smoke test PASSED logged out: /, /courses/, AI Literacy course page, /cart/ (-> /cart-2/), /checkout/ (empty -> cart, normal), /my-account/, /student-registration/ all 200; sign-up form renders with all fields + shield fields, no "registration disabled" message; wp-login.php?action=register -> /student-registration/; Store API add-to-cart OK for 120 (Rs 1,999) and 286 (Rs 399), Razorpay only gateway; /wp/v2/users 401.
+- BLOCKED: wp-admin logged out (login screen). No admin changes made. "Anyone can register" checkbox could not be read directly (inferred ON from the form).
+- Found: courses 30, 124, 232 have no meta description. Copy ready in content/seo/course-meta-descriptions-2026-11-01.md for next run.
