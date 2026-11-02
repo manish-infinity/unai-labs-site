@@ -257,6 +257,11 @@ function unai_amb_admin_page() {
 		$uid = absint( $_POST['uid'] ?? 0 ); $act = sanitize_key( $_POST['unai_amb_admin'] );
 		if ( $uid && $act === 'approve' ) { unai_amb_activate( $uid ); }
 		if ( $uid && $act === 'suspend' ) { unai_amb_suspend( $uid ); }
+		if ( $uid && $act === 'remove' ) {
+			$cid = (int) get_user_meta( $uid, '_unai_amb_coupon_id', true );
+			if ( $cid ) { wp_trash_post( $cid ); }
+			foreach ( array( 'status', 'college', 'college_email', 'domain', 'city', 'year', 'terms', 'coupon_id', 'upi', 'paid_out', 'token_hash', 'token_exp' ) as $k ) { delete_user_meta( $uid, '_unai_amb_' . $k ); }
+		}
 		if ( $uid && $act === 'paid' ) { $amt = (float) ( $_POST['amount'] ?? 0 ); if ( $amt > 0 ) { update_user_meta( $uid, '_unai_amb_paid_out', (float) get_user_meta( $uid, '_unai_amb_paid_out', true ) + $amt ); } }
 		echo '<div class="notice notice-success"><p>Done.</p></div>';
 	}
@@ -267,7 +272,7 @@ function unai_amb_admin_page() {
 		$st = unai_amb_status( $u->ID ); $cid = (int) get_user_meta( $u->ID, '_unai_amb_coupon_id', true ); $code = $cid ? wc_get_coupon_code_by_id( $cid ) : '';
 		$s = $code ? unai_amb_stats( $code ) : array( 'units' => 0, 'rate' => 0.10, 'earned' => 0 );
 		$f = function ( $act, $label, $extra = '' ) use ( $u ) { return '<form method="post" style="display:inline">' . wp_nonce_field( 'unai_amb_admin', '_wpnonce', true, false ) . '<input type="hidden" name="uid" value="' . (int) $u->ID . '">' . $extra . '<button class="button" name="unai_amb_admin" value="' . esc_attr( $act ) . '">' . esc_html( $label ) . '</button></form> '; };
-		$actions = ( $st === 'pending_review' || $st === 'suspended' ? $f( 'approve', 'Approve' ) : '' ) . ( $st === 'active' ? $f( 'suspend', 'Suspend' ) . $f( 'paid', 'Record payout', '<input name="amount" type="number" min="1" step="1" style="width:80px" placeholder="Rs">' ) : '' );
+		$actions = ( $st === 'pending_review' || $st === 'suspended' ? $f( 'approve', 'Approve' ) : '' ) . ( $st === 'active' ? $f( 'suspend', 'Suspend' ) . $f( 'paid', 'Record payout', '<input name="amount" type="number" min="1" step="1" style="width:80px" placeholder="Rs">' ) : '' ) . ( $st !== 'active' ? $f( 'remove', 'Remove' ) : '' );
 		printf( '<tr><td>%s</td><td>%s<br><small>%s</small></td><td>%s</td><td>%s</td><td>%d</td><td>%d%%</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
 			esc_html( $u->display_name ), esc_html( get_user_meta( $u->ID, '_unai_amb_college', true ) ), esc_html( get_user_meta( $u->ID, '_unai_amb_college_email', true ) ), esc_html( $st ), esc_html( strtoupper( $code ) ),
 			(int) $s['units'], (int) round( $s['rate'] * 100 ), esc_html( number_format( $s['earned'], 0 ) ), esc_html( number_format( (float) get_user_meta( $u->ID, '_unai_amb_paid_out', true ), 0 ) ), esc_html( get_user_meta( $u->ID, '_unai_amb_upi', true ) ), $actions );
