@@ -1,6 +1,6 @@
 # Course meta descriptions (ready to apply)
 
-Found 2026-11-01: courses 30, 124 and 232 have NO meta description in live page source (the KB said auto-excerpt; that was wrong). Course 209 is fine.
+APPLIED LIVE 2026-11-02 (verified in page source). Found 2026-11-01: courses 30, 124 and 232 have NO meta description in live page source (the KB said auto-excerpt; that was wrong). Course 209 is fine.
 Apply via REST (Snippet #6 exposes Yoast fields on `courses`): POST /wp-json/wp/v2/courses/<id> with meta `_yoast_wpseo_metadesc`.
 
 | Course ID | Slug | Meta description |

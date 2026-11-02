@@ -3419,3 +3419,12 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Smoke test PASSED logged out: /, /courses/, AI Literacy course page, /cart/ (-> /cart-2/), /checkout/ (empty -> cart, normal), /my-account/, /student-registration/ all 200; sign-up form renders with all fields + shield fields, no "registration disabled" message; wp-login.php?action=register -> /student-registration/; Store API add-to-cart OK for 120 (Rs 1,999) and 286 (Rs 399), Razorpay only gateway; /wp/v2/users 401.
 - BLOCKED: wp-admin logged out (login screen). No admin changes made. "Anyone can register" checkbox could not be read directly (inferred ON from the form).
 - Found: courses 30, 124, 232 have no meta description. Copy ready in content/seo/course-meta-descriptions-2026-11-01.md for next run.
+
+## Daily build 2026-11-02 (scheduled, 15:20 UTC; Mac folder not connected)
+- Smoke test PASS logged out: /, /courses/, AI Literacy course, /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (form renders, 5 fields, no disabled text) all 200; wp-login.php?action=register to /student-registration/; Store API add-to-cart 120 (Rs 1,999) + 286 (Rs 399) OK, Razorpay only gateway. Anyone can register ON (Subscriber), read from wp-admin.
+- wp-admin logged in again (blocked 11-01).
+- SEO live: Yoast meta descriptions set on courses 30, 124, 232 (were empty); verified in logged-out page source.
+- Weekly security check: 0 plugin/theme updates pending (WP 7.1.4); 1 admin (id 1, unchanged); /wp-json/wp/v2/users 401; headers nosniff, SAMEORIGIN, HSTS, Referrer-Policy present; .env/.git 403, debug.log 404, xmlrpc 403; 1 sign-up since 30 Oct (31 Oct 14:21 UTC, gmail, random-looking name; total 11,383); repo secret scan clean.
+- Found: Snippet #17 "Campus Ambassadors v2" active, modified 2026-11-02 15:10 UTC by another session; not touched.
+- Not done: capstone rubric lessons (Tutor lessons have no REST route; needs course-builder UI).
+- Still showing: GoDaddy "Hosting plan for this site has expired" banner.
