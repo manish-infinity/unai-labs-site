@@ -3428,3 +3428,9 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Found: Snippet #17 "Campus Ambassadors v2" active, modified 2026-11-02 15:10 UTC by another session; not touched.
 - Not done: capstone rubric lessons (Tutor lessons have no REST route; needs course-builder UI).
 - Still showing: GoDaddy "Hosting plan for this site has expired" banner.
+
+## 2026-11-03 daily build (scheduled)
+- Smoke test PASSED logged out: / /courses/ AI Literacy course (buy button) /cart/->/cart-2/ /checkout/->cart (empty, normal) /my-account/ /student-registration/ (form + password field, no disabled text) all 200; wp-login register -> /student-registration/; Store API add 120 = Rs 1,999, Razorpay only gateway; /wp-json/wp/v2/users 401; nosniff/XFO/HSTS present.
+- BLOCKED: admin logged out (wp-admin shows login screen). "Anyone can register" inferred ON from the form, not read. No admin changes.
+- Mac folder not connected; Master State on Mac not updated.
+- SEO scan logged out: 46/47 posts lack a meta description tag; pricing/courses/about/blog/contact lack one; queue + copy in content/seo/seo-queue-2026-11-03.md.
