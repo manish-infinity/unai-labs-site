@@ -3434,3 +3434,11 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - BLOCKED: admin logged out (wp-admin shows login screen). "Anyone can register" inferred ON from the form, not read. No admin changes.
 - Mac folder not connected; Master State on Mac not updated.
 - SEO scan logged out: 46/47 posts lack a meta description tag; pricing/courses/about/blog/contact lack one; queue + copy in content/seo/seo-queue-2026-11-03.md.
+
+## 2026-11-05 daily build (scheduled 09:37 IST, fired 18:46 IST)
+- Smoke test PASSED logged out, before and after changes: / /courses/ AI Literacy course /cart/->/cart-2/ /checkout/->cart /my-account/ /student-registration/ (form) /pricing/ all 200; wp-login register -> /student-registration/; Store API add-to-cart 120 = Rs 1,999 and 286 = Rs 399, Razorpay only; /wp-json/wp/v2/users 401; nosniff, XFO, HSTS, CSP present. "Anyone can register" ON (Subscriber), read in wp-admin.
+- wp-admin logged in. Snippet #18 security hardening 2 is live (another session, 11-03 15:45 UTC); not touched.
+- SEO live: post meta description template (all 47 posts), page meta on 269/26/27/28/25, /courses/ archive title + description. Details: content/seo/seo-queue-2026-11-03.md.
+- Tried + switched off Snippet #19 (thumbnail alt; filter not used by Tutor). Copy: tools/snippets/course-thumbnail-alt.php.
+- Mobile resize not available in this Chrome window; changes are head tags only.
+- Users 11,383; last sign-up 31 Oct. Mac folder not connected; Master State on Mac not updated.
