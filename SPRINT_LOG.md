@@ -3442,3 +3442,10 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Tried + switched off Snippet #19 (thumbnail alt; filter not used by Tutor). Copy: tools/snippets/course-thumbnail-alt.php.
 - Mobile resize not available in this Chrome window; changes are head tags only.
 - Users 11,383; last sign-up 31 Oct. Mac folder not connected; Master State on Mac not updated.
+
+## 2026-11-06 daily build (scheduled 09:37 IST, fired 18:57 IST)
+- Smoke test PASSED logged out, before and after: /, /courses/, AI Literacy course page (Add to cart), /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (form + password), /pricing/ all 200; wp-login.php?action=register to /student-registration/; Store API add 120 = Rs 1,999, Razorpay only gateway; /wp-json/wp/v2/users 401; nosniff, XFO, HSTS, CSP present.
+- wp-admin logged in; Anyone can register ON (Subscriber). Snippets unchanged since 11-05 (#19 still off). No new orders (latest #312). Users 11,383; last sign-up 31 Oct.
+- Registration shield check: signed token + honeypot JS present on /student-registration/, token is fresh per render (Cloudflare MISS), refusal message gives hello@ contact. No token max-age, so cached pages cannot lock out buyers.
+- SEO live: hand-written Yoast meta descriptions on 30 posts whose excerpt ran over 160 chars (110-155 chars, focus keyphrase in each). Spot-checked in logged-out source (310, 186, 144, 29). List: content/seo/post-meta-descriptions-2026-11-06.md.
+- Mac folder not connected; Master State on Mac not updated.
