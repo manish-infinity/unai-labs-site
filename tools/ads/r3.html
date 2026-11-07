@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: comic book panels, halftone, POW captions (trend: "so absorbed in my phone I missed...") */
+html,body{background:#fff6d6}
+#bgA{background:#fff6d6}
+.panel{width:960px;height:700px;border:12px solid #111;background:#ffe27a;position:relative;overflow:hidden;box-shadow:16px 16px 0 #111}
+.panel.b{background:#7fd3ff}
+.dots{position:absolute;inset:0;background-image:radial-gradient(#111 18%,transparent 19%);background-size:26px 26px;opacity:.16}
+.cbox{background:#fff;border:8px solid #111;font:800 52px/1.1 P;color:#111;padding:18px 26px;width:900px;text-align:center;box-shadow:10px 10px 0 #111}
+.pow{white-space:nowrap;font:800 120px P;color:#ff3b47;-webkit-text-stroke:8px #111;transform:rotate(-8deg);letter-spacing:2px}
+.ct{color:#111;text-shadow:none}
+.foot{color:#5a4b1a}
+.phone{width:150px;height:260px;background:#111;border-radius:26px;border:8px solid #333;position:absolute}
+.phone i{position:absolute;inset:14px;background:#6ff0ff;border-radius:10px}
+.clown{position:absolute;font:800 210px P}
+.big{font:800 300px P;color:#ff3b47;-webkit-text-stroke:10px #111;letter-spacing:-8px;line-height:1}
+.vs{font:800 300px P;color:#2e7dff;-webkit-text-stroke:10px #111;letter-spacing:-8px;line-height:1}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+const b = add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]); b.style.color = '#111';
+add('<div class="cbox">A clown on a unicycle rode across the square.</div>', '', [[0, { y: -640, o: 0, s: .7 }], [0.3, { o: 1, s: 1 }, 'back'], [5.6, {}], [5.9, { o: 0 }]]);
+const PN = add('<div class="panel"><div class="dots"></div></div>', '', [[0.2, { y: 60, o: 0, r: -4, s: .8 }], [0.5, { o: 1, r: -2, s: 1 }, 'back'], [5.6, {}], [5.9, { o: 0, x: -400 }, 'inout']]);
+const pnl = PN.querySelector('.panel');
+const Bt = document.createElement('img'); Bt.src = 'src/bit_c.png'; Bt.style.cssText = 'position:absolute;width:300px;left:600px;top:300px'; pnl.appendChild(Bt);
+const ph = document.createElement('div'); ph.className = 'phone'; ph.innerHTML = '<i></i>'; ph.style.cssText += 'left:560px;top:380px;transform:rotate(-12deg)'; pnl.appendChild(ph);
+const cw = document.createElement('div'); cw.className = 'clown'; cw.textContent = '🤡'; pnl.appendChild(cw);
+add('<span class="pow">WHAT CLOWN?</span>', '', [[3.6, { y: -180, s: 0, o: 0 }], [3.9, { s: 1, o: 1 }, 'back'], [5.6, {}], [5.9, { o: 0 }]], { shake: [3.7, 4.1] });
+say('<span class="ct">Researchers asked walkers: did you see it?</span>', 't m', 0, 600, 1.0, 5.6, 9);
+// stat panel
+add('<div class="cbox">People on their phone who noticed the clown</div>', '', [[6.0, { y: -640, o: 0 }], [6.3, { o: 1 }, 'back'], [10.4, {}], [10.7, { o: 0 }]]);
+const n1 = add('<span class="big"><span class="num">0</span></span>', '', [[6.1, { y: -300, o: 0, s: .6 }], [6.4, { o: 1, s: 1 }, 'back'], [10.4, {}], [10.7, { o: 0 }]], { count: [6.3, 7.3, 0, 25, '%'] });
+n1.querySelector('.num').style.cssText = 'font-size:300px;color:#ff3b47;letter-spacing:-8px';
+add('<div class="cbox" style="background:#7fd3ff">People walking alone</div>', '', [[7.6, { y: 40, o: 0 }], [7.9, { o: 1 }, 'back'], [10.4, {}], [10.7, { o: 0 }]]);
+const n2 = add('<span class="vs"><span class="num">0</span></span>', '', [[7.7, { y: 330, o: 0, s: .6 }], [8.0, { o: 1, s: 1 }, 'back'], [10.4, {}], [10.7, { o: 0 }]], { count: [7.9, 8.9, 0, 51, '%'] });
+n2.querySelector('.num').style.cssText = 'font-size:300px;color:#2e7dff;letter-spacing:-8px';
+foot('Hyman et al., Applied Cognitive Psychology, 2010 (Western Washington University)', 6.0, 10.7, 640);
+say('<span class="ct">Your phone doesn\'t just take your time. It takes <b style="color:#ff3b47">what you see.</b></span>', 't l', 0, -150, 10.7, 13.4, 9);
+const Nr = char('src/neuro_c.png', [[10.9, { x: 0, y: 520, o: 0, s: .5 }], [11.3, { o: 1, s: 1 }, 'back'], [13.2, {}], [13.4, { o: 0 }]], { bob: 8 }); Nr.style.width = '460px';
+cta(13.4, { kicker: 'THE BOOK', title: 'How to Be<br>a Hippie', sub: 'Get your attention back from<br>a world built to take it.', price: '₹399', was: '', tag: 'eBook. Instant download.', btn: 'unai-labs.com' });
+window.bg = t => {
+  const k = cl((t - 0.6) / 3.2);
+  cw.style.left = (-260 + k * 1300) + 'px'; cw.style.top = (180 + Math.sin(t * 9) * 16) + 'px'; cw.style.transform = `rotate(${Math.sin(t * 9) * 8}deg)`;
+  Bt.style.transform = `translateY(${Math.sin(t * 3) * 4}px)`;
+};
+render(0);
+</script></body></html>

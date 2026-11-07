@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: synthwave grid + zoom-in message (trend: "zoom in to read this" encouragement) */
+html,body{background:#0a0018}
+canvas{position:absolute;inset:0}
+.msg{font:800 64px/1.1 P;color:#fff;text-align:center;width:900px;text-shadow:0 0 20px #ff2e88}
+.mini{font:700 22px/1.25 P;color:#fff;text-align:center;width:420px;opacity:.9}
+.neon{color:#ffe066;text-shadow:0 0 18px #ff2e88}
+.cy{color:#6ff0ff;text-shadow:0 0 18px #6ff0ff}
+.score{font:800 170px P;line-height:1;letter-spacing:-4px;width:440px;text-align:center}.score .num{font-size:170px;color:inherit;letter-spacing:-4px}
+.lab{font:800 46px P;letter-spacing:2px}
+</style></head><body>
+<div id="stage"><canvas id="cv" width="1080" height="1920"></canvas><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+say('Exam soon? <span class="neon">Zoom in.</span>', 't l', 0, -620, 0, 2.6, 6);
+// tiny note that zooms up to fill the screen (the "zoom in" trend)
+add('<div class="mini">stop re-reading your notes.<br>close the book and <b>test yourself</b> instead.</div>', '', [[0.2, { y: 180, s: 1, o: 0 }], [0.5, { o: 1 }], [2.4, { s: 1.05 }], [3.6, { s: 2.6, y: -40 }, 'inout'], [6.2, { s: 2.6 }], [6.5, { o: 0 }]]);
+say('In a famous memory study, students either <span class="cy">re-read</span> a passage or <span class="neon">tested themselves</span> on it.', 't s', 0, -560, 6.5, 9.6, 12);
+add('<div class="lab cy">RE-READ</div><div class="score cy"><span class="num">0</span></div>', '', [[9.6, { x: -250, y: 40, o: 0, s: .6 }], [9.9, { o: 1, s: 1 }, 'back'], [13.2, {}], [13.4, { o: 0 }]], { count: [9.9, 10.9, 0, 42, '%'] });
+add('<div class="lab neon">TESTED</div><div class="score neon"><span class="num">0</span></div>', '', [[9.8, { x: 250, y: 40, o: 0, s: .6 }], [10.1, { o: 1, s: 1 }, 'back'], [13.2, {}], [13.4, { o: 0 }]], { count: [10.1, 11.3, 0, 56, '%'] });
+say('remembered a week later', 't s', 0, 330, 10.0, 13.2, 8);
+foot('Roediger & Karpicke, Psychological Science 2006 (Experiment 1)', 9.6, 13.4, 520);
+say('Testing feels harder. <span class="neon">That\'s why it works.</span>', 't m', 0, -540, 11.4, 13.3, 9);
+const Nr = char('src/neuro_c.png', [[6.6, { x: 0, y: 790, o: 0, s: .5 }], [7.0, { o: 1, s: .8 }, 'back'], [13.2, {}], [13.4, { o: 0 }]], { bob: 10 }); Nr.style.width = '360px';
+cta(13.4, { kicker: 'ONLINE COURSE', title: 'Study like<br>a brain scientist.', sub: '<b>Neuroplasticity in Practice:</b> recall,<br>spacing and habits that stick.', price: '₹1,999', was: '₹2,999', tag: 'Launch price ends 30 Nov', btn: 'unai-labs.com' });
+const c = document.getElementById('cv').getContext('2d');
+window.bg = t => {
+  const g = c.createLinearGradient(0, 0, 0, 1920); g.addColorStop(0, '#14002e'); g.addColorStop(.55, '#4a0860'); g.addColorStop(.56, '#0a0018'); g.addColorStop(1, '#000'); c.fillStyle = g; c.fillRect(0, 0, 1080, 1920);
+  const sy = 1050, sr = 260; const sg = c.createLinearGradient(0, sy - sr, 0, sy); sg.addColorStop(0, '#ffe066'); sg.addColorStop(1, '#ff2e88');
+  c.save(); c.globalAlpha = .55; c.beginPath(); c.arc(540, sy, sr, Math.PI, 0); c.clip(); c.fillStyle = sg; c.fillRect(280, sy - sr, 520, sr); c.fillStyle = '#4a0860'; for (let k = 0; k < 6; k++) c.fillRect(280, sy - 110 + k * 22 + ((t * 30) % 22), 520, 3 + k * 2); c.restore();
+  c.strokeStyle = '#ff2e88'; c.lineWidth = 3; c.shadowColor = '#ff2e88'; c.shadowBlur = 16; const hz = 1060;
+  for (let k = -14; k <= 14; k++) { c.beginPath(); c.moveTo(540 + k * 20, hz); c.lineTo(540 + k * 190, 1920); c.stroke(); }
+  for (let k = 0; k < 14; k++) { const z = ((k + t * 1.6) % 14) / 14, y = hz + Math.pow(z, 2.2) * 860; c.beginPath(); c.moveTo(0, y); c.lineTo(1080, y); c.stroke(); }
+  c.shadowBlur = 0;
+};
+render(0);
+</script></body></html>

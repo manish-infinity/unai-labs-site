@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: pixel art / retro game loading screen (trend: "loading 0% to 100%") */
+html,body{background:#0b0b1a}
+#bgA{background:#0b0b1a}
+canvas{position:absolute;inset:0;image-rendering:pixelated}
+.px{font-family:P;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#7CFC9A;text-shadow:6px 6px 0 #0b3d1a}
+.bar{width:880px;height:110px;border:10px solid #fff;padding:10px;box-shadow:8px 8px 0 #444}
+.fill{height:100%;background:repeating-linear-gradient(90deg,#7CFC9A 0 50px,#4fd36b 50px 60px);width:0}
+.pct{font:800 150px P;color:#fff;text-shadow:8px 8px 0 #ff3b47;letter-spacing:4px}
+.step{font:800 58px/1.15 P;color:#fff;background:#1d1d3a;border:8px solid #7CFC9A;padding:22px 30px;width:900px;text-align:left;box-shadow:10px 10px 0 #000}
+.step b{color:#ffd166}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><canvas id="cv" width="270" height="480" style="width:1080px;height:1920px"></canvas><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+pop('LOADING:<br>DEEP FOCUS', 'px t l', 0, -600, 0, 10.4, 'zoom');
+const BAR = add('<div class="bar"><div class="fill"></div></div>', '', [[0.1, { y: -260, o: 0 }], [0.4, { o: 1 }], [10.2, {}], [10.5, { o: 0 }]]);
+const fill = BAR.querySelector('.fill');
+const P = add('<span class="pct">0%</span>', '', [[0.1, { y: -40, o: 0 }], [0.4, { o: 1 }], [10.2, {}], [10.5, { o: 0 }]]);
+const steps = [
+  [1.0, 'LEVEL 1: <b>phone in another room</b>'],
+  [3.3, 'LEVEL 2: <b>one tab.</b> Close the rest'],
+  [5.6, 'LEVEL 3: <b>25 minutes.</b> No checking'],
+  [7.9, 'BOSS LEVEL: <b>finish before you switch</b>'],
+];
+steps.forEach(([t0, s], i) => add(`<div class="step">${s}</div>`, '', [[t0, { y: 260 + i * 0 + 0, x: -40, o: 0 }], [t0 + 0.25, { x: 0, o: 1 }, 'back'], [t0 + 2.1, {}], [t0 + 2.3, { o: 0, x: 40 }]]));
+const Nr = char('src/neuro_c.png', [[0.3, { x: 0, y: 640, o: 0, s: .5 }], [0.7, { o: 1, s: .8 }, 'back'], [10.2, {}], [10.5, { o: 0 }]], { bob: 12 }); Nr.style.width = '400px';
+say('Why? Every switch leaves <span class="hl">attention residue</span>: part of your mind stays stuck on the last task.', 't m', 0, -200, 10.5, 13.4, 16);
+foot('Leroy, Organizational Behavior and Human Decision Processes, 2009', 10.5, 13.4, 300);
+cta(13.4, { kicker: 'ONLINE COURSE', title: 'Focus is a skill.<br>Level it up.', sub: '<b>Deep Focus: Reclaiming Attention.</b><br>12 short lessons.', price: '₹1,999', was: '₹2,999', tag: 'Launch price ends 30 Nov', btn: 'unai-labs.com' });
+const c = document.getElementById('cv').getContext('2d');
+const stars = Array.from({ length: 70 }, (_, i) => [(i * 97) % 270, (i * 53) % 480, (i % 3) + 1]);
+window.bg = t => {
+  const pct = Math.min(100, Math.floor(eo(cl((t - 0.4) / 9.6)) * 100 / 25) * 25 + (t > 0.4 ? Math.floor(((t * 7) % 1) * 3) : 0));
+  const real = t < 0.4 ? 0 : t > 10 ? 100 : [0, 25, 50, 75, 100][Math.min(4, Math.floor((t - 0.4) / 2.3) + (t > 9.6 ? 1 : 0))];
+  fill.style.width = real + '%'; P.querySelector('.pct').textContent = real + '%';
+  c.fillStyle = '#0b0b1a'; c.fillRect(0, 0, 270, 480);
+  stars.forEach(([x, y, s]) => { c.fillStyle = (Math.floor(t * 4 + x) % 5) ? '#2a2a55' : '#7CFC9A'; c.fillRect(x, (y + t * 20 * s) % 480, s, s); });
+  // pixel ground
+  for (let x = 0; x < 270; x += 6) { c.fillStyle = (x / 6) % 2 ? '#1d6b33' : '#25883f'; c.fillRect(x, 440, 6, 40); }
+};
+render(0);
+</script></body></html>
