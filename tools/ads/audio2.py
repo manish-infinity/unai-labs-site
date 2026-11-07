@@ -16,11 +16,13 @@ def say(text, who, slot):
         if len(s) / SR <= slot or sp >= 1.45: break
         sp = min(1.45, sp * (len(s) / SR) / slot * 1.02)
     if who == 'B':  # robot: ring mod + light bitcrush
-        t = np.arange(len(s)) / SR; s = s * (0.75 + 0.25 * np.sin(2 * np.pi * 55 * t)); s = np.round(s * 48) / 48
+        t = np.arange(len(s)) / SR; s = s * (0.85 + 0.15 * np.sin(2 * np.pi * 55 * t))
     return s / (np.max(np.abs(s)) + 1e-9) * 0.9
 
 def note(m): return 440 * 2 ** ((m - 69) / 12)
 def put(out, s0, x, g=1.0):
+    x = np.array(x, dtype=float); f = min(len(x) // 4, int(0.012 * SR))
+    if f > 1: x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
     i = int(s0 * SR); n = min(len(x), len(out) - i)
     if n > 0 and i >= 0: out[i:i + n] += x[:n] * g
 
@@ -31,7 +33,7 @@ def sfx(kind, d=0.3):
         nz = np.convolve(rng.standard_normal(n), np.ones(25) / 25, 'same'); return nz * np.sin(np.linspace(0, np.pi, n)) ** 2 * 1.2
     if kind == 'impact': return (np.sin(2 * np.pi * np.cumsum(50 + 120 * np.exp(-t * 20)) / SR) + rng.standard_normal(n) * 0.25 * np.exp(-t * 25)) * np.exp(-t * 4)
     if kind == 'riser':
-        f = 200 + 1800 * (t / d) ** 2; return (np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.3 + rng.standard_normal(n) * 0.25 * (t / d)) * (t / d) ** 1.5
+        f = 200 + 1800 * (t / d) ** 2; return (np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.3 + rng.standard_normal(n) * 0.25 * (t / d)) * (t / d) ** 1.5 * np.minimum(1, (d - t) / 0.12)
     if kind == 'heart':
         x = np.zeros(n)
         for off in (0, 0.22):
@@ -149,3 +151,9 @@ if 'ad5' in which:
         (14.2, 17.4, 'N', "Launch price ends November thirtieth."),
     ], [(0, 'impact')] + [(3.4+0.5*k, 'ding', .5) for k in range(6)] + [(t, 'whoosh') for t in (2.6, 6.9, 10.5, 13.9)] + pops([8.0, 14.4]),
        gaps=[(6.8, 7.1)], dark=[(2.8, 7)])
+
+if 'styles' in which:
+    d=21.9; N=int(d*SR); mu=beat(d)[:N]; fx=np.zeros(N)
+    for k in range(9): put(fx, k*2.4, sfx('whoosh'), .7); put(fx, k*2.4+0.15, sfx('pop'))
+    mix=mu*0.8+fx*0.5; fo=int(0.6*SR); mix[-fo:]*=np.linspace(1,0,fo); mix=np.tanh(mix/np.max(np.abs(mix))*1.15)*0.95
+    sf.write('out/styles_v2.wav', np.stack([mix,mix],1), SR); print('styles ok')

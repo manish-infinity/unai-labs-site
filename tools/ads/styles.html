@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.sc{position:absolute;inset:0;display:none;overflow:hidden}
+canvas{position:absolute;inset:0}
+.lab{position:absolute;top:150px;left:0;right:0;text-align:center}
+.lab span{font:800 34px P;letter-spacing:3px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);padding:10px 26px;border-radius:999px}
+.cap{position:absolute;left:60px;right:60px;top:250px;text-align:center;font:800 96px/1.05 P;letter-spacing:-2px}
+.iso{position:absolute;left:540px;top:1100px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(45deg)}
+.blk{position:absolute;transform-style:preserve-3d}
+.blk i{position:absolute;display:block}
+.cube{position:absolute;left:540px;top:1060px;width:0;height:0;transform-style:preserve-3d}
+.cube div{position:absolute;width:440px;height:440px;left:-220px;top:-220px;display:flex;align-items:center;justify-content:center;font:800 64px P;border:4px solid rgba(255,255,255,.6);backface-visibility:visible}
+.bub{position:absolute;background:#fff;color:#0f1e3d;font:800 54px/1.1 P;padding:28px 36px;border-radius:40px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+const st=document.getElementById('stage'), SD=2.4, names=['ISOMETRIC','PAPER CUT','3D DATA CHART','SYNTHWAVE','3D EXPLAINER','MATHS DIAGRAM','CARTOON EXPLAINER','DOMINO REVERSAL','GLOW ATOM'];
+E.dur=SD*names.length+0.3;
+const caps=['Your day, rebuilt','Your brain keeps<br>reshaping itself','Watch the trend,<br>not the noise','BRAIN<br>vs AI','4 sides of a<br>sharp brain','The forgetting<br>curve','Who\'s smarter?','One ping starts<br>the chain','Attention is<br>energy'];
+const scenes=names.map((n,i)=>{const d=document.createElement('div');d.className='sc';d.innerHTML=`<canvas width=1080 height=1920></canvas><div class="lab"><span>${n}</span></div><div class="cap">${caps[i]}</div>`;st.appendChild(d);return d;});
+const ctx=scenes.map(s=>s.querySelector('canvas').getContext('2d'));
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), eo=x=>1-Math.pow(1-cl(x),3), eb=x=>{x=cl(x);const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+// 1 isometric: canvas iso boxes
+function isoBox(c,gx,gy,h,w,col,lab){const k=0.5,ux=95,X=(x,y)=>540+(x-y)*ux,Y=(x,y,z)=>1250+(x+y)*ux*k-z;
+ const p=(x,y,z)=>[X(x,y),Y(x,y,z)];const sh=(hex,f)=>{const n=parseInt(hex.slice(1),16);const r=(n>>16)*f,g=(n>>8&255)*f,b=(n&255)*f;return `rgb(${r|0},${g|0},${b|0})`};
+ const poly=(pts,f)=>{c.fillStyle=f;c.beginPath();pts.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.closePath();c.fill();};
+ const x0=gx,y0=gy,x1=gx+w,y1=gy+w;
+ poly([p(x0,y1,0),p(x1,y1,0),p(x1,y1,h),p(x0,y1,h)],sh(col,.62));
+ poly([p(x1,y0,0),p(x1,y1,0),p(x1,y1,h),p(x1,y0,h)],sh(col,.8));
+ poly([p(x0,y0,h),p(x1,y0,h),p(x1,y1,h),p(x0,y1,h)],col);
+ const [tx,ty]=p(gx+w/2,gy+w/2,h);c.fillStyle='#0f1e3d';c.font='800 34px P';c.textAlign='center';c.fillText(lab,tx,ty+12);c.textAlign='left';}
+const IB=[[-2.6,-2.6,'#ff9aa2','Sleep',300],[0.6,-2.6,'#6ff0ff','Focus',340],[-2.6,0.6,'#ffd166','Move',240],[0.6,0.6,'#ff5a5f','Phone',150]];
+function s0(t){const c=ctx[0];c.clearRect(0,0,1080,1920);
+ c.strokeStyle='rgba(255,255,255,.12)';c.lineWidth=2;for(let k=-3;k<=3;k++){c.beginPath();c.moveTo(540+(k-(-3))*95-3*95*0, 0);}
+ IB.forEach(([gx,gy,col,l,h],i)=>isoBox(c,gx,gy,h*eb((t-0.15*i)/0.8)+4,1.7,col,l));}
+// 2 paper cut: layered waves with shadows
+function s1(t){const c=ctx[1];c.clearRect(0,0,1080,1920);const cols=['#ffd9d6','#ffb3ad','#ff8a82','#ff5a5f','#d93a4a','#a3243a'];
+ cols.forEach((col,k)=>{const y0=900+k*150, a=40+k*8, ph=t*(0.8+k*0.25)+k;c.save();c.shadowColor='rgba(0,0,0,.45)';c.shadowBlur=30;c.shadowOffsetY=-12;c.fillStyle=col;c.beginPath();c.moveTo(0,1920);for(let x=0;x<=1080;x+=20){c.lineTo(x,y0+Math.sin(x/140+ph)*a+Math.sin(x/53+ph*1.3)*a*.3-eo(t/0.8)*60);}c.lineTo(1080,1920);c.fill();c.restore();});
+ const im=window.NEURO;if(im.complete){const s=eb((t-0.3)/0.7);c.save();c.translate(540,1010);c.scale(s,s);c.shadowColor='rgba(0,0,0,.5)';c.shadowBlur=25;c.shadowOffsetY=18;c.drawImage(im,-230,-205,460,407);c.restore();}}
+// 3 3D data chart (CSS-free pseudo 3D bars)
+function s2(t){const c=ctx[2];c.clearRect(0,0,1080,1920);const vals=[.35,.5,.62,.8,.95],cx=170,base=1500;c.font='600 30px P';
+ c.strokeStyle='rgba(255,255,255,.25)';c.lineWidth=2;for(let g=0;g<5;g++){c.beginPath();c.moveTo(120,base-g*150);c.lineTo(960,base-g*150);c.stroke();}
+ vals.forEach((v,i)=>{const h=v*700*eb((t-0.12*i)/0.9),x=cx+i*160,w=100,d=40;c.fillStyle='#6ff0ff';c.fillRect(x,base-h,w,h);c.fillStyle='#3aaec0';c.beginPath();c.moveTo(x+w,base-h);c.lineTo(x+w+d,base-h-d);c.lineTo(x+w+d,base-d);c.lineTo(x+w,base);c.fill();c.fillStyle='#b8f8ff';c.beginPath();c.moveTo(x,base-h);c.lineTo(x+d,base-h-d);c.lineTo(x+w+d,base-h-d);c.lineTo(x+w,base-h);c.fill();c.fillStyle='rgba(255,255,255,.7)';c.fillText('Wk '+(i+1),x+10,base+50);});
+ c.fillStyle='rgba(255,255,255,.5)';c.font='500 28px P';c.fillText('demo data: focus minutes per day',300,base+110);}
+// 4 synthwave
+function s3(t){const c=ctx[3];const g=c.createLinearGradient(0,0,0,1920);g.addColorStop(0,'#14002e');g.addColorStop(.55,'#5b0a6e');g.addColorStop(.56,'#0a0018');g.addColorStop(1,'#000');c.fillStyle=g;c.fillRect(0,0,1080,1920);
+ const sy=1000,sr=300;const sg=c.createLinearGradient(0,sy-sr,0,sy+sr);sg.addColorStop(0,'#ffe066');sg.addColorStop(1,'#ff2e88');c.save();c.beginPath();c.arc(540,sy,sr,Math.PI,0);c.clip();c.fillStyle=sg;c.fillRect(240,sy-sr,600,sr);c.fillStyle='#5b0a6e';for(let k=0;k<7;k++){const yy=sy-120+k*22+((t*40)%22);c.fillRect(240,yy,600,4+k*2);}c.restore();
+ c.strokeStyle='#ff2e88';c.lineWidth=3;c.shadowColor='#ff2e88';c.shadowBlur=18;const hz=1060;for(let k=-14;k<=14;k++){c.beginPath();c.moveTo(540+k*20,hz);c.lineTo(540+k*190,1920);c.stroke();}
+ for(let k=0;k<14;k++){const z=((k+t*1.6)%14)/14,y=hz+Math.pow(z,2.2)*860;c.beginPath();c.moveTo(0,y);c.lineTo(1080,y);c.stroke();}c.shadowBlur=0;}
+// 5 3D explainer cube
+const cube=document.createElement('div');cube.className='cube';scenes[4].appendChild(cube);
+[['Focus','#6ff0ff','translateZ(220px)'],['Sleep','#ff9aa2','rotateY(90deg) translateZ(220px)'],['Stress','#ffd166','rotateY(180deg) translateZ(220px)'],['AI','#b39dff','rotateY(-90deg) translateZ(220px)'],['','#1d3566','rotateX(90deg) translateZ(220px)'],['','#1d3566','rotateX(-90deg) translateZ(220px)']].forEach(([l,c,tr])=>{const f=document.createElement('div');f.textContent=l;f.style.cssText=`background:${c};color:#0f1e3d;transform:${tr}`;cube.appendChild(f);});
+function s4(t){cube.style.transform=`perspective(1600px) rotateX(-18deg) rotateY(${t*150}deg) scale(${eb(t/0.6)})`;}
+// 6 maths: forgetting curve
+function s5(t){const c=ctx[5];c.clearRect(0,0,1080,1920);const x0=140,y0=1450,W=820,Hh=700;c.strokeStyle='#fff';c.lineWidth=5;c.beginPath();c.moveTo(x0,y0-Hh-40);c.lineTo(x0,y0);c.lineTo(x0+W+30,y0);c.stroke();
+ c.fillStyle='rgba(255,255,255,.75)';c.font='600 32px P';c.fillText('memory',x0-10,y0-Hh-60);c.fillText('days',x0+W-40,y0+56);
+ const p=eo(t/1.6);c.strokeStyle='#ffd166';c.lineWidth=9;c.lineCap='round';c.beginPath();for(let k=0;k<=200*p;k++){const x=k/200,y=Math.exp(-x*4);c.lineTo(x0+x*W,y0-y*Hh);}c.stroke();
+ c.font='italic 700 64px serif';c.fillStyle='#ffd166';c.globalAlpha=cl((t-1)/0.4);c.fillText('R = e^(−t/S)',x0+330,y0-Hh+140);c.globalAlpha=1;
+ c.font='500 28px P';c.fillStyle='rgba(255,255,255,.55)';c.fillText('Ebbinghaus forgetting curve (shape)',x0+170,y0+110);}
+// 7 cartoon explainer
+const n7=document.createElement('img');n7.src='src/neuro_c.png';n7.style.cssText='position:absolute;width:470px;left:40px;top:1150px';scenes[6].appendChild(n7);
+const b7=document.createElement('img');b7.src='src/bit_c.png';b7.style.cssText='position:absolute;width:380px;left:640px;top:1020px';scenes[6].appendChild(b7);
+const u1=document.createElement('div');u1.className='bub';u1.style.cssText+='left:520px;top:700px';u1.textContent='Me. Obviously.';scenes[6].appendChild(u1);
+const u2=document.createElement('div');u2.className='bub';u2.style.cssText+='left:90px;top:900px;background:#ffd166';u2.textContent='Says who?';scenes[6].appendChild(u2);
+function s6(t){b7.style.transform=`translateY(${Math.sin(t*6)*10}px) rotate(${Math.sin(t*4)*3}deg)`;n7.style.transform=`translateY(${Math.sin(t*5+1)*8}px)`;u1.style.transform=`scale(${eb((t-0.2)/0.4)})`;u2.style.transform=`scale(${eb((t-1.1)/0.4)})`;}
+// 8 domino reversal
+function s7(t){const c=ctx[7];c.clearRect(0,0,1080,1920);const n=8,base=1450;for(let k=0;k<n;k++){const ft=t<1.3?cl((t-0.12*k)/0.25):cl(1-(t-1.4-0.1*(n-1-k))/0.25);const ang=ft*1.2;const x=130+k*110;
+ c.save();c.translate(x,base);c.rotate(ang);c.fillStyle=k==0?'#ff3b47':'#fff';c.shadowColor='rgba(0,0,0,.5)';c.shadowBlur=20;c.fillRect(-22,-240,44,240);c.fillStyle='#0f1e3d';c.beginPath();c.arc(0,-180,8,0,7);c.arc(0,-60,8,0,7);c.fill();c.restore();}
+ c.fillStyle='#fff';c.font='700 44px P';c.textAlign='center';c.fillText(t<1.3?'ping, scroll, lost hour':'...and you can reverse it',540,base+120);c.textAlign='left';}
+// 9 glow atom
+function s8(t){const c=ctx[8];c.clearRect(0,0,1080,1920);const cx=540,cy=1080;c.globalCompositeOperation='lighter';
+ for(let k=0;k<3;k++){c.save();c.translate(cx,cy);c.rotate(k*Math.PI/3+t*.3);c.strokeStyle='rgba(111,240,255,.55)';c.lineWidth=4;c.shadowColor='#6ff0ff';c.shadowBlur=30;c.beginPath();c.ellipse(0,0,380,130,0,0,7);c.stroke();
+  const a=t*(3+k)+k*2;c.fillStyle='#fff';c.shadowBlur=40;c.beginPath();c.arc(Math.cos(a)*380,Math.sin(a)*130,16,0,7);c.fill();c.restore();}
+ const r=70+Math.sin(t*8)*6;const g=c.createRadialGradient(cx,cy,0,cx,cy,r*3);g.addColorStop(0,'rgba(255,154,162,1)');g.addColorStop(.3,'rgba(255,90,95,.6)');g.addColorStop(1,'rgba(255,90,95,0)');c.fillStyle=g;c.beginPath();c.arc(cx,cy,r*3,0,7);c.fill();c.globalCompositeOperation='source-over';}
+const fns=[s0,s1,s2,s3,s4,s5,s6,s7,s8];
+window.NEURO=new Image();NEURO.src='src/neuro_c.png';
+const base=window.render;
+window.render=function(t){const i=Math.min(names.length-1,Math.floor(t/SD)), lt=t-i*SD;scenes.forEach((s,k)=>s.style.display=k==i?'block':'none');
+ const cap=scenes[i].querySelector('.cap');cap.style.opacity=cl(lt/0.25)*cl((SD-lt)/0.2);cap.style.transform=`translateY(${(1-eo(lt/0.35))*40}px)`;fns[i](lt);base(t);};
+render(0);
+</script></body></html>
