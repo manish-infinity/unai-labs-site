@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+E.dur = 20;
+const S = document.getElementById('bgB');
+window.bg = t => { let o=0; if (t>3.2&&t<7) o=Math.min(.85,(t-3.2)/.5*.85); else if(t>=7&&t<7.5) o=.85*(1-(t-7)/.5); else if(t>14.6&&t<16.8) o=.85; S.style.opacity=o; };
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+pop('There are already<br><span class="hl">2 kinds of people</span><br>at work.', 't l', 0, -520, 0, 3.2, 'zoom');
+const N = char('src/neuro_c.png', [[0.2,{x:-240,y:360,o:0,s:.6}],[0.7,{o:1,s:.9},'back'],[3.2,{}],[3.7,{x:-260,y:420,s:.62,g:.95,b:.6},'inout'],[7,{}],[7.5,{x:0,y:330,s:1.25,g:0,b:1.1},'back'],[10.8,{}],[11.2,{x:-250,y:470,s:.75},'inout'],[14.6,{}],[15,{x:-210,y:430,s:.62,g:.95,b:.6},'inout'],[16.6,{}],[16.9,{o:0}]],{bob:8});
+N.style.width='520px';
+const B = char('src/bit_c.png', [[0.3,{x:240,y:400,o:0,s:.6}],[0.8,{o:1,s:.9},'back'],[3.2,{}],[3.7,{x:170,y:330,s:1.2},'back'],[7,{}],[7.5,{x:360,y:520,s:.6},'inout'],[10.8,{}],[11.2,{x:250,y:470,s:.8},'inout'],[14.6,{}],[15,{x:200,y:330,s:1.2},'back'],[16.6,{}],[16.9,{o:0}]],{bob:10,phase:2,shake:[14.7,15.3]});
+B.style.width='440px';
+pop('<span class="redbox">1</span><br>People who let AI<br><span class="red">think for them.</span>', 't l', 0, -500, 3.3, 7.0);
+pop('<span class="box">2</span><br>People who make AI<br><span class="hl">work for their brain.</span>', 't l', 0, -500, 7.1, 10.8);
+pop('Microsoft research on<br><span class="hl">319 knowledge workers:</span>', 't s', 0, -640, 10.9, 14.6);
+pop('The more they trusted AI,<br>the <span class="redbox">LESS</span> they<br>thought critically.', 't m', 0, -330, 11.3, 14.6);
+pop('Lee et al., Microsoft Research and Carnegie Mellon, CHI 2025', 'foot', 0, -770, 10.9, 14.6, 'none');
+pop('Which one gets<br><span class="redbox">replaced first?</span>', 't xl', 0, -460, 14.7, 16.8, 'zoom');
+const T0=16.8;
+add(`<div class="card"><div class="pill" style="background:#0f1e3d;color:#fff;border:none;font-size:32px">ONLINE COURSE</div>
+<h2 style="margin-top:24px">Be the<br>second kind.</h2>
+<p><b>AI Literacy for Everyone:</b> use AI daily<br>without losing your edge. 15 short videos.</p>
+<div class="price"><b>₹1,999</b><s>₹2,999</s></div>
+<div class="tag">Launch price ends 30 Nov</div>
+<div class="btn">Start at unai-labs.com</div></div>`, '', [[T0, { y: -60, o: 0, s: 0.8 }], [T0+0.45, { o: 1, s: 1 }, 'back']]);
+char('src/neuro_c.png', [[17.0,{x:-330,y:640,o:0,s:.5}],[17.5,{o:1,s:1},'back']],{bob:8}).style.width='330px';
+char('src/bit_c.png', [[17.1,{x:330,y:650,o:0,s:.5}],[17.6,{o:1,s:1},'back']],{bob:8,phase:2}).style.width='300px';
+render(0);
+</script></body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+E.dur = 20;
+const S = document.getElementById('bgB');
+window.bg = t => { // red "danger" tint in the middle, back to navy for the turn
+  let o = 0;
+  if (t < 2.8) o = 0.85; else if (t < 3.3) o = 0.85 * (1 - (t - 2.8) / 0.5);
+  else if (t > 7 && t < 14.2) o = Math.min(0.9, (t - 7) / 0.6 * 0.9); else if (t >= 14.2 && t < 14.8) o = 0.9 * (1 - (t - 14.2) / 0.6);
+  S.style.opacity = o;
+};
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+
+// 0-2.8 HOOK
+pop('Is AI quietly<br>making you', 't l', 0, -560, 0.0, 2.8, 'zoom');
+add('<span class="redbox">WORSE</span><br>at thinking?', 't xl', [[0.15, { y: -260, o: 0, s: 1.6 }], [0.55, { o: 1, s: 1 }, 'back'], [2.55, {}], [2.8, { o: 0, y: -300 }]], { shake: [0.55, 1.0] });
+char('src/bit_c.png', [[0, { x: 230, y: 420, o: 0, s: 0.7 }], [0.4, { o: 1, s: 1 }, 'back'], [2.6, {}], [2.9, { x: 900, o: 0 }, 'inout']], { bob: 10 }).style.width = '430px';
+char('src/neuro_c.png', [[0, { x: -230, y: 470, o: 0, s: 0.7 }], [0.5, { o: 1, s: 0.85 }, 'back'], [1.4, { g: 0.85, b: 0.8, s: 0.78 }], [2.8, {}], [3.2, { x: 0, y: 330, s: 1, g: 0, b: 1 }, 'inout'],
+  // 7-10.8 shrink + desaturate
+  [7.3, {}], [8.3, { x: -220, y: 380, s: 0.72, g: 0.95, b: 0.65 }, 'inout'], [10.6, {}], [11.0, { y: 470 }, 'inout'], [14.2, {}], [14.8, { x: 0, y: 300, s: 1.18, g: 0, b: 1.08 }, 'back'], [16.6, {}], [16.9, { o: 0, y: 200 }]], { bob: 8, phase: 1 }).style.width = '520px';
+
+// 2.8-7 MIT scan
+pop('MIT researchers scanned<br>the brains of <span class="hl">54 people</span><br>writing essays.', 't m', 0, -560, 2.9, 7.0);
+const w = add('<svg class="wave" viewBox="0 0 900 220"><path id="eeg" fill="none" stroke="#6ff0ff" stroke-width="6" stroke-linecap="round"/></svg>', '', [[2.9, { y: -160, o: 0 }], [3.3, { o: 1 }], [6.8, {}], [7.0, { o: 0 }]]);
+const eeg = w.querySelector('#eeg');
+const oldBg = window.bg;
+window.bg = t => { oldBg(t); let d = 'M0 110'; const amp = t < 7 ? 70 : t < 14.2 ? 14 : 70; for (let x = 0; x <= 900; x += 10) { const y = 110 + Math.sin(x / 23 + t * 9) * amp * Math.sin(x / 140 + t * 2) * (0.6 + 0.4 * Math.sin(x / 7 + t * 17)); d += ` L${x} ${y.toFixed(1)}`; } eeg.setAttribute('d', d); eeg.setAttribute('stroke', t >= 7 && t < 14.2 ? '#ff5a5f' : '#6ff0ff'); };
+
+// 7-10.8 weakest connectivity
+pop('ChatGPT users showed<br>the <span class="redbox">WEAKEST</span><br>brain connectivity.', 't m', 0, -560, 7.0, 10.8);
+char('src/bit_c.png', [[7.2, { x: 900, y: 400, s: 1, o: 0 }], [7.8, { x: 230, o: 1 }, 'back'], [8.4, { s: 1.1 }], [10.6, {}], [11.0, { y: 520, s: 0.95 }, 'inout'], [14.2, {}], [14.6, { x: 900, o: 0 }, 'inout']], { bob: 10 }).style.width = '470px';
+E.els.find(e => e.d === w).kfs = [[2.9, { y: -160, o: 0 }], [3.3, { o: 1 }], [7.0, { y: -160 }], [7.2, { y: -110 }], [10.6, {}], [10.8, { o: 0 }]];
+
+// 10.8-14.2 83%
+add('<div class="num">0%</div>', 't', [[10.8, { y: -440, o: 0, s: 0.5 }], [11.2, { o: 1, s: 1 }, 'back'], [14.0, {}], [14.2, { o: 0 }]], { count: [10.9, 12.0, 0, 83, '%'] });
+pop('couldn\'t quote a single line<br>of the essay they had<br><span class="hl">just written.</span>', 't s', 0, -130, 11.3, 14.2);
+pop('Kosmyna et al., MIT Media Lab, 2025 (preprint, 54 participants)', 'foot', 0, -770, 3.0, 14.2, 'none');
+
+// 14.2-16.8 the turn
+pop('AI isn\'t the problem.', 't m', 0, -640, 14.3, 16.8);
+pop('Switching your<br><span class="box">brain off</span> is.', 't xl', 0, -400, 14.7, 16.8, 'zoom');
+
+// 16.8-20 CTA
+add(`<div class="card"><div class="pill" style="background:#0f1e3d;color:#fff;border:none;font-size:32px">ONLINE COURSE</div>
+<h2 style="margin-top:24px">AI Literacy<br>for Everyone</h2>
+<p>Use AI daily <b>without losing your edge.</b><br>15 short video lessons + quizzes.</p>
+<div class="price"><b>₹1,999</b><s>₹2,999</s></div>
+<div class="tag">Launch price ends 30 Nov</div>
+<div class="btn">Start at unai-labs.com</div></div>`, '', [[16.8, { y: -60, o: 0, s: 0.8 }], [17.25, { o: 1, s: 1 }, 'back']], { pulse: 0 });
+char('src/neuro_c.png', [[17.0, { x: -330, y: 640, o: 0, s: 0.5 }], [17.5, { o: 1, s: 1 }, 'back']], { bob: 8 }).style.width = '330px';
+char('src/bit_c.png', [[17.1, { x: 330, y: 650, o: 0, s: 0.5 }], [17.6, { o: 1, s: 1 }, 'back']], { bob: 8, phase: 2 }).style.width = '300px';
+render(0);
+</script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+E.dur = 15;
+window.bg = t => {};
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+pop('<span class="box">₹1,000 off</span><br>every course.', 't xl', 0, -560, 0, 2.7, 'zoom');
+pop('Ends <span class="red">30 November.</span>', 't m', 0, -300, 0.5, 2.7);
+char('src/chai_c.png', [[0.2,{x:0,y:380,o:0,s:.5}],[0.7,{o:1,s:1},'back'],[2.5,{}],[2.9,{x:-330,y:640,s:.55},'inout'],[14,{}]],{bob:9,wobble:3}).style.width='560px';
+pop('4 science-backed courses', 't s', 0, -700, 2.8, 7.2);
+const rows=['AI Literacy for Everyone','Deep Focus','Neuroplasticity in Practice','Brain Health 101'];
+rows.forEach((r,i)=>add(`<div class="row">${r}<span>₹1,999<s>₹2,999</s></span></div>`,'',[[3.0+i*.35,{x:-900,y:-520+i*170,o:0}],[3.4+i*.35,{x:0,o:1},'back'],[7.0,{}],[7.2,{o:0,x:900},'inout']]));
+pop('Want everything?', 't m', 0, -640, 7.3, 11);
+add(`<div class="card"><h2>All 4 courses<br>+ the book</h2><p>"How to Be a Hippie" eBook included</p><div class="price"><b>₹5,999</b></div><div class="tag" style="color:#0f1e3d">₹8,395 if bought separately</div></div>`,'',[[7.5,{y:-180,o:0,s:.8}],[7.95,{o:1,s:1},'back'],[10.8,{}],[11,{o:0,y:-230}]]);
+char('src/neuro_c.png',[[7.6,{x:80,y:560,o:0,s:.5}],[8.1,{o:1,s:1},'back'],[14,{}]],{bob:8,phase:1}).style.width='330px';
+char('src/bit_c.png',[[7.7,{x:350,y:560,o:0,s:.5}],[8.2,{o:1,s:1},'back'],[14,{}]],{bob:8,phase:2}).style.width='270px';
+const T0=11;
+add(`<div class="card"><div class="pill" style="background:#0f1e3d;color:#fff;border:none;font-size:32px">ONLINE COURSE</div>
+<h2 style="margin-top:24px">Your brain<br>vs AI.</h2>
+<p>Learn to use AI without switching<br>your brain off. 4 courses, from ₹1,999.</p>
+<div class="price"><b>₹1,999</b><s>₹2,999</s></div>
+<div class="tag">Launch price ends 30 Nov</div>
+<div class="btn">Start at unai-labs.com</div></div>`, '', [[T0, { y: -60, o: 0, s: 0.8 }], [T0+0.45, { o: 1, s: 1 }, 'back']]);
+render(0);
+</script></body></html>
