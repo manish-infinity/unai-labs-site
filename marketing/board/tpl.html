@@ -1,0 +1,114 @@
+<title>UnAI Revenue Engine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Inter+Tight:wght@400;600&display=swap">
+<style>
+/* Layout: one column war-room board; funnel strip, then the formula, the money map, the 30-day reel calendar, the style rotation */
+:root{--bg:#f4f6fb;--panel:#ffffff;--ink:#0f1e3d;--mute:#5a6580;--line:#dfe4ef;--coral:#e8414d;--sun:#f5b21b;--cyan:#0a9db3;--good:#1a8a5a;
+--disp:'Poppins',system-ui,sans-serif;--body:'Inter Tight',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1630;--panel:#12224a;--ink:#eef2fb;--mute:#a3afcb;--line:#24366a;--coral:#ff6b74;--sun:#ffd166;--cyan:#6ff0ff;--good:#5fd39b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1630;--panel:#12224a;--ink:#eef2fb;--mute:#a3afcb;--line:#24366a;--coral:#ff6b74;--sun:#ffd166;--cyan:#6ff0ff;--good:#5fd39b;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:26px}
+h1{font:800 clamp(30px,5vw,48px)/1.05 var(--disp);letter-spacing:-1px;margin:0;text-wrap:balance}
+h2{font:800 22px/1.2 var(--disp);margin:0 0 12px;letter-spacing:-.3px}
+.eyebrow{font:700 12px var(--disp);letter-spacing:2px;text-transform:uppercase;color:var(--coral)}
+.truth{background:var(--ink);color:var(--bg);border-radius:18px;padding:20px 22px;font-size:16px}
+.truth b{color:var(--sun)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.funnel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.fs{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.fs .k{font:700 11px var(--disp);letter-spacing:1.5px;text-transform:uppercase;color:var(--mute)}
+.fs .v{font:800 30px var(--disp);font-variant-numeric:tabular-nums}
+.fs .s{font-size:12px;color:var(--mute)}
+.formula{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.step{border-top:5px solid var(--coral);background:var(--panel);border-radius:12px;padding:14px;min-width:0}
+.step:nth-child(2){border-color:var(--cyan)}.step:nth-child(3){border-color:var(--good)}.step:nth-child(4){border-color:var(--sun)}.step:nth-child(5){border-color:var(--ink)}
+.step b{font:800 18px var(--disp);display:block}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+ul{margin:0;padding-left:18px}li{margin:3px 0}
+.ban li::marker{color:var(--coral)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th{font:700 11px var(--disp);letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);text-align:left;padding:8px;border-bottom:2px solid var(--line)}
+td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+.pill{display:inline-block;font:700 12px var(--disp);padding:3px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.st{font:700 11px var(--disp);padding:3px 8px;border-radius:6px}
+.st.ready{background:var(--good);color:var(--panel)}.st.plan{border:1px dashed var(--mute);color:var(--mute)}
+.styles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.styles li{font:600 13px var(--disp);padding:7px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--line)}
+.styles li.q{border-style:dashed;color:var(--mute)}
+.money td:last-child,.money th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.tag{font-size:12px;color:var(--mute)}
+@media (max-width:820px){.funnel{grid-template-columns:repeat(3,minmax(0,1fr))}.formula{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+@media (max-width:480px){.funnel{grid-template-columns:1fr 1fr}.formula{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+<header><div class="eyebrow">UnAI Labs · CMO / CSO board · updated 7 Nov 2026</div><h1>Every reel, email and post ends in a rupee</h1></header>
+
+<div class="truth"><b>Hard truth:</b> 15 days in, the site has <b>1 genuine sale</b> (₹399). Content made so far has earned ₹0, because almost nobody sees it (@un_ai_labs: 5 followers). Content only becomes money through three paths, ranked by rupees per hour: <b>1) B2B licences</b> from outreach, <b>2) boosted reels</b> (₹3,000 Meta cap) to course pages, <b>3) daily organic reels</b> that build the audience we later retarget. We judge every week by orders, not posts.</div>
+
+<section><h2>Funnel scoreboard (live numbers, updated each run)</h2>
+<div class="funnel">
+<div class="fs"><div class="k">Reel views</div><div class="v">0</div><div class="s">first reel posts 7 Nov, 7:30 pm</div></div>
+<div class="fs"><div class="k">3-sec hold</div><div class="v">n/a</div><div class="s">target above 60%</div></div>
+<div class="fs"><div class="k">Link clicks</div><div class="v">0</div><div class="s">UTM-tagged</div></div>
+<div class="fs"><div class="k">Emails sent</div><div class="v">15</div><div class="s">1 redirect reply</div></div>
+<div class="fs"><div class="k">Orders</div><div class="v">1</div><div class="s">#312, eBook</div></div>
+<div class="fs"><div class="k">Revenue</div><div class="v">₹399</div><div class="s">target by 30 Nov: ₹2 lakh</div></div>
+</div></section>
+
+<section class="panel"><h2>November target: ₹2 lakh by 30 Nov (launch price deadline)</h2>
+<div class="tbl"><table class="money"><thead><tr><th>Lever</th><th>Owner</th><th>What has to happen</th><th>₹</th></tr></thead><tbody>
+<tr><td>1 campus licence</td><td>Claude (outreach) + Manish (call)</td><td>50 students × ₹499, opened by the free guest lecture</td><td>24,950</td></tr>
+<tr><td>2 team licences</td><td>Claude (outreach) + Manish (call)</td><td>2 × 10 seats × ₹1,499</td><td>29,980</td></tr>
+<tr><td>60 course sales</td><td>Claude (reels + boosts)</td><td>₹1,999 each; boosted reels at under ₹1,000 cost per sale</td><td>1,19,940</td></tr>
+<tr><td>4 All-Access</td><td>Claude (reel 3 + email)</td><td>₹5,999 each</td><td>23,996</td></tr>
+<tr><td>Book</td><td>Claude (reel 4, Amazon)</td><td>eBook ₹399 on site; Kindle sales show in KDP, not here</td><td>tracked separately</td></tr>
+<tr><td><b>Total</b></td><td></td><td></td><td><b>1,98,866</b></td></tr>
+</tbody></table></div>
+<p class="tag">Blocked on Manish: boost payment in Meta (Claude never enters payment details). Wipro-client rule and no-written-commitments rule apply to all B2B.</p></section>
+
+<section><h2>The success formula (in every piece, no exceptions)</h2>
+<div class="formula">
+<div class="step"><b>Hook</b>Under 2 s: fear of loss, curiosity, ambition or "that's me". Voice on in 1 s.</div>
+<div class="step"><b>Proof</b>One real, named source on screen. Science is our unfair edge.</div>
+<div class="step"><b>Turn</b>The way out. Fear without a fix makes people leave.</div>
+<div class="step"><b>Offer</b>One product, real price, real deadline or real limit.</div>
+<div class="step"><b>Action</b>One tracked link. Every view should lead to a click.</div>
+</div></section>
+
+<div class="cols">
+<section class="panel"><h2>Triggers we push hard</h2><ul>
+<li>Loss aversion: what AI, phones and bad sleep cost you</li>
+<li>Curiosity gap: open the loop, pay it off late</li>
+<li>Future self and ambition: harder to replace, sharper, calmer</li>
+<li>Real scarcity: launch price ends 30 Nov; FOUNDING100 has 100 seats</li>
+<li>Identity: "operator, not operated"; "the second kind"</li>
+<li>Authority: named studies (MIT, Microsoft, sleep research)</li>
+<li>Reciprocity and a small first yes: free 5-day course, free guest lecture</li>
+</ul></section>
+<section class="panel ban"><h2>Lines we never cross</h2><ul>
+<li>Fake scarcity or fake countdowns</li>
+<li>Invented numbers, quotes or studies</li>
+<li>Fake reviews or testimonials</li>
+<li>Promised results or income</li>
+</ul><p class="tag">Why: Meta rejects misleading ads and can ban the ad account, which kills the ₹3,000 boost engine. One exposed fake ends a science brand. The truth hits hard enough when it is framed right.</p></section>
+</div>
+
+<section><h2>30-day reel calendar (one a day, 7:30 pm IST)</h2>
+<div class="tbl"><table><thead><tr><th>Date</th><th>Sells</th><th>Hook</th><th>Style</th><th>Reel</th><th>Status</th></tr></thead><tbody>
+{{ROWS}}
+</tbody></table></div>
+<p class="tag">Weekly rule: after 7 reels, keep the two hooks and two styles with the best 3-second hold and link clicks; the bottom two styles drop out of rotation. Winners get the ₹3,000 boost.</p></section>
+
+<section class="panel"><h2>Style rotation (one new style every reel, 2 to 3 per reel)</h2>
+<ul class="styles">{{STY}}</ul>
+<p class="tag">Dashed: Manish to share one example link so the look is matched exactly. CGI motion uses Kling credits; everything else is built in-house at zero cost.</p></section>
+
+<section class="panel"><h2>Formats beyond animation</h2><ul>
+<li><b>Manish + animation:</b> talking head, zoom-ins every 2 to 3 s, Neuro and Bit react on screen. Needs Manish's recordings in Movies/unai-raw.</li>
+<li><b>Me vs AI podcast:</b> Manish against Bit. 10 to 15 min on YouTube, cut into 3 to 5 reels.</li>
+<li><b>Free 5-day course (lead magnet):</b> every cold reel can point here; emails then sell the course. Build target: 12 Nov.</li>
+</ul></section>
+</div>

@@ -43,3 +43,11 @@ Known gap: the cloud workspace cannot download speech-to-text models (huggingfac
 
 ## Audio rules
 Our ads use original beats and sound design (safe for paid boosts). Trending sounds: for boosted ads Meta only allows commercially cleared audio (Meta Sound Collection), so we keep our own track. For organic reels, add a trending sound from Instagram's commercial library in the app at low volume under our voice.
+
+## Revenue DNA (Manish, 7 Nov: "every action maps to revenue")
+- Every reel, post and email names its product, offer, tracked link and rupee value before it is made. Done = a click, reply or order, not a finished file.
+- Formula: HOOK (under 2 s) -> PROOF (named source) -> TURN (the way out) -> OFFER (one product, real price, real deadline or limit) -> ACTION (one tracked link).
+- Push hard on: loss aversion, curiosity gap, future self, real scarcity (launch price to 30 Nov, FOUNDING100 100 seats), identity, authority, reciprocity, small first yes.
+- Never: fake scarcity, invented numbers, fake reviews, promised results. Meta rejects misleading ads and can ban the ad account.
+- Style rotation: each reel uses 2-3 of 20 styles; weekly, keep the top two by 3-second hold and link clicks, drop the bottom two.
+- Board: https://claude.ai/artifact/PKS9yrpbDaSy652xFxWRgs (November target Rs 2 lakh; 30-day reel calendar). Same rules appended to the agents' brain/dna.md on the Mac.
