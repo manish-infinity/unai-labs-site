@@ -2,7 +2,7 @@
 <div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
 <script src="engine.js"></script>
 <script>
-E.dur = 20;
+E.dur = 20.5;
 const S = document.getElementById('bgB');
 window.bg = t => { let o=0; if (t>3.2&&t<7) o=Math.min(.85,(t-3.2)/.5*.85); else if(t>=7&&t<7.5) o=.85*(1-(t-7)/.5); else if(t>14.6&&t<16.8) o=.85; S.style.opacity=o; };
 add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
