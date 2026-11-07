@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+.c{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.hd{position:absolute;left:60px;right:60px;top:330px;text-align:center;font-weight:800;line-height:1.02;letter-spacing:-2px;text-shadow:0 8px 40px rgba(0,0,0,.55)}
+.k{position:absolute;bottom:300px;left:0;right:0;text-align:center}
+.st{position:absolute;top:250px;left:0;right:0;text-align:center}
+.st span{background:#ff3b47;color:#fff;font-weight:800;font-size:40px;padding:10px 26px;border-radius:999px;letter-spacing:1px}
+.glow{position:absolute;left:50%;top:62%;width:1100px;height:1100px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,90,95,.45),rgba(255,90,95,0) 65%)}
+</style></head><body><div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div></div>
+<script>
+const q=new URLSearchParams(location.search), C={
+ ad1:{red:1,tag:'MIT BRAIN SCANS',h:'<span style="font-size:150px">Is AI making<br>your brain</span><br><span class="redbox" style="font-size:190px">LAZY?</span>',chars:[['neuro',-250,1260,560,'grayscale(1) brightness(.7)'],['bit',230,1240,520,'']]},
+ ad2:{red:0,tag:'WHICH ONE ARE YOU?',h:'<span style="font-size:150px">2 kinds of<br>people at</span><br><span class="box" style="font-size:190px">WORK</span>',chars:[['neuro',-230,1250,600,''],['bit',250,1260,480,'']]},
+ ad3:{red:0,tag:'ENDS 30 NOV',h:'<span class="box" style="font-size:200px">₹1,000</span><br><span style="font-size:170px">OFF</span><br><span style="font-size:110px">every course</span>',chars:[['chai',0,1330,640,'']]},
+ book:{red:1,tag:'THE BOOK',h:'<span style="font-size:140px">Your phone is<br></span><span class="redbox" style="font-size:170px">REWIRING</span><br><span style="font-size:140px">your brain</span>',chars:[['neuro',-240,1300,520,'grayscale(.6)'],['chai',250,1320,470,'']]},
+ focus:{red:0,tag:'DEEP FOCUS',h:'<span style="font-size:140px">Can\'t focus?</span><br><span class="box" style="font-size:150px">It\'s not you.</span>',chars:[['neuro',-200,1260,600,''],['bit',270,1280,420,'']]},
+}[q.get('v')];
+document.getElementById('bgB').style.opacity=C.red?.9:0;
+const st=document.getElementById('stage');
+if(C.red){const g=document.createElement('div');g.className='glow';st.appendChild(g);}
+st.insertAdjacentHTML('beforeend',`<div class="st"><span>${C.tag}</span></div><div class="hd">${C.h}</div>`);
+for(const [n,x,y,w,f] of C.chars){const i=document.createElement('img');i.src=`src/${n}_c.png`;i.style.cssText=`position:absolute;width:${w}px;left:${540+x-w/2}px;top:${y-w*0.55}px;filter:${f} drop-shadow(0 30px 40px rgba(0,0,0,.5))`;st.appendChild(i);}
+st.insertAdjacentHTML('beforeend','<div class="brand" style="position:absolute;top:150px;left:0;right:0;text-align:center">un<span>^</span>AI LABS</div>');
+</script></body></html>

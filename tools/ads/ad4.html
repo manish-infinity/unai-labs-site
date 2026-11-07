@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+E.dur = 18;
+const S=document.getElementById('bgB');
+window.bg=t=>{S.style.opacity = t<6.6 ? .85 : t<7.2 ? .85*(1-(t-6.6)/.6) : 0;};
+add('un<span>^</span>AI LABS','brand',[[0,{y:-850}]]);
+pop('Your phone is<br><span class="redbox">REWIRING</span><br>your brain.','t xl',0,-480,0,2.8,'zoom');
+char('src/neuro_c.png',[[0,{x:0,y:400,o:0,s:.6,g:.7,b:.75}],[0.4,{o:1,s:1},'back'],[2.8,{}],[3.2,{x:0,y:430,s:.8},'inout'],[6.6,{}],[7.2,{x:0,y:330,s:1.2,g:0,b:1.1},'back'],[9.8,{}],[10.2,{x:-260,y:430,s:.8},'inout'],[12.8,{}],[13.1,{o:0}]],{bob:8}).style.width='520px';
+// notification badges swarm in scene 2
+for(let i=0;i<9;i++){const a=i/9*Math.PI*2, R=330;add(`<div style="width:110px;height:110px;border-radius:30px;background:#ff3b47;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.4)">${[3,12,1,99,7,24,5,48,2][i]}</div>`,'',[[3.0+i*.18,{x:Math.cos(a)*R,y:430+Math.sin(a)*R*.8,o:0,s:.3}],[3.3+i*.18,{o:1,s:1},'back'],[6.5,{}],[6.9,{o:0,s:.2,x:0,y:430},'inout']],{bob:6,phase:i});}
+pop('Just having your phone<br>nearby lowered people\'s<br><span class="hl">thinking capacity</span> in tests.','t s',0,-560,3.0,6.6);
+pop('Ward et al. 2017, J. Assoc. Consumer Research (later replications mixed)','foot',0,-770,3.0,6.6,'none');
+pop('But a brain that can<br>be rewired...','t m',0,-620,6.8,9.8);
+pop('<span class="box">can be rewired back.</span>','t m',0,-400,7.6,9.8,'zoom');
+pop('One week. No internet.<br><span class="hl">Just chai.</span>','t l',0,-520,9.9,12.8);
+char('src/chai_c.png',[[9.9,{x:900,y:420,o:0}],[10.4,{x:200,o:1},'back'],[12.8,{}],[13.1,{o:0}]],{bob:9,wobble:3}).style.width='520px';
+add(`<div class="card" style="padding:44px 48px"><div style="display:flex;gap:34px;align-items:center;text-align:left">
+<div style="flex:0 0 250px;height:370px;border-radius:10px 22px 22px 10px;background:linear-gradient(160deg,#ff9a6b,#c2412d 60%,#6b1d1d);box-shadow:inset 14px 0 0 rgba(0,0,0,.18),0 20px 40px rgba(0,0,0,.35);color:#fff;padding:26px 22px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="font-size:48px;font-weight:800;line-height:1">How to Be a Hippie</div><div style="font-size:20px;font-weight:600;opacity:.9">MANISH KUMAR SINGH</div></div>
+<div><h2 style="font-size:56px">The book</h2><p style="font-size:32px;margin-top:12px">The ancient art of getting free in a world designed to keep you distracted.</p></div></div>
+<div class="price" style="font-size:34px;margin-top:26px">Kindle + paperback on Amazon<br>eBook <b style="font-size:64px">₹399</b> at unai-labs.com</div>
+<div class="btn">Read it this week</div></div>`,'',[[13.0,{y:-60,o:0,s:.8}],[13.45,{o:1,s:1},'back']]);
+char('src/chai_c.png',[[13.3,{x:-300,y:640,o:0,s:.5}],[13.8,{o:1,s:1},'back']],{bob:9,wobble:3}).style.width='360px';
+char('src/neuro_c.png',[[13.4,{x:280,y:650,o:0,s:.5}],[13.9,{o:1,s:1},'back']],{bob:8,phase:1}).style.width='340px';
+render(0);
+</script></body></html>

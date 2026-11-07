@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"></head><body>
+<div id="stage"><div id="bgA"></div><div id="bgB"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script>
+<script>
+E.dur = 18;
+const S=document.getElementById('bgB');
+window.bg=t=>{S.style.opacity = (t>2.8&&t<7) ? .85 : 0;};
+add('un<span>^</span>AI LABS','brand',[[0,{y:-850}]]);
+pop('Can\'t focus?','t xl',0,-600,0,2.8,'zoom');
+pop('<span class="box">It\'s not you.</span>','t l',0,-400,0.7,2.8,'zoom');
+char('src/neuro_c.png',[[0,{x:0,y:400,o:0,s:.6}],[0.4,{o:1,s:1},'back'],[2.8,{}],[3.2,{x:-220,y:430,s:.8,g:.5,b:.85},'inout'],[7,{}],[7.4,{x:0,y:340,s:1.2,g:0,b:1.1},'back'],[10.5,{}],[10.9,{x:-280,y:470,s:.75},'inout'],[13.8,{}],[14.1,{o:0}]],{bob:8,shake:[3.4,6.5]}).style.width='520px';
+char('src/bit_c.png',[[3.0,{x:900,y:420,o:0}],[3.5,{x:240,o:1},'back'],[6.8,{}],[7.2,{x:900,o:0},'inout'],[10.6,{x:900,y:470,o:0,s:.8}],[11.0,{x:270,o:1},'back'],[13.8,{}],[14.1,{o:0}]],{bob:10,phase:2}).style.width='420px';
+pop('Every switch leaves<br><span class="redbox">attention residue</span><br>on the last task.','t m',0,-560,3.0,7.0);
+pop('Leroy 2009, Organizational Behavior and Human Decision Processes','foot',0,-770,3.0,7.0,'none');
+pop('Focus isn\'t a personality.<br>It\'s a <span class="box">skill</span>.','t m',0,-560,7.1,10.5);
+pop('You can train it.','t l',0,-330,8.0,10.5,'zoom');
+pop('<span class="hl">Deep Focus</span><br>12 lessons to win your<br>attention back.','t m',0,-540,10.6,14.0);
+add(`<div class="card"><div class="pill" style="background:#0f1e3d;color:#fff;border:none;font-size:32px">ONLINE COURSE</div>
+<h2 style="margin-top:24px">Deep Focus</h2><p>Reclaim your attention in the age of AI.<br>12 short video lessons + quizzes.</p>
+<div class="price"><b>₹1,999</b><s>₹2,999</s></div><div class="tag">Launch price ends 30 Nov</div><div class="btn">Start at unai-labs.com</div></div>`,'',[[14.0,{y:-60,o:0,s:.8}],[14.45,{o:1,s:1},'back']]);
+char('src/neuro_c.png',[[14.2,{x:-330,y:640,o:0,s:.5}],[14.7,{o:1,s:1},'back']],{bob:8}).style.width='330px';
+render(0);
+</script></body></html>

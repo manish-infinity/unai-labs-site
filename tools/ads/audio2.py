@@ -129,3 +129,23 @@ if 'ad3' in which:
         (11.2, 14.5, 'N', "Launch price ends November thirtieth. Start at unai labs dot com."),
     ], [(0, 'impact'), (0.6, 'ding', .6)] + pops([3.0, 3.35, 3.7, 4.05, 7.5, 11.2]) + [(t, 'whoosh') for t in (2.6, 7.0, 10.8)] +
        [(11.3 + k * 0.5, 'tick') for k in range(7)], dark=[])
+
+if 'ad4' in which:
+    build('ad4', 18, [
+        (0.05, 2.7, 'N', "Your phone is rewiring your brain."),
+        (3.0, 6.5, 'N', "Just having your phone nearby lowered people's thinking capacity, in tests."),
+        (6.8, 9.7, 'N', "But a brain that can be rewired, can be rewired back."),
+        (9.95, 12.7, 'C', "One week. No internet. Just chai."),
+        (13.1, 17.4, 'N', "How to Be a Hippie. On Amazon, or the eBook for three ninety nine."),
+    ], [(0, 'impact')] + pops([3.3+0.18*i for i in range(9)]) + [(t, 'whoosh') for t in (2.6, 6.7, 9.8, 12.9)] + [(7.6, 'ding', .7)],
+       gaps=[(6.5, 6.8)], dark=[(0, 6.6)])
+if 'ad5' in which:
+    build('ad5', 18, [
+        (0.05, 2.7, 'N', "Can't focus? It's not you."),
+        (3.0, 6.9, 'N', "Every time you switch, part of your attention stays stuck on the last task."),
+        (3.6, 4.6, 'B', "New message!"),
+        (7.1, 10.4, 'N', "Focus isn't a personality. It's a skill. You can train it."),
+        (10.7, 13.9, 'N', "Deep Focus. Twelve lessons to win your attention back."),
+        (14.2, 17.4, 'N', "Launch price ends November thirtieth."),
+    ], [(0, 'impact')] + [(3.4+0.5*k, 'ding', .5) for k in range(6)] + [(t, 'whoosh') for t in (2.6, 6.9, 10.5, 13.9)] + pops([8.0, 14.4]),
+       gaps=[(6.8, 7.1)], dark=[(2.8, 7)])

@@ -1,6 +1,6 @@
 <?php
 /**
- * Snippet: "SEO: courses archive H1 + course thumbnail alt" (prepared 2026-11-07, NOT yet live)
+ * Snippet: "SEO: courses archive H1 + course thumbnail alt" (LIVE 2026-11-07 as Code Snippet #20)
  *
  * 1) /courses/ archive has no H1 (Astra + Tutor template). Adds one visible H1 at the top
  *    of the primary content area, archive only.
@@ -13,11 +13,16 @@
  */
 if ( is_admin() ) { return; }
 
-add_action( 'astra_primary_content_top', function () {
-	if ( ! is_post_type_archive( 'courses' ) ) { return; }
+$unai_h1 = function () {
+	static $done = false;
+	if ( $done || ! is_post_type_archive( 'courses' ) ) { return; }
+	$done = true;
 	echo '<h1 class="unai-archive-title" style="margin:0 0 1.25rem;font-size:2rem;line-height:1.2;">'
 		. esc_html__( 'Online Courses on AI and the Brain', 'unai' ) . '</h1>';
-} );
+};
+add_action( 'tutor_course/archive/before_loop', $unai_h1 );
+add_action( 'astra_primary_content_top', $unai_h1 );
+add_action( 'astra_content_top', $unai_h1 );
 
 add_action( 'wp_footer', function () {
 	if ( ! is_singular( 'courses' ) ) { return; }
