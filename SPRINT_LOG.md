@@ -3449,3 +3449,9 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Registration shield check: signed token + honeypot JS present on /student-registration/, token is fresh per render (Cloudflare MISS), refusal message gives hello@ contact. No token max-age, so cached pages cannot lock out buyers.
 - SEO live: hand-written Yoast meta descriptions on 30 posts whose excerpt ran over 160 chars (110-155 chars, focus keyphrase in each). Spot-checked in logged-out source (310, 186, 144, 29). List: content/seo/post-meta-descriptions-2026-11-06.md.
 - Mac folder not connected; Master State on Mac not updated.
+
+## 2026-11-07 daily build (scheduled 09:37 IST)
+- Smoke test PASSED logged out: /, /courses/, AI Literacy course page (Add to cart), /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (form: name, username, email, password + shield script), /pricing/ all 200; wp-login.php?action=register to /student-registration/; Store API add 120 = Rs 1,999, Razorpay only gateway; /wp-json/wp/v2/users 401; nosniff, XFO, HSTS, CSP present; .env/.git 403, debug.log 404, xmlrpc 403, Woo orders API 401.
+- BLOCKED: wp-admin shows the login screen (reauth). No admin changes. "Anyone can register" inferred ON from the live form, not read.
+- Prepared (not live): tools/snippets/courses-h1-and-thumb-alt.php (H1 on /courses/ archive via astra_primary_content_top; course thumbnail alt set in the browser, no output buffering on the buy page). Apply as a new Code Snippet when admin is back, then re-run the smoke test.
+- Mac folder not connected; Master State on Mac not updated.
