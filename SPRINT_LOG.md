@@ -3455,3 +3455,9 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - BLOCKED: wp-admin shows the login screen (reauth). No admin changes. "Anyone can register" inferred ON from the live form, not read.
 - Prepared (not live): tools/snippets/courses-h1-and-thumb-alt.php (H1 on /courses/ archive via astra_primary_content_top; course thumbnail alt set in the browser, no output buffering on the buy page). Apply as a new Code Snippet when admin is back, then re-run the smoke test.
 - Mac folder not connected; Master State on Mac not updated.
+
+## 2026-11-08 Daily build run (scheduled; Mac folder connected)
+- Smoke test PASSED logged out: /, /courses/, AI Literacy course page (buy button), /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (all 6 fields, no disabled text), /pricing/ all 200; wp-login.php?action=register to /student-registration/; Store API add 120 = Rs 1,999, Razorpay only gateway; /wp-json/wp/v2/users 401; .env/.git 403, debug.log 404, xmlrpc 429, Woo orders API 401; nosniff, XFO, HSTS, CSP present.
+- Verified live: Snippet #20 (applied 11-07 by another session): /courses/ H1 "Online Courses on AI and the Brain"; course thumbnail alt = course title.
+- Blocked: wp-admin redirects to wp-login.php?reauth=1 (logged out, 4th lapse); wp-login now shows a Cloudflare "Performing security verification" check first.
+- Found: public HTML is sent with Cache-Control public, max-age=2678400 (31 days); browser-cached copies of /courses/, /about/, brain-health-101 were stale. Prepared tools/snippets/html-browser-cache-headers.php (not live).
