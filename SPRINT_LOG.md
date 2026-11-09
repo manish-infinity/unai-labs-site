@@ -3461,3 +3461,11 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Verified live: Snippet #20 (applied 11-07 by another session): /courses/ H1 "Online Courses on AI and the Brain"; course thumbnail alt = course title.
 - Blocked: wp-admin redirects to wp-login.php?reauth=1 (logged out, 4th lapse); wp-login now shows a Cloudflare "Performing security verification" check first.
 - Found: public HTML is sent with Cache-Control public, max-age=2678400 (31 days); browser-cached copies of /courses/, /about/, brain-health-101 were stale. Prepared tools/snippets/html-browser-cache-headers.php (not live).
+
+## 2026-11-09 Daily build run (scheduled; Mac folder connected)
+- Smoke test PASSED logged out: /, /courses/, AI Literacy course page (add-to-cart 120 + enrol button), /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (email, username, password; no disabled text), /pricing/ all 200; wp-login.php?action=register to /student-registration/; Store API add 120 = Rs 1,999, Razorpay only gateway.
+- BLOCKED: wp-admin logged out (3rd run in a row). No admin changes; orders, users, plugin updates not read.
+- Weekly security check, logged-out half PASSED: wp/v2/users 401, Tutor author endpoint 401, Woo orders 401; .env, .git/config, wp-config.php.bak, uploads/backup.sql 403; debug.log, backup.zip, readme.html 404; xmlrpc 403; nosniff, XFO, HSTS, Referrer-Policy, CSP, COOP present.
+- Repo secret scan (main + outreach-drafts-2026-11-01 since 11-02): clean.
+- Read-only review of live Snippets #17 (campus ambassadors), #18 (security hardening 2), #20 (courses H1 + alt): no defects. Watch: #18 login limiter is per IP, so a campus behind one IP shares the 10-fail counter (help message shown).
+- Cache: 31-day max-age + Expires also on the hero mp4, with GoDaddy x-gateway headers; likely a host/CDN browser-cache setting, so tools/snippets/html-browser-cache-headers.php may not override it. Check the CDN setting when applying.
