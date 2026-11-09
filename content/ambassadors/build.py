@@ -58,6 +58,7 @@ S = {}
 S['intro'] = f'''<p class="lead">Share UnAI Labs with your campus. Your friends get 10% off. You earn a share of every sale made with your personal code.</p>
 <p>UnAI Labs makes short, science-backed online courses in plain language: AI literacy, deep focus, neuroplasticity and brain health, plus the eBook <em>How to Be a Hippie</em>. Our belief: your brain is more powerful than any AI, if you train it.</p>
 <p><strong>The honest part first:</strong> this is commission only. There is no salary. If nobody buys with your code, you earn nothing. There is no fee to join and you never have to buy anything.</p>'''
+S['help'] = f'''<div class="help"><strong>Need help?</strong> Email <a href="mailto:{CONTACT}">{CONTACT}</a> with your question (and your code, if you have one). We reply within 2 working days.</div>'''
 S['who'] = '''<h2>Who can join</h2><ul>
 <li>College or university students in India, aged 18 or older, any year, any stream.</li>
 <li>You need your official college email (for example name@college.ac.in). Personal emails like Gmail are not accepted, because the college email is how we confirm you are a student.</li>
@@ -104,7 +105,7 @@ S['faq'] = f'''<h2>Questions</h2>
 <p><strong>Can I use my code myself?</strong> No. Codes are for friends and classmates.</p>
 <p><strong>I am under 18.</strong> Sorry, you need to be 18 or older to join.</p>
 <p><strong>Where do I start?</strong> Read the Playbook below. It has a 30-day plan and messages you can copy.</p>
-<p><strong>Anything else?</strong> Write to {CONTACT}.</p>'''
+<p><strong>Anything else?</strong> Email <a href="mailto:{CONTACT}">{CONTACT}</a>. We reply within 2 working days.</p>'''
 
 PLAN = '''<h2>Your first 30 days</h2><table class="t"><tbody>
 <tr><td><strong>Day 1</strong></td><td>Add your UPI ID. Read this Playbook once. Look through the course pages so you can describe them honestly.</td></tr>
@@ -131,7 +132,7 @@ CHECK = '''<h2>Start checklist</h2><ul class="check">
 <li>Account created and college email confirmed</li><li>Code and share link on my dashboard</li><li>UPI ID added</li>
 <li>Looked through the course pages</li><li>First story or group message sent</li><li>Wellness centre or club contacted</li></ul>'''
 
-PUBLIC_ORDER = ['intro', 'who', 'how', 'buyers', 'earn', 'counts', 'paid', 'tax', 'rules', 'data', 'faq']
+PUBLIC_ORDER = ['intro', 'help', 'who', 'how', 'buyers', 'earn', 'counts', 'paid', 'tax', 'rules', 'data', 'faq']
 
 CSS = '''
 .unai-amb{font-family:Inter,system-ui,sans-serif;color:#0f1e3d;line-height:1.6;max-width:820px}
@@ -148,12 +149,13 @@ CSS = '''
 .unai-amb .t th small{color:#cfe}
 .unai-amb blockquote{background:#f2f6fb;border-left:4px solid #40c4be;margin:.4em 0 1em;padding:.7em 1em}
 .unai-amb .check{list-style:none;padding-left:0}.unai-amb .check li:before{content:"\\2610  "}
+.unai-amb .help{background:#e9f8f7;border:1px solid #40c4be;border-radius:6px;padding:.8em 1em;margin:1em 0}
 .unai-amb .cta{display:inline-block;background:#0f1e3d;color:#fff;padding:.6em 1.2em;border-radius:6px;text-decoration:none}
 '''
 
 page_body = '<div class="unai-amb"><h1>Campus Ambassadors</h1>' + ''.join(S[k] for k in PUBLIC_ORDER) + \
     '<h2>The Playbook</h2><p>Everything on this page, plus a 30-day plan and messages you can copy, in one printable PDF: ' \
-    '<a href="[PLAYBOOK_PDF_URL]">Download the Ambassador Playbook (PDF)</a>.</p><h2>Apply</h2></div>'
+    '<a href="/wp-content/uploads/2026/11/unai-campus-ambassador-playbook.pdf">Download the Ambassador Playbook (PDF)</a>.</p><h2>Apply</h2></div>'
 page = f'<style>{CSS}</style>\n' + page_body + '\n<!-- the existing [unai_ambassador_portal] shortcode stays below this block -->\n'
 (OUT / 'page.html').write_text(page)
 (OUT / 'preview.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -168,7 +170,7 @@ body{margin:0}.unai-amb{max-width:none;font-size:10.5pt}
 .cover p{font-size:13pt;max-width:140mm}.cover .f{position:absolute;bottom:30mm;color:#40c4be;font-weight:600}
 h2,h3{page-break-after:avoid;break-after:avoid}table,blockquote,section,.keep{page-break-inside:avoid;break-inside:avoid}.pb{page-break-before:always}
 '''
-pdf_order = ['intro', 'who', 'how', 'buyers', 'earn', 'counts', 'paid', 'tax', 'rules', 'data']
+pdf_order = ['intro', 'help', 'who', 'how', 'buyers', 'earn', 'counts', 'paid', 'tax', 'rules', 'data']
 book = ('<!doctype html><html><head><meta charset="utf-8"><title>UnAI Labs Campus Ambassador Playbook</title>'
         f'<style>{PDF_CSS}</style></head><body><div class="unai-amb">'
         '<div class="cover"><p class="k">UNAI LABS</p><h1>Campus Ambassador Playbook</h1>'
