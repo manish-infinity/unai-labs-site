@@ -36,7 +36,8 @@ function unai_amb_make_code( $name ) {
 	$base = strtoupper( substr( preg_replace( '/[^A-Za-z]/', '', remove_accents( $name ) ), 0, 8 ) );
 	if ( strlen( $base ) < 3 ) { $base = 'UNAI'; }
 	for ( $i = 0; $i < 20; $i++ ) {
-		$code = $base . wp_rand( 100, 999 );
+		// 9 Nov security fix: 6 random characters (about 1 billion combinations) so codes cannot be guessed.
+		$code = $base . strtoupper( wp_generate_password( 6, false, false ) );
 		if ( ! wc_get_coupon_id_by_code( $code ) ) { return $code; }
 	}
 	return 'UNAI' . strtoupper( wp_generate_password( 6, false, false ) );
@@ -222,7 +223,7 @@ add_shortcode( 'unai_ambassador_portal', function () {
 	}
 	$nonce = wp_nonce_field( 'unai_amb_portal_' . $uid, '_unai_amb_nonce', true, false );
 
-	if ( $status === 'suspended' ) { return $out . '<p>Your ambassador account is paused. Write to hello@unai-labs.com if you think this is a mistake.</p>'; }
+	if ( $status === 'suspended' ) { return $out . '<p>Your ambassador account is paused. Write to manish.singh@unai-labs.com if you think this is a mistake.</p>'; }
 	if ( $status === 'pending_review' ) { return $out . '<p>Your application is verified and waiting for review. We reply within 3 working days.</p>'; }
 	if ( $status === 'active' ) {
 		$cid = (int) get_user_meta( $uid, '_unai_amb_coupon_id', true ); $code = wc_get_coupon_code_by_id( $cid ); $s = unai_amb_stats( $code );
@@ -232,7 +233,7 @@ add_shortcode( 'unai_ambassador_portal', function () {
 		$out .= '<h2>Your ambassador dashboard</h2><p>Your code: <strong style="font-size:1.4em">' . esc_html( $code ) . '</strong><br>Share link (applies the code automatically): <code>' . esc_html( $link ) . '</code></p>';
 		$out .= '<table><tr><td>Courses sold with your code</td><td><strong>' . (int) $s['units'] . '</strong></td></tr><tr><td>Your current share</td><td><strong>' . (int) round( $s['rate'] * 100 ) . '%</strong>' . ( $next ? ' (next tier at ' . $next . ')' : ' (top tier)' ) . '</td></tr><tr><td>Confirmed earnings</td><td>Rs ' . esc_html( number_format( $s['earned'], 0 ) ) . '</td></tr><tr><td>Pending (inside 7-day refund window)</td><td>Rs ' . esc_html( number_format( $s['pending'], 0 ) ) . '</td></tr><tr><td>Paid out so far</td><td>Rs ' . esc_html( number_format( $paid_out, 0 ) ) . '</td></tr><tr><td>Balance due</td><td><strong>Rs ' . esc_html( number_format( max( 0, $s['earned'] - $paid_out ), 0 ) ) . '</strong> (paid monthly from Rs 500)</td></tr></table>';
 		$out .= '<form method="post">' . $nonce . '<input type="hidden" name="unai_amb_action" value="upi"><p><label>UPI ID for payouts<br><input name="upi" value="' . esc_attr( $upi ) . '" placeholder="name@okhdfcbank" maxlength="100"></label> <button type="submit">Save</button></p></form>';
-		$out .= '<h3>How to share well</h3><ul><li>Post your link on your Instagram story with one line on why focus matters to you.</li><li>Share it in class and club WhatsApp groups once, not every day.</li><li>Ask your wellness centre, placement cell or tech club about a free 45-minute "Your Brain vs AI" session: introduce them to hello@unai-labs.com.</li><li>Be honest: no fake reviews, no spam, no promises the courses do not make. Your own purchases do not count and your code will not work for you.</li></ul>';
+		$out .= '<h3>How to share well</h3><ul><li>Post your link on your Instagram story with one line on why focus matters to you.</li><li>Share it in class and club WhatsApp groups once, not every day.</li><li>Ask your wellness centre, placement cell or tech club about a free 45-minute "Your Brain vs AI" session: introduce them to manish.singh@unai-labs.com.</li><li>Be honest: no fake reviews, no spam, no promises the courses do not make. Your own purchases do not count and your code will not work for you.</li></ul>';
 		return $out;
 	}
 	if ( $status === 'pending_verify' ) {
