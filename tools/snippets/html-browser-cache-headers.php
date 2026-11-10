@@ -1,6 +1,6 @@
 <?php
 /**
- * Snippet (PREPARED 2026-11-08, NOT LIVE): "HTML browser cache: 5 min, not 31 days"
+ * Snippet #21 (prepared 2026-11-08, ACTIVE since 2026-11-10): "HTML browser cache: 5 min, not 31 days"
  *
  * Problem (found 2026-11-08, logged out): public HTML pages (/, /courses/, course
  * pages, /pricing/, /about/, /student-registration/) are served with
@@ -19,6 +19,10 @@
  * NOTE: if the CDN (GoDaddy/Cloudflare "Browser Cache TTL") forces 1 month, it
  * overrides this header; then the CDN setting must be changed to "Respect existing
  * headers". Check the response header after activating.
+ *
+ * 2026-11-10: activated as Code Snippet #21. Live header still "public, max-age=2678400"
+ * on a cache MISS: Cloudflare Browser Cache TTL (1 month) overrides shorter origin
+ * values. Needs the CDN setting changed to "Respect existing headers" (Manish).
  *
  * Revert: switch this snippet off in Code Snippets.
  * No secrets, no user data, no output changes.
