@@ -3469,3 +3469,10 @@ Last updated: 2026-06-30 | Next sprint: as scheduled
 - Repo secret scan (main + outreach-drafts-2026-11-01 since 11-02): clean.
 - Read-only review of live Snippets #17 (campus ambassadors), #18 (security hardening 2), #20 (courses H1 + alt): no defects. Watch: #18 login limiter is per IP, so a campus behind one IP shares the 10-fail counter (help message shown).
 - Cache: 31-day max-age + Expires also on the hero mp4, with GoDaddy x-gateway headers; likely a host/CDN browser-cache setting, so tools/snippets/html-browser-cache-headers.php may not override it. Check the CDN setting when applying.
+
+## 2026-11-12 build run (scheduled 09:37 IST)
+- Smoke test PASSED logged out, before and after: /, /courses/, 4 course pages, /cart/ (to /cart-2/), /checkout/ (empty, to cart), /my-account/, /student-registration/ (form + shield), /pricing/, /blog/ all 200; register link to /student-registration/; Store API 200, Razorpay only; users API 401. wp-admin logged in; Anyone can register ON. Orders unchanged (5, latest #312).
+- FOUND (conversion leak): every logged-out Add to cart (4 course pages + 4 /courses/ cards) carried Tutor's tutor-open-login-modal class, so a new buyer got a Sign In pop-up with a captcha instead of the cart.
+- LIVE Snippet #22 (tools/snippets/add-to-cart-no-login-popup.php): filter tutor_enroll_required_login_class returns '' for WooCommerce courses. Verified logged out: 0 modal buttons left; guest wc-ajax add_to_cart of 249 returns cart Rs 1,999. Woo still creates the account at checkout (guest checkout OFF, signup at checkout ON, auto username + password).
+- LIVE Snippet #23 (tools/snippets/blog-h1.php): /blog/ H1 "Blog" (page title, no new copy). Verified logged out on /blog/ and /blog/page/2/.
+- Not verifiable from here: a full logged-out click to checkout in a cookie session (admin is the course author and sees no buy button; sandbox cannot reach the site). Manish to do a 1-minute private-window check.
