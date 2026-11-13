@@ -11,6 +11,7 @@ CUTS = {
  'r5': dict(hit=[0, 12.9], pop=[3.5, 6.5, 9.7], whoosh=[3.4, 6.4, 9.6, 12.7], heart=[9.8, 10.4, 11.0], ding=[7.4], dark=[(9.7, 12.7)]),
  'r6': dict(hit=[0, 9.6, 13.4], pop=[0.5, 6.5, 9.9, 10.1, 11.4], whoosh=[2.4, 6.3, 13.2], riser=[2.6], tick=[9.9 + k * 0.1 for k in range(12)], dark=[(6.5, 9.6)]),
 }
+for _n in ['r1','r4','r5','r6']: CUTS[_n+'v'] = CUTS[_n]
 LEN = {'riser': 1.0, 'heart': 0.5, 'scratch': 0.45, 'ding': 0.8, 'impact': 0.9}
 GAIN = {'tick': .5, 'ding': .6, 'whoosh': .8}
 for name in sys.argv[1:] or CUTS:

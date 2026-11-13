@@ -22,3 +22,9 @@ function cta(T0, o) {
 ${o.tag ? `<div class="tag">${o.tag}</div>` : ''}<div class="btn">${o.btn || 'unai-labs.com'}</div></div>`, '', [[T0, { y: -80, o: 0, s: 0.8 }], [T0 + 0.45, { o: 1, s: 1 }, 'back']]);
 }
 function foot(text, t0, t1, y = 760) { return pop(text, 'foot', 0, y, t0, t1, 'none'); }
+// D-024 value ending (no offer, no price, no button): end on the payoff, hope-framed; CTA lives in the caption.
+function payoff(T0, o) {
+  add(`<div class="card"><div class="pill" style="background:#0f1e3d;color:#fff;border:none;font-size:32px">${o.kicker || 'THE TAKEAWAY'}</div>
+<h2 style="margin-top:24px">${o.title}</h2><p>${o.sub}</p>
+<div class="tag" style="color:#0f1e3d;margin-top:30px">${o.save || 'Save this for later'}</div></div>`, '', [[T0, { y: -80, o: 0, s: 0.8 }], [T0 + 0.45, { o: 1, s: 1 }, 'back']]);
+}

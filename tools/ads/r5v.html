@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: chalkboard, hand-drawn lines (trend: epic instrumental + on-screen text, e.g. "Luminary") */
+@font-face{font-family:Caveat;font-weight:700;src:url(fonts/caveat-latin-700-normal.woff2)}
+html,body{background:#1f3a2e}
+#bgA{background:radial-gradient(1200px 1600px at 50% 40%,#2c5242 0%,#1f3a2e 60%,#142820 100%)}
+canvas{position:absolute;inset:0}
+.ch{font-family:'Caveat',P,cursive;font-weight:700;color:#f4f1e6;text-align:center;width:980px;line-height:1.02;text-shadow:0 0 2px rgba(255,255,255,.4)}
+.c1{font-size:130px}.c2{font-size:96px}.c3{font-size:74px}
+.y{color:#ffe98a}.p{color:#ffb3c1}
+.foot{color:rgba(244,241,230,.7)}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><canvas id="cv" width="1080" height="1920"></canvas><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+say('Can 3 months change your <span class="y">brain?</span>', 'ch c1', 0, -560, 0, 3.4, 6);
+say('Volunteers learned to <span class="y">juggle.</span>', 'ch c2', 0, -580, 3.5, 6.4, 6);
+say('Brain scans showed <span class="y">more grey matter</span> in areas that track motion.', 'ch c2', 0, -560, 6.5, 9.6, 8);
+say('When they stopped practising, <span class="p">it shrank back.</span> Use it, or lose it.', 'ch c2', 0, -560, 9.7, 12.6, 8);
+foot('Draganski et al., Nature 2004', 3.5, 12.6, 800);
+const Nr = char('src/neuro_c.png', [[0.5, { x: 300, y: 620, o: 0, s: .5 }], [0.9, { o: 1, s: .8 }, 'back'], [6.2, {}], [6.5, { o: 0 }]], { bob: 10 }); Nr.style.width = '380px';
+payoff(12.9, { title: 'Your brain<br>is not fixed.', sub: 'It keeps reshaping itself<br>around <b>what you practise.</b>', save: 'What skill would you learn in 3 months?' });
+const c = document.getElementById('cv').getContext('2d');
+function chalk(pts, p, w = 7, col = '#f4f1e6') { c.strokeStyle = col; c.lineWidth = w; c.lineCap = 'round'; c.globalAlpha = .9; c.beginPath(); const n = Math.floor(pts.length * cl(p)); for (let i = 0; i < n; i++) { const [x, y] = pts[i]; i ? c.lineTo(x + Math.sin(i * 7.3) * 1.5, y + Math.cos(i * 5.1) * 1.5) : c.moveTo(x, y); } c.stroke(); c.globalAlpha = 1; }
+const circ = (cx, cy, r, n = 90) => Array.from({ length: n + 1 }, (_, i) => [cx + Math.cos(i / n * Math.PI * 2) * r, cy + Math.sin(i / n * Math.PI * 2) * r]);
+window.bg = t => {
+  c.clearRect(0, 0, 1080, 1920);
+  // smudges
+  c.fillStyle = 'rgba(255,255,255,.03)'; for (let i = 0; i < 12; i++) { c.beginPath(); c.ellipse((i * 263) % 1080, (i * 411) % 1920, 220, 70, i, 0, 7); c.fill(); }
+  // juggling balls arc (3.5-6.4)
+  if (t > 3.5 && t < 6.6) {
+    chalk(circ(540, 1000, 260, 120).slice(60, 121), (t - 3.6) / 0.8, 6);
+    for (let k = 0; k < 3; k++) { const a = Math.PI + ((t * 1.6 + k / 3) % 1) * Math.PI; c.strokeStyle = ['#ffe98a', '#ffb3c1', '#9fe8ff'][k]; c.lineWidth = 8; c.beginPath(); c.arc(540 + Math.cos(a) * 260, 1000 + Math.sin(a) * 260, 40, 0, 7); c.stroke(); }
+  }
+  // bar chart before/after (6.5-12.6)
+  if (t > 6.5 && t < 12.7) {
+    chalk([[200, 1500], [880, 1500]], (t - 6.6) / .4, 7);
+    const h1 = 260, h2 = 260 + 200 * eo((t - 7.2) / 1.2) - (t > 9.8 ? 170 * eo((t - 9.9) / 1.2) : 0);
+    chalk([[330, 1500], [330, 1500 - h1], [450, 1500 - h1], [450, 1500]], (t - 6.8) / .6, 7);
+    chalk([[630, 1500], [630, 1500 - h2], [750, 1500 - h2], [750, 1500]], (t - 7.0) / .6, 7, '#ffe98a');
+    c.font = "700 54px Caveat"; c.fillStyle = '#f4f1e6'; c.textAlign = 'center'; c.fillText('before', 390, 1570); c.fillText(t > 9.8 ? 'stopped' : '3 months', 690, 1570); c.textAlign = 'left';
+    c.font = "700 36px Caveat"; c.fillStyle = 'rgba(244,241,230,.55)'; c.fillText('(drawing to show direction, not data)', 330, 1650);
+  }
+};
+render(0);
+</script></body></html>

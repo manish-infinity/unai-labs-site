@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: neon toggle (trend: "toggle ON" reveal) */
+html,body{background:#05010f}
+#bgA{background:radial-gradient(900px 1300px at 50% 45%,#1a0b3d 0%,#07021a 60%,#030008 100%)}
+.sw{width:620px;height:300px;border-radius:200px;border:8px solid #6ff0ff;box-shadow:0 0 40px #6ff0ff,inset 0 0 40px rgba(111,240,255,.4);position:relative;transition:none}
+.knob{position:absolute;top:22px;left:22px;width:240px;height:240px;border-radius:50%;background:#fff;box-shadow:0 0 50px #fff}
+.lbl{font:800 120px P;letter-spacing:6px;text-align:center;width:900px}
+.neon{color:#fff;text-shadow:0 0 18px #ff2e88,0 0 50px #ff2e88}
+.neonc{color:#fff;text-shadow:0 0 18px #6ff0ff,0 0 50px #6ff0ff}
+.bub{background:#fff;color:#0f1e3d;font:800 54px/1.1 P;padding:26px 34px;border-radius:40px;white-space:nowrap}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div class="grid"></div><div id="flash"></div><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+// switch
+const SW = add('<div class="sw"><div class="knob"></div></div>', '', [[0, { y: 120, s: 0.5, o: 0 }], [0.35, { s: 1, o: 1 }, 'back'], [9.6, {}], [10, { s: 0.6, o: 0, y: 300 }, 'inout']]);
+const knob = SW.querySelector('.knob'), swb = SW.querySelector('.sw');
+const OFF = pop('BRAIN: <span class="neon">OFF</span>', 'lbl', 0, -150, 0.1, 4.9, 'zoom');
+const ON = pop('BRAIN: <span class="neonc">ON</span>', 'lbl', 0, -150, 5.0, 9.6, 'zoom');
+say('Is AI doing your thinking?', 't l', 0, -560, 0.2, 2.6);
+const Bt = char('src/bit_c.png', [[2.5, { x: 320, y: 620, o: 0, s: .5 }], [2.9, { o: 1, s: 1 }, 'back'], [4.8, {}], [5.1, { x: 620, o: 0 }, 'inout']], { bob: 10, shake: [3.0, 3.5] }); Bt.style.width = '360px';
+add('<div class="bub">I\'ll write it for you!</div>', '', [[2.7, { x: 120, y: 420, o: 0, s: .5 }], [3.0, { o: 1, s: 1 }, 'back'], [4.8, {}], [5.0, { o: 0 }]]);
+say('Flip it.', 't xl', 0, -560, 2.7, 4.9);
+say('Write your <span class="hl">first draft yourself.</span>', 't l', 0, -580, 5.1, 7.4);
+say('THEN ask AI to make it better.', 't l', 0, 560, 5.6, 9.5);
+const Nr = char('src/neuro_c.png', [[7.3, { x: -330, y: 800, o: 0, s: .5 }], [7.7, { o: 1, s: .9 }, 'back'], [9.5, {}], [9.8, { o: 0 }]], { bob: 8 }); Nr.style.width = '380px';
+say('In a small MIT study, people who wrote <span class="hl">on their own first</span>, then used AI, kept <span class="cyan">stronger brain connectivity</span> than people who leaned on AI from the start.', 't s', 0, -40, 10.0, 13.4, 20);
+foot('Kosmyna et al., MIT Media Lab 2025 (preprint, small sample)', 10.0, 13.4, 420);
+payoff(13.4, { title: 'Think first.<br>Then ask AI.', sub: 'Write your own draft,<br>then let AI <b>make it better.</b>', save: 'Save this habit' });
+window.bg = t => {
+  const on = t >= 5;
+  knob.style.left = (on ? 358 : 22) * 1 + (t > 4.8 && t < 5.15 ? 0 : 0) + 'px';
+  if (t > 4.8 && t < 5.1) knob.style.left = (22 + (358 - 22) * eo((t - 4.8) / 0.3)) + 'px';
+  swb.style.borderColor = on ? '#6ff0ff' : '#ff2e88';
+  swb.style.boxShadow = on ? '0 0 60px #6ff0ff,inset 0 0 40px rgba(111,240,255,.5)' : '0 0 40px #ff2e88,inset 0 0 30px rgba(255,46,136,.4)';
+  swb.style.background = on ? 'rgba(111,240,255,.25)' : 'transparent';
+  document.getElementById('flash').style.opacity = t > 4.95 && t < 5.4 ? (1 - (t - 4.95) / 0.45) * 0.85 : 0;
+  // flicker on OFF state
+  if (!on) OFF.style.filter = Math.sin(t * 40) > 0.85 ? 'brightness(.4)' : 'none';
+};
+render(0);
+</script></body></html>

@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* STYLE: paper cut layers + upside-down flip (trend: "Upside Down" before/after flip) */
+html,body{background:#ffe9e1}
+#bgA{background:#ffe9e1}
+canvas{position:absolute;inset:0}
+.paper{background:#fff;color:#2a1020;border-radius:30px;padding:34px 40px;width:920px;text-align:center;font:800 76px/1.08 P;box-shadow:0 22px 0 rgba(120,30,50,.18),0 30px 60px rgba(120,30,50,.25)}
+.tagm{display:inline-block;font:800 40px P;letter-spacing:4px;padding:8px 26px;border-radius:999px;margin-bottom:14px}
+.my{background:#ff3b47;color:#fff}.fa{background:#2fbf71;color:#fff}
+.dk{color:#2a1020;text-shadow:none}
+.foot{color:#7a4050}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><canvas id="cv" width="1080" height="1920"></canvas><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 16;
+const br = add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]); br.style.color = '#2a1020';
+// myth card that flips upside down at 3.2s
+const M = add('<div class="paper"><div class="tagm my">MYTH</div><br>Sugar makes kids hyper.</div>', '', [[0, { y: -420, o: 0, s: .7 }], [0.35, { o: 1, s: 1 }, 'back'], [3.0, {}], [3.6, { r: 180, y: -380 }, 'inout'], [4.2, {}], [4.6, { o: 0, y: 200, r: 200 }, 'inout']]);
+say('<span class="dk">Every parent has said it.</span>', 't m', 0, 560, 0.3, 3.0);
+const F = add('<div class="paper"><div class="tagm fa">SCIENCE</div><br>In <span style="color:#ff3b47">16 double-blind studies</span>, sugar did not change kids\' behaviour.</div>', '', [[4.3, { y: -420, o: 0, r: -180 }], [4.9, { o: 1, r: 0 }, 'back'], [8.6, {}], [8.9, { o: 0, y: -500 }]]);
+foot('Wolraich, Wilson & White, JAMA 1995 (meta-analysis)', 4.3, 8.9, 0);
+say('<span class="dk">So why do kids <b style="color:#ff3b47">seem</b> wild after cake?</span>', 't m', 0, 520, 5.2, 8.6, 9);
+add('<div class="paper" style="font-size:62px">Mothers were told their son had sugar. He had a <span style="color:#2fbf71">placebo.</span> They still rated him more hyper.</div>', '', [[9.0, { y: -360, o: 0, s: .8 }], [9.35, { o: 1, s: 1 }, 'back'], [12.6, {}], [12.9, { o: 0 }]]);
+foot('Hoover & Milich, Journal of Abnormal Child Psychology 1994', 9.0, 12.9, 40);
+say('<span class="dk">Your brain sees what it <b style="color:#ff3b47">expects</b> to see.</span>', 't m', 0, 520, 9.6, 12.9, 9);
+const Nr = char('src/neuro_c.png', [[0.4, { x: 330, y: 230, o: 0, s: .4 }], [0.8, { o: 1, s: .6 }, 'back'], [12.8, {}], [13, { o: 0 }]], { bob: 8, wobble: 4 }); Nr.style.width = '420px';
+payoff(13.0, { kicker: 'MYTH BUSTED', title: 'Sugar didn\'t<br>change behaviour.', sub: 'Expectations changed<br><b>what adults saw.</b>', save: 'Send this to a parent' });
+const c = document.getElementById('cv').getContext('2d');
+const cols = ['#ffd3c4', '#ffb39e', '#ff8f80', '#ff6b7a', '#e2486a', '#b8305a'];
+window.bg = t => {
+  c.clearRect(0, 0, 1080, 1920);
+  const flip = cl((t - 3.0) / 0.8);
+  cols.forEach((col, k) => {
+    const y0 = 1180 + k * 120, a = 34 + k * 6, ph = t * (0.7 + k * .2) + k;
+    c.save(); c.shadowColor = 'rgba(90,20,40,.35)'; c.shadowBlur = 26; c.shadowOffsetY = -10; c.fillStyle = col; c.beginPath(); c.moveTo(0, 1920);
+    for (let x = 0; x <= 1080; x += 20) c.lineTo(x, y0 + Math.sin(x / 130 + ph) * a + Math.sin(x / 47 + ph * 1.4) * a * .3 - Math.sin(flip * Math.PI) * 120);
+    c.lineTo(1080, 1920); c.fill(); c.restore();
+  });
+};
+render(0);
+</script></body></html>
