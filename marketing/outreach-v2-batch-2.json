@@ -1,0 +1,149 @@
+{
+ "batch": "outreach v2 batch 2",
+ "sent_from": "manish.singh@unai-labs.com",
+ "prepared_on": "2026-11-13 21:45 IST",
+ "send_not_before": "2026-11-15 08:30 IST",
+ "note": "14 campuses; companies held pending Wipro-client check; DSU skipped (no published role address). Research by 2 subagents 13 Nov.",
+ "emails": [
+  {
+   "template": "A",
+   "org": "O.P. Jindal Global University (resend after bounce)",
+   "to": "osa@jgu.edu.in",
+   "address_source": "https://jgu.edu.in/osa",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "JGU AI Governance Report 2026 (jgu.edu.in)",
+   "body": "Dear Office of Student Affairs,\n\nI noticed JGU's AI Governance Report 2026, \"Reimagining Education for a New Era\". (I first wrote to the CSCAILR group, which only accepts messages from members, so I am writing to you instead.)\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Woxsen University",
+   "to": "studentaffairs@woxsen.edu.in",
+   "address_source": "https://studentcouncil.woxsen.edu.in/contact",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://woxsen.edu.in/news/woxsen-university-hosts-thought-leadership-sessions-on-enterprise-ai-and-launches-book-on-ai-ethics-and-governance (14 Jan 2026)",
+   "body": "Dear Student Affairs team,\n\nI noticed Woxsen's thought-leadership sessions on enterprise AI in January and the launch of the book \"Ethics and Governance of Artificial Intelligence\".\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Manipal University Jaipur",
+   "to": "students.counsellor@jaipur.manipal.edu",
+   "address_source": "https://jaipur.manipal.edu/dsw-counselling.php",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "Outlook Business PR, ICAIC 2026, 22-24 Oct 2026",
+   "body": "Dear Student Counsellors,\n\nI noticed MUJ hosted the second International Conference on Artificial Intelligence and Computing in October, with researchers from 16 countries.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "St. Xavier's College Kolkata",
+   "to": "contact@sxccal.edu",
+   "address_source": "https://sxccal.edu/wellness-centre",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://sxccal.edu/bulletin/deeksharambh-2026-magis-mind-nurturing-students-mental-well-being (30 Jul 2026)",
+   "body": "Dear Sir or Madam,\n\nCould you kindly pass this to the Wellness Centre? I noticed your \"Magis Mind: Nurturing Students' Mental Well-being\" session for first-year students as part of Deeksharambh 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Sister Nivedita University",
+   "to": "info@snuniv.ac.in",
+   "address_source": "https://snuniv.ac.in/student-welfare-committees/student-welfare-and-counselling-committee/118",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "Indian Masterminds, NSIC-SNU MoU, 7 Sep 2026",
+   "body": "Dear Dr Pyne and Dr Sah,\n\nI am writing to the Student Welfare and Counselling Committee through the address on its page. I noticed SNU's MoU with the NSIC Technical Services Centre in September to give students AI and entrepreneurship training.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Rajagiri College of Social Sciences",
+   "to": "admin@rajagiri.edu",
+   "address_source": "https://rajagiri.edu/student-support/counselling-center",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://rajagiri.edu/event/beyond-the-screen (30 Jan 2026)",
+   "body": "Dear Sir or Madam,\n\nCould you kindly pass this to the Counselling Center or the Department of Psychology? I noticed the Department of Social Work's workshop \"Beyond the Screen: Safeguarding Children's Mental Health in the Digital Age\" in January.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Anurag University",
+   "to": "info@anurag.edu.in",
+   "address_source": "https://anurag.edu.in/wellness-and-safety",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://anurag.edu.in/news-and-stories/building-global-perspectives-through-trustworthy-ai (Aug 2026)",
+   "body": "Dear Sir or Madam,\n\nCould you kindly forward this to the Dean of Student Affairs or the student wellness team? I noticed four Anurag students completed a Trustworthy AI summer school at OTH Regensburg in August.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Presidency University Bengaluru",
+   "to": "counselling@presidencyuniversity.in",
+   "address_source": "https://presidencyuniversity.in/student-life/health-facilities",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://presidencyuniversity.in/student-life/health-facilities (events list)",
+   "body": "Dear Counselling team,\n\nI noticed the Mental Health Awareness and Emotional Resilience Workshop on your student wellness page, following the week-long mental health awareness drive in February.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Loyola College Chennai",
+   "to": "counsellors@loyolacollege.edu",
+   "address_source": "https://mail.loyolacollege.edu/services/TeleCounselling.php",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://www.loyolacollege.edu/sociology/Reports/2025_2026/06122025.pdf (6 Dec 2025)",
+   "body": "Dear Counsellors,\n\nI noticed that at Socio-fest'25 the opening address compared the human brain with AI, and the chief guest spoke about student anxiety and wellbeing.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "MIT World Peace University",
+   "to": "aakriti-wellness@mitwpu.edu.in",
+   "address_source": "https://mitwpu.edu.in/aakriti-centre-for-holistic-well-being",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://mitwpu.edu.in/news/mit-wpu-pune-receives-the-prestigious-national-heartful-campus-award (20 Jan 2026)",
+   "body": "Dear Aakriti Centre team,\n\nCongratulations on MIT-WPU receiving the National Heartful Campus Award 2025 for its work on holistic student development.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "VIT Vellore",
+   "to": "vhappy.vellore@vit.ac.in",
+   "address_source": "https://vit.ac.in/centre-for-vit-happiness-and-well-being",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://vit.ac.in/?p=123138 (26 Mar 2026)",
+   "body": "Dear Centre for VIT Happiness and Well Being,\n\nI noticed VIT hosted the seminar \"Digital Dreamscapes: Youth Navigating AI, Creativity and Virtual Expression\" with the Ministry of Youth Affairs this year.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Shiv Nadar Institution of Eminence",
+   "to": "dean.students@snu.edu.in",
+   "address_source": "https://snu.edu.in/site/assets/files/2144/student_handbook_2026_13_08_2026.pdf",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "Shiv Nadar Student Handbook 2026 (13 Aug 2026)",
+   "body": "Dear Dean of Students,\n\nI noticed the 2026 Student Handbook sets out campus mental health support, with clinical psychologists, round-the-clock support and Peer Support Guides.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "GITAM University",
+   "to": "udaan_dosl_vsp@gitam.edu",
+   "address_source": "https://gitam.edu/gimsr/gitam-medical-college/students-well-being",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "NewsBytes, GITAM AI Challenge 2026 (6 Oct 2026)",
+   "body": "Dear UDAAN team,\n\nI noticed GITAM's UDAAN mental health and wellbeing initiative, and that GITAM is running a national AI Challenge 2026 for school students.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  },
+  {
+   "template": "A",
+   "org": "Jamia Millia Islamia",
+   "to": "dsw@jmi.ac.in",
+   "address_source": "https://jmi.ac.in/ADMINISTRATION/Dean-Students-Welfare/Introduction",
+   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+   "why_now_source": "https://www.jmi.ac.in/upload/advertisement/notification_Students_Mental_Health_Wellness_Policy_2025_2026march24.pdf",
+   "body": "Dear Dean, Students' Welfare,\n\nI noticed Jamia's recent Students' Mental Health and Wellness Policy, covering early intervention and support for all students.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+   "status": "draft"
+  }
+ ]
+}
