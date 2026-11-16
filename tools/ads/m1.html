@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* R7 Prop metaphor: working-memory jar on a bright, warm desk. One object, balls drop from frame 0. */
+html,body{background:#f2e7d8}
+#bgA{background:linear-gradient(#f6ede1 0%,#efe2cf 64%,#c9a27a 64%,#b88f66 100%)}
+canvas{position:absolute;inset:0}
+#stage{color:#2a2118}
+.cap{font-size:66px;font-weight:800;text-align:center;width:960px;line-height:1.12;color:#2a2118}
+.cap .hl{color:#2a2118;background:#ffd166;padding:0 14px;border-radius:12px}
+.brand{color:#2a2118}.brand span{color:#e2574c}
+.foot{color:rgba(42,33,24,.65)}
+.note{background:#fff7b8;color:#2a2118;width:360px;padding:30px 30px 40px;font-size:44px;font-weight:700;line-height:1.35;box-shadow:0 14px 30px rgba(0,0,0,.18);transform-origin:center}
+.big{font-size:150px;font-weight:800;color:#e2574c;letter-spacing:-3px}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><canvas id="cv" width="1080" height="1920"></canvas><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 20;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+add('<div class="cap">Imagine this is your <span class="hl">memory.</span></div>', '', [[0, { y: -560, o: 1 }], [3.2, {}], [3.4, { o: 0 }]]);
+say('Most of us hold about <span class="hl">4</span> things.', 'cap', 0, -560, 3.4, 6.0, 6);
+say('Add a fifth...', 'cap', 0, -560, 6.1, 7.6, 6);
+say('...and one <span class="hl">falls out.</span>', 'cap', 0, -560, 7.6, 9.6, 6);
+say('That is why you forget what you <span class="hl">walked in for.</span>', 'cap', 0, -560, 9.7, 12.6, 7);
+say('So <span class="hl">write it down.</span>', 'cap', 0, -560, 12.7, 15.6, 6);
+foot('Cowan 2001, Behavioral and Brain Sciences: about 3 to 5 chunks', 3.4, 15.6, 800);
+add('<div class="big">4</div>', '', [[3.6, { x: 330, y: -300, o: 0, s: .5 }], [3.9, { o: 1, s: 1 }, 'back'], [5.9, {}], [6.1, { o: 0 }]]);
+add('<div class="note">To do:<br>&#9744; keys<br>&#9744; email Priya<br>&#9744; milk<br>&#9744; call mum</div>', '', [[12.8, { x: 700, y: -200, r: 14, o: 0 }], [12.9, { o: 1 }], [13.4, { x: 0, r: -4 }, 'back'], [15.5, {}], [15.7, { o: 0 }]]);
+payoff(15.8, { kicker: 'THE TAKEAWAY', title: 'Your brain is for thinking,<br>not storing.', sub: 'Lists and closed tabs<br>give it <b>room to think.</b>', save: 'Save this for the next busy day' });
+const c = document.getElementById('cv').getContext('2d');
+const JX = 540, JY = 1180, JW = 330, JH = 380; // jar centre and size (inner bottom at JY + JH/2)
+const BALLS = [
+  { l: 'keys', col: '#e2574c', t: -0.3, slot: [-95, 120] },
+  { l: 'email', col: '#3d7be0', t: 0.7, slot: [95, 120] },
+  { l: 'milk', col: '#2fb67c', t: 1.4, slot: [-95, -20] },
+  { l: 'call mum', col: '#f0a020', t: 2.1, slot: [95, -20] },
+  { l: 'idea!', col: '#9b59d0', t: 6.3, slot: [-95, 120] },
+];
+const R = 78;
+function ballPos(b, i, t) {
+  const bx = JX + b.slot[0], by = JY + b.slot[1];
+  // drop in
+  let x = bx, y = by;
+  const k = cl((t - b.t) / 0.55);
+  if (t < b.t) return null;
+  y = -150 + (by + 150) * (1 - Math.pow(1 - k, 2)) + (k >= 1 ? Math.sin(cl((t - b.t - .55) / .3) * Math.PI) * -18 : 0);
+  // ball 0 (keys) pops out when the fifth arrives
+  if (i === 0 && t > 6.3) { const q = cl((t - 6.3) / 1.2); x = bx - 520 * q; y = by - 700 * q + 900 * q * q; }
+  // after 12.9 balls fly to the note (write it down); keep the idea
+  if (i >= 1 && i <= 3 && t > 13.4) { const q = eo((t - 13.4 - (i - 1) * .25) / .5); x = bx + (540 - bx) * q; y = by + (760 - by) * q; if (q >= 1) return null; }
+  // the idea moves to the centre once the jar is clear
+  if (i === 4 && t > 14.6) { const q = eo((t - 14.6) / .6); x = bx + (JX - bx) * q; y = by + (JY + 90 - by) * q; }
+  return [x, y];
+}
+function jar() {
+  c.save(); c.lineWidth = 10; c.strokeStyle = 'rgba(90,120,140,.55)'; c.fillStyle = 'rgba(200,230,245,.25)';
+  c.beginPath(); c.moveTo(JX - JW / 2, JY - JH / 2); c.lineTo(JX - JW / 2, JY + JH / 2 - 40); c.quadraticCurveTo(JX - JW / 2, JY + JH / 2, JX - JW / 2 + 40, JY + JH / 2);
+  c.lineTo(JX + JW / 2 - 40, JY + JH / 2); c.quadraticCurveTo(JX + JW / 2, JY + JH / 2, JX + JW / 2, JY + JH / 2 - 40); c.lineTo(JX + JW / 2, JY - JH / 2); c.fill(); c.stroke();
+  c.fillStyle = 'rgba(90,120,140,.35)'; c.fillRect(JX - JW / 2 - 18, JY - JH / 2 - 26, JW + 36, 26);
+  c.strokeStyle = 'rgba(255,255,255,.7)'; c.lineWidth = 12; c.beginPath(); c.moveTo(JX - JW / 2 + 30, JY - JH / 2 + 30); c.lineTo(JX - JW / 2 + 30, JY + 60); c.stroke();
+  c.restore();
+}
+window.bg = t => {
+  c.clearRect(0, 0, 1080, 1920);
+  c.fillStyle = 'rgba(0,0,0,.12)'; c.beginPath(); c.ellipse(JX, JY + JH / 2 + 20, JW / 2 + 40, 26, 0, 0, 7); c.fill();
+  BALLS.forEach((b, i) => {
+    const p = ballPos(b, i, t); if (!p) return;
+    c.fillStyle = b.col; c.beginPath(); c.arc(p[0], p[1], R, 0, 7); c.fill();
+    c.fillStyle = 'rgba(255,255,255,.35)'; c.beginPath(); c.arc(p[0] - 24, p[1] - 26, 20, 0, 7); c.fill();
+    c.fillStyle = '#fff'; c.font = '800 ' + (b.l.length > 6 ? 26 : 38) + 'px P'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(b.l, p[0], p[1] + 4);
+  });
+  jar();
+  // "too full" flash when the fifth lands
+  if (t > 6.8 && t < 7.6) { c.strokeStyle = 'rgba(226,87,76,' + (1 - (t - 6.8) / .8) + ')'; c.lineWidth = 14; c.strokeRect(JX - JW / 2 - 30, JY - JH / 2 - 40, JW + 60, JH + 80); }
+};
+render(0);
+</script></body></html>

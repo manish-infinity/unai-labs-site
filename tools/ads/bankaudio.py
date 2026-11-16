@@ -12,13 +12,17 @@ CUTS = {
  'r6': dict(hit=[0, 9.6, 13.4], pop=[0.5, 6.5, 9.9, 10.1, 11.4], whoosh=[2.4, 6.3, 13.2], riser=[2.6], tick=[9.9 + k * 0.1 for k in range(12)], dark=[(6.5, 9.6)]),
 }
 for _n in ['r1','r4','r5','r6']: CUTS[_n+'v'] = CUTS[_n]
+# 16 Nov 2026 (REELS-004): 20 s value reels
+CUTS['s1'] = dict(dur=20.0, hit=[0, 15.8], tick=[1.5 + 0.6 * i for i in range(5)] + [4.7 + 0.7 * i for i in range(6)], pop=[9.1, 10.0], ding=[10.7], whoosh=[1.4, 4.6, 9.0, 11.4, 15.6], riser=[3.7], dark=[(4.7, 9.0)])
+CUTS['m1'] = dict(dur=20.0, hit=[0, 15.8], pop=[0.25, 0.95, 1.65, 2.35, 6.85, 13.5, 13.75, 14.0], ding=[3.9], scratch=[6.85], whoosh=[6.3, 12.8, 15.6], riser=[5.6], dark=[(6.3, 9.6)])
+CUTS['g1'] = dict(dur=20.0, hit=[0, 15.8], heart=[3.0, 3.4, 3.8, 4.2, 4.6, 5.0], pop=[8.7], whoosh=[2.9, 5.6, 8.4, 11.7, 15.6], riser=[7.5], dark=[(11.8, 15.6)])
 LEN = {'riser': 1.0, 'heart': 0.5, 'scratch': 0.45, 'ding': 0.8, 'impact': 0.9}
 GAIN = {'tick': .5, 'ding': .6, 'whoosh': .8}
 for name in sys.argv[1:] or CUTS:
-    c = CUTS[name]; dur = 16.0; N = int(dur * SR)
+    c = CUTS[name]; dur = c.get('dur', 16.0); N = int(dur * SR)
     mu = beat(dur, dark=c.get('dark', []))[:N]; fx = np.zeros(N)
     for kind, ts in c.items():
-        if kind == 'dark': continue
+        if kind in ('dark', 'dur'): continue
         k = 'impact' if kind == 'hit' else kind
         for t in ts: put(fx, t, sfx(k, LEN.get(k, 0.3)), GAIN.get(k, 1))
     mix = mu * 0.8 + fx * 0.6; fo = int(0.6 * SR); mix[-fo:] *= np.linspace(1, 0, fo)
