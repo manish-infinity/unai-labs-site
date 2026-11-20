@@ -1,159 +1,177 @@
 {
- "batch": "outreach v2 batch 3",
- "sent_from": "manish.singh@unai-labs.com",
- "prepared_on": "2026-11-15",
- "send_not_before": "2026-11-18T10:18+05:30 and only after the 30-email review (OUTREACH-002)",
- "note": "15 campuses (IITs, NITs, IISc, IISER, IIM, UoH, IIITDM), researched by 2 subagents 15 Nov. IIT KGP LEADS lead rejected (contact.iic@ is the webmaster link; 'AI for Viksit Bharat' event not found); replaced with SETU counselling address. IIT Delhi dropped (only why-now source is a student-suicide report). Skipped: Azim Premji University (Wipro founder link, hold), IIT Bombay (sensitive trigger), IIIT Hyderabad, IIT Roorkee, IIT Indore, IIT Guwahati, IIIT Delhi (no printed role address).",
- "emails": [
-  {
-   "template": "A",
-   "org": "IIT Kharagpur (SETU Counselling Centre)",
-   "to": "cc@adm.iitkgp.ac.in",
-   "address_source": "https://setuatcc.iitkgp.ac.in/",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iit-kharagpur-set-up-indias-first-dedicated-school-of-physical-ai/amp (26 Oct 2026)",
-   "body": "Dear SETU Counselling Centre team,\n\nI noticed that in October 2026 IIT Kharagpur announced plans for the Benjamin Gupta School of Physical AI, with programmes expected to begin in 2027.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Kanpur (Centre for Mental Health and Wellness)",
-   "to": "headadmin_cmhw@iitk.ac.in",
-   "address_source": "https://iitk.ac.in/counsel/cmhw/pages/walk-in.php",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://iitk.ac.in/sathee-summit-2026 (11 Sep 2026)",
-   "body": "Dear Head-Admin, Centre for Mental Health and Wellness,\n\nI noticed that at the SATHEE Summit 2026 at IIT Kanpur in September, a counsellor from your Centre spoke to about 400 students on managing exam stress.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Jodhpur (Institute Student Wellbeing Committee)",
-   "to": "wellbeing@iitj.ac.in",
-   "address_source": "https://iitj.ac.in/iswc/en/contact",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iit-jodhpur-launches-4-year-bs-in-management-technology-eligibility-admission-jee/amp (1 Aug 2026)",
-   "body": "Dear Institute Student Wellbeing Committee,\n\nI noticed that IIT Jodhpur launched a four-year BS in Management and Technology in August 2026, aimed at careers in an AI-driven economy.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT (ISM) Dhanbad",
-   "to": "dsw@iitism.ac.in",
-   "address_source": "https://www.iitism.ac.in/counselling",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iit-ism-dhanbad-hosts-iinventiv-2026-focus-on-innovation-and-digital-health/amp (7 Apr 2026)",
-   "body": "Dear Dean, Students' Welfare,\n\nI noticed that IIT (ISM) Dhanbad hosted IInvenTiv 2026, a two-day R&D fair on innovation and digital health, in April as part of its centenary year.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "NIT Rourkela (Institute Counselling Services)",
-   "to": "ics@nitrkl.ac.in",
-   "address_source": "https://ics.nitrkl.ac.in/",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/nit-rourkela-introduces-four-new-programmes-for-2026-btech-mathematics-computing-engineering-physics-mtech-semiconductor-nep-2020/amp (13 May 2026)",
-   "body": "Dear Institute Counselling Services team,\n\nI noticed that NIT Rourkela is introducing an M.Tech in Machine Learning and Signal Analysis and a B.Tech in Mathematics and Computing with AI coursework for 2026-27.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Mandi (Guidance and Counselling Services)",
-   "to": "gcs@iitmandi.ac.in",
-   "address_source": "https://students.iitmandi.ac.in/main/gcs/",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iit-mandi-launches-indias-first-btech-programmes-in-quantum-science-agricultural-chemical-engineering-data-analytics-ai/amp (8 Jun 2026)",
-   "body": "Dear Guidance and Counselling Services team,\n\nI noticed that in June 2026 IIT Mandi announced three new BTech programmes that draw on AI and machine learning, including Quantum Science and Engineering.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IISER Bhopal (ICSC)",
-   "to": "head_icsc@iiserb.ac.in",
-   "address_source": "https://iiserb.ac.in/dosa/counsellor",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iiser-bhopal-bs-ms-course-btech-mtech-engineering-placement-job-iat-2026-admission-physics-chemistry-bio-maths-ai-data-science-phd/amp (1 Jun 2026)",
-   "body": "Dear Head, ICSC,\n\nI noticed that in June 2026 IISER Bhopal said it is bringing AI into the curriculum of several subjects and has recently started a data science department.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IISc Bengaluru (Wellness Centre)",
-   "to": "support.wellness@iisc.ac.in",
-   "address_source": "https://wellness.iisc.ac.in/index.php/contact/",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://biospectrumindia.com/news/101/27060/ministry-of-education-establishes-ai-centre-of-excellence-for-healthcare-at-iisc.html (13 Dec 2025)",
-   "body": "Dear IISc Wellness Centre team,\n\nI noticed that the Ministry of Education set up the TANUH Foundation at IISc in December 2025 as one of its national AI Centres of Excellence.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Madras (Office of the Dean of Students)",
-   "to": "dostoffice@smail.iitm.ac.in",
-   "address_source": "https://dost.iitm.ac.in/wellness-center",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iit-madras-launches-prem-initiative-parents-safe-handbook-for-student-support-world-suicide-prevention-day (9 Sep 2026)",
-   "body": "Dear Office of the Dean of Students,\n\nI noticed that IIT Madras launched the PREM initiative in September 2026 to help parents support students' wellbeing.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Hyderabad (Sunshine Cell)",
-   "to": "fic.sunshine@iith.ac.in",
-   "address_source": "https://dost.iith.ac.in/support.html",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://telanganatoday.com/iit-hyderabad-launches-ai-innovation-lab-in-collaboration-with-sp-global (7 Oct 2026)",
-   "body": "Dear Faculty-in-Charge, Sunshine Cell,\n\nI noticed that IIT Hyderabad launched an AI Innovation Lab with S&P Global in October 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "NIT Tiruchirappalli (Counselling and Guidance Cell)",
-   "to": "cgc@nitt.edu",
-   "address_source": "https://nitt.edu/home/students/office",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://www.newsbytesapp.com/news/science/nit-tiruchi-opens-tata-ai-and-ml-center-with-rs10cr/tldr (6 Nov 2026)",
-   "body": "Dear Counselling and Guidance Cell team,\n\nI noticed that NIT Tiruchirappalli opened the Tata Centre for Artificial Intelligence and Machine Learning, supported by the TCS Foundation, in November 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIT Palakkad (Mitra)",
-   "to": "mitra@iitpkd.ac.in",
-   "address_source": "https://smail.iitpkd.ac.in/mitra",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://iitpkd.ac.in/hi/node/6796 (6 Feb 2026)",
-   "body": "Dear Mitra team,\n\nI noticed that IIT Palakkad's Mehta Family School of Data Science and AI hosted an India-AI Summit 2026 pre-event in February, with a panel on upskilling in the age of AI.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "University of Hyderabad (Psychological Counsellor)",
-   "to": "psychologicalcounselor@uohyd.ac.in",
-   "address_source": "https://uohyd.ac.in/health-centre/",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://telanganatoday.com/university-of-hyderabad-launches-third-ai-faculty-development-programme (24 Mar 2026)",
-   "body": "Dear Psychological Counsellor,\n\nI noticed that the University of Hyderabad ran a series of five-day Faculty Development Programmes on Artificial Intelligence in March 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIITDM Kancheepuram (Guidance and Counselling Cell)",
-   "to": "pic-guidance-counseling@iiitdm.ac.in",
-   "address_source": "https://iiitdm.ac.in/student-counselling-cell",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://www.iiitdm.ac.in/notifications/current-events (24-29 Aug 2026)",
-   "body": "Dear Guidance and Counselling Cell team,\n\nI noticed that IIITDM Kancheepuram ran a short-term programme on AI Tools for Teaching and Learning in Higher Education in August 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  },
-  {
-   "template": "A",
-   "org": "IIM Bangalore (Student Welfare Office)",
-   "to": "studentwelfareoffice@iimb.ac.in",
-   "address_source": "https://www.iimb.ac.in/about-institute/life-iimb/swo",
-   "subject": "A free 45-minute talk for your students: Your Brain vs AI",
-   "why_now_source": "https://news.careers360.com/iim-bangalore-tata-trusts-sign-agreement-establish-dorabji-tata-school-ug-studies-first-batch-starts-august-31-80-students (21 Aug 2026)",
-   "body": "Dear Student Welfare Office team,\n\nI noticed that the first batch of the IIMB Dorabji Tata School of Undergraduate Studies, in Data Sciences and Economics, began classes on 31 August 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
-   "status": "draft"
-  }
- ]
+  "batch": "outreach v2 batch 3",
+  "sent_from": "manish.singh@unai-labs.com",
+  "prepared_on": "2026-11-15",
+  "send_not_before": "2026-11-18T10:18+05:30 and only after the 30-email review (OUTREACH-002)",
+  "note": "15 campuses (IITs, NITs, IISc, IISER, IIM, UoH, IIITDM), researched by 2 subagents 15 Nov. IIT KGP LEADS lead rejected (contact.iic@ is the webmaster link; 'AI for Viksit Bharat' event not found); replaced with SETU counselling address. IIT Delhi dropped (only why-now source is a student-suicide report). Skipped: Azim Premji University (Wipro founder link, hold), IIT Bombay (sensitive trigger), IIIT Hyderabad, IIT Roorkee, IIT Indore, IIT Guwahati, IIIT Delhi (no printed role address).",
+  "emails": [
+    {
+      "template": "A",
+      "org": "IIT Kharagpur (SETU Counselling Centre)",
+      "to": "cc@adm.iitkgp.ac.in",
+      "address_source": "https://setuatcc.iitkgp.ac.in/",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iit-kharagpur-set-up-indias-first-dedicated-school-of-physical-ai/amp (26 Oct 2026)",
+      "body": "Dear SETU Counselling Centre team,\n\nI noticed that in October 2026 IIT Kharagpur announced plans for the Benjamin Gupta School of Physical AI, with programmes expected to begin in 2027.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:41 IST",
+      "reply": "auto-reply 20:41 (SETU appointments notice); no reply sent"
+    },
+    {
+      "template": "A",
+      "org": "IIT Kanpur (Centre for Mental Health and Wellness)",
+      "to": "headadmin_cmhw@iitk.ac.in",
+      "address_source": "https://iitk.ac.in/counsel/cmhw/pages/walk-in.php",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://iitk.ac.in/sathee-summit-2026 (11 Sep 2026)",
+      "body": "Dear Head-Admin, Centre for Mental Health and Wellness,\n\nI noticed that at the SATHEE Summit 2026 at IIT Kanpur in September, a counsellor from your Centre spoke to about 400 students on managing exam stress.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:41 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT Jodhpur (Institute Student Wellbeing Committee)",
+      "to": "wellbeing@iitj.ac.in",
+      "address_source": "https://iitj.ac.in/iswc/en/contact",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iit-jodhpur-launches-4-year-bs-in-management-technology-eligibility-admission-jee/amp (1 Aug 2026)",
+      "body": "Dear Institute Student Wellbeing Committee,\n\nI noticed that IIT Jodhpur launched a four-year BS in Management and Technology in August 2026, aimed at careers in an AI-driven economy.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:41 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT (ISM) Dhanbad",
+      "to": "dsw@iitism.ac.in",
+      "address_source": "https://www.iitism.ac.in/counselling",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iit-ism-dhanbad-hosts-iinventiv-2026-focus-on-innovation-and-digital-health/amp (7 Apr 2026)",
+      "body": "Dear Dean, Students' Welfare,\n\nI noticed that IIT (ISM) Dhanbad hosted IInvenTiv 2026, a two-day R&D fair on innovation and digital health, in April as part of its centenary year.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "NIT Rourkela (Institute Counselling Services)",
+      "to": "ics@nitrkl.ac.in",
+      "address_source": "https://ics.nitrkl.ac.in/",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/nit-rourkela-introduces-four-new-programmes-for-2026-btech-mathematics-computing-engineering-physics-mtech-semiconductor-nep-2020/amp (13 May 2026)",
+      "body": "Dear Institute Counselling Services team,\n\nI noticed that NIT Rourkela is introducing an M.Tech in Machine Learning and Signal Analysis and a B.Tech in Mathematics and Computing with AI coursework for 2026-27.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT Mandi (Guidance and Counselling Services)",
+      "to": "gcs@iitmandi.ac.in",
+      "address_source": "https://students.iitmandi.ac.in/main/gcs/",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iit-mandi-launches-indias-first-btech-programmes-in-quantum-science-agricultural-chemical-engineering-data-analytics-ai/amp (8 Jun 2026)",
+      "body": "Dear Guidance and Counselling Services team,\n\nI noticed that in June 2026 IIT Mandi announced three new BTech programmes that draw on AI and machine learning, including Quantum Science and Engineering.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IISER Bhopal (ICSC)",
+      "to": "head_icsc@iiserb.ac.in",
+      "address_source": "https://iiserb.ac.in/dosa/counsellor",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iiser-bhopal-bs-ms-course-btech-mtech-engineering-placement-job-iat-2026-admission-physics-chemistry-bio-maths-ai-data-science-phd/amp (1 Jun 2026)",
+      "body": "Dear Head, ICSC,\n\nI noticed that in June 2026 IISER Bhopal said it is bringing AI into the curriculum of several subjects and has recently started a data science department.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IISc Bengaluru (Wellness Centre)",
+      "to": "support.wellness@iisc.ac.in",
+      "address_source": "https://wellness.iisc.ac.in/index.php/contact/",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://biospectrumindia.com/news/101/27060/ministry-of-education-establishes-ai-centre-of-excellence-for-healthcare-at-iisc.html (13 Dec 2025)",
+      "body": "Dear IISc Wellness Centre team,\n\nI noticed that the Ministry of Education set up the TANUH Foundation at IISc in December 2025 as one of its national AI Centres of Excellence.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT Madras (Office of the Dean of Students)",
+      "to": "dostoffice@smail.iitm.ac.in",
+      "address_source": "https://dost.iitm.ac.in/wellness-center",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iit-madras-launches-prem-initiative-parents-safe-handbook-for-student-support-world-suicide-prevention-day (9 Sep 2026)",
+      "body": "Dear Office of the Dean of Students,\n\nI noticed that IIT Madras launched the PREM initiative in September 2026 to help parents support students' wellbeing.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT Hyderabad (Sunshine Cell)",
+      "to": "fic.sunshine@iith.ac.in",
+      "address_source": "https://dost.iith.ac.in/support.html",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://telanganatoday.com/iit-hyderabad-launches-ai-innovation-lab-in-collaboration-with-sp-global (7 Oct 2026)",
+      "body": "Dear Faculty-in-Charge, Sunshine Cell,\n\nI noticed that IIT Hyderabad launched an AI Innovation Lab with S&P Global in October 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "NIT Tiruchirappalli (Counselling and Guidance Cell)",
+      "to": "cgc@nitt.edu",
+      "address_source": "https://nitt.edu/home/students/office",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://www.newsbytesapp.com/news/science/nit-tiruchi-opens-tata-ai-and-ml-center-with-rs10cr/tldr (6 Nov 2026)",
+      "body": "Dear Counselling and Guidance Cell team,\n\nI noticed that NIT Tiruchirappalli opened the Tata Centre for Artificial Intelligence and Machine Learning, supported by the TCS Foundation, in November 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIT Palakkad (Mitra)",
+      "to": "mitra@iitpkd.ac.in",
+      "address_source": "https://smail.iitpkd.ac.in/mitra",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://iitpkd.ac.in/hi/node/6796 (6 Feb 2026)",
+      "body": "Dear Mitra team,\n\nI noticed that IIT Palakkad's Mehta Family School of Data Science and AI hosted an India-AI Summit 2026 pre-event in February, with a panel on upskilling in the age of AI.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "University of Hyderabad (Psychological Counsellor)",
+      "to": "psychologicalcounselor@uohyd.ac.in",
+      "address_source": "https://uohyd.ac.in/health-centre/",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://telanganatoday.com/university-of-hyderabad-launches-third-ai-faculty-development-programme (24 Mar 2026)",
+      "body": "Dear Psychological Counsellor,\n\nI noticed that the University of Hyderabad ran a series of five-day Faculty Development Programmes on Artificial Intelligence in March 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIITDM Kancheepuram (Guidance and Counselling Cell)",
+      "to": "pic-guidance-counseling@iiitdm.ac.in",
+      "address_source": "https://iiitdm.ac.in/student-counselling-cell",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://www.iiitdm.ac.in/notifications/current-events (24-29 Aug 2026)",
+      "body": "Dear Guidance and Counselling Cell team,\n\nI noticed that IIITDM Kancheepuram ran a short-term programme on AI Tools for Teaching and Learning in Higher Education in August 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    },
+    {
+      "template": "A",
+      "org": "IIM Bangalore (Student Welfare Office)",
+      "to": "studentwelfareoffice@iimb.ac.in",
+      "address_source": "https://www.iimb.ac.in/about-institute/life-iimb/swo",
+      "subject": "A free 45-minute talk for your students: Your Brain vs AI",
+      "why_now_source": "https://news.careers360.com/iim-bangalore-tata-trusts-sign-agreement-establish-dorabji-tata-school-ug-studies-first-batch-starts-august-31-80-students (21 Aug 2026)",
+      "body": "Dear Student Welfare Office team,\n\nI noticed that the first batch of the IIMB Dorabji Tata School of Undergraduate Studies, in Data Sciences and Economics, began classes on 31 August 2026.\n\nI give a free 45-minute online talk for students called \"Your Brain vs AI\": how attention and memory actually work, what leaning on AI does to thinking (based on published studies, stated honestly), and five simple habits that help with focus and memory during exams. There is no fee and nothing to buy; it is an awareness session with time for questions.\n\nIf it would be useful for your students this semester, reply with a date or two that suit you and I will make it work.\n\nWarm regards,\nManish Kumar Singh\nUnAI Labs | unai-labs.com\n\nIf you would rather not hear from me again, reply \"no thanks\" and I will not write again.",
+      "status": "sent",
+      "sent_at": "2026-11-20 20:42-20:43 IST"
+    }
+  ],
+  "sent_on": "2026-11-20 20:41-20:43 IST, all 15 verified in Titan Sent",
+  "experiment": "X-007; kill rule: 0 interested of 15 by 2026-11-27 = stop cold email (D-039, D-045)"
 }
