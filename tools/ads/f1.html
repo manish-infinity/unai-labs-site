@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* R1 Your Brain Test #2: count the F's (missing-letter effect). Calm dark bg, sentence card, timer bar. */
+html,body{background:#121628}
+#bgA{background:radial-gradient(1100px 1500px at 50% 42%,#1e2542 0%,#121628 60%,#0a0d1a 100%)}
+.cap{font-size:68px;font-weight:800;text-align:center;width:960px;line-height:1.12;text-shadow:0 4px 0 #000,0 0 18px rgba(0,0,0,.8)}
+.cap .hl{color:#ffd166}
+.sent{background:#fffdf4;color:#1a1f33;border-radius:36px;width:960px;padding:56px 50px;font-size:62px;font-weight:800;line-height:1.3;text-align:center;letter-spacing:1px;box-shadow:0 26px 80px rgba(0,0,0,.5)}
+.sent u{text-decoration:none;border-radius:10px;padding:0 2px}
+.bar{width:800px;height:18px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:#ffd166;transform-origin:left}
+.cnt{font-size:200px;font-weight:800;color:#ffd166;line-height:1}
+.secs{font-size:120px;font-weight:800;color:#fff;line-height:1}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 20;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+add('<div class="pill">YOUR BRAIN TEST #2</div>', '', [[0, { y: -700, o: 1 }], [15.6, {}], [15.8, { o: 0 }]]);
+const S = 'FINISHED FILES ARE THE RESULT OF YEARS OF SCIENTIFIC STUDY COMBINED WITH THE EXPERIENCE OF YEARS.';
+let k = 0; const html = S.replace(/F/g, () => `<u data-k="${k++}">F</u>`);
+const card = add(`<div class="sent">${html}</div>`, '', [[0, { y: -130, s: .97, o: 1 }], [5.6, { s: 1.0 }, 'lin'], [15.4, {}], [15.6, { o: 0 }]]);
+// order of reveal: the easy ones first, the OFs last
+const order = [0, 1, 3, 2, 4, 5];
+const us = [...card.querySelectorAll('u')];
+E.hooks.push(t => us.forEach((u, i) => { const a = 7.4 + order.indexOf(i) * 0.5; const on = t >= a; u.style.background = on ? (i === 3 ? '#ffd166' : '#ffd166') : 'transparent'; u.style.color = on ? '#1a1f33' : ''; }));
+// countdown
+add('<div class="cap">Count the <span class="hl">F\'s.</span> You have 5 seconds.</div>', '', [[0, { y: -540, o: 1 }], [5.6, {}], [5.8, { o: 0 }]]);
+const bar = add('<div class="bar"><i></i></div>', '', [[0, { y: 330, o: 1 }], [5.6, {}], [5.8, { o: 0 }]]);
+const bi = bar.querySelector('i'); E.hooks.push(t => { bi.style.transform = 'scaleX(' + cl(1 - (t - 0.6) / 5) + ')'; });
+const sc = add('<div class="secs">5</div>', '', [[0, { y: 520, o: 1 }], [5.6, {}], [5.8, { o: 0 }]]);
+E.hooks.push(t => { sc.querySelector('.secs').textContent = Math.max(1, Math.min(5, Math.ceil(5 - (t - 0.6)))); });
+say('Got <span class="hl">3?</span> Maybe 4?', 'cap', 0, -540, 5.9, 7.3, 5);
+add('<div class="cnt"><span class="num">0</span></div>', '', [[7.3, { y: 420, o: 0, s: .6 }], [7.5, { o: 1, s: 1 }, 'back'], [10.4, {}], [10.6, { o: 0 }]]);
+E.hooks.push(t => { const n = t < 7.4 ? 0 : Math.min(6, 1 + Math.floor((t - 7.4) / 0.5)); document.querySelector('.cnt .num').textContent = n; });
+say('There are <span class="hl">6.</span>', 'cap', 0, -540, 7.4, 10.5, 5);
+say('Most people miss the F in every <span class="hl">"OF".</span>', 'cap', 0, 400, 10.6, 13.0, 6);
+say('Your brain <span class="hl">skims</span> small, familiar words to grab the meaning.', 'cap', 0, 400, 13.0, 15.6, 7);
+foot('Missing-letter effect: Healy 1976, J. Exp. Psychology; Koriat and Greenberg 1994', 10.6, 15.6, 790);
+payoff(15.8, { kicker: 'THE TAKEAWAY', title: 'Familiar is not<br>the same as learned.', sub: 'Rereading notes has the same trap.<br><b>Quiz yourself instead.</b>', save: 'Comment your count' });
+render(0);
+</script></body></html>

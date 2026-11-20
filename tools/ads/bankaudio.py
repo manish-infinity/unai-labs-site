@@ -16,6 +16,10 @@ for _n in ['r1','r4','r5','r6']: CUTS[_n+'v'] = CUTS[_n]
 CUTS['s1'] = dict(dur=20.0, hit=[0, 15.8], tick=[1.5 + 0.6 * i for i in range(5)] + [4.7 + 0.7 * i for i in range(6)], pop=[9.1, 10.0], ding=[10.7], whoosh=[1.4, 4.6, 9.0, 11.4, 15.6], riser=[3.7], dark=[(4.7, 9.0)])
 CUTS['m1'] = dict(dur=20.0, hit=[0, 15.8], pop=[0.25, 0.95, 1.65, 2.35, 6.85, 13.5, 13.75, 14.0], ding=[3.9], scratch=[6.85], whoosh=[6.3, 12.8, 15.6], riser=[5.6], dark=[(6.3, 9.6)])
 CUTS['g1'] = dict(dur=20.0, hit=[0, 15.8], heart=[3.0, 3.4, 3.8, 4.2, 4.6, 5.0], pop=[8.7], whoosh=[2.9, 5.6, 8.4, 11.7, 15.6], riser=[7.5], dark=[(11.8, 15.6)])
+# 20 Nov 2026 (REELS-008): 20 s value reels for 23-25 Nov (D-045 students)
+CUTS['l1'] = dict(dur=20.0, hit=[0, 15.8], whoosh=[2.1, 5.7, 9.3, 12.8, 15.6], scratch=[3.0, 6.6, 10.2], ding=[3.5, 7.1, 10.7], riser=[11.8], dark=[(12.9, 15.6)])
+CUTS['f1'] = dict(dur=20.0, hit=[0, 15.8], tick=[0.6 + i for i in range(5)], pop=[7.4 + 0.5 * i for i in range(6)], ding=[10.4], whoosh=[5.8, 10.6, 15.6], riser=[6.3], dark=[(0.6, 5.6)])
+CUTS['p1'] = dict(dur=20.0, hit=[0, 15.8], whoosh=[2.8, 5.4, 13.4, 15.6], pop=[6.2, 6.7, 7.2], riser=[8.0], ding=[10.3], dark=[(2.8, 5.6)])
 LEN = {'riser': 1.0, 'heart': 0.5, 'scratch': 0.45, 'ding': 0.8, 'impact': 0.9}
 GAIN = {'tick': .5, 'ding': .6, 'whoosh': .8}
 for name in sys.argv[1:] or CUTS:

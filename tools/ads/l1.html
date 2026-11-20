@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* R8 Numbered list #1: 3 study habits that feel productive. Dark navy, list builds row by row. */
+.cap{font-size:68px;font-weight:800;text-align:center;width:960px;line-height:1.12;text-shadow:0 4px 0 #000,0 0 18px rgba(0,0,0,.8)}
+.cap .hl{color:#ffd166}
+.giant{font-size:520px;font-weight:800;line-height:1;color:#ffd166;letter-spacing:-10px;text-shadow:0 20px 60px rgba(0,0,0,.5)}
+.item{display:flex;align-items:center;gap:30px;background:#fff;color:#0f1e3d;border-radius:30px;width:940px;padding:26px 34px;box-shadow:0 16px 50px rgba(0,0,0,.4)}
+.item .n{flex:none;width:96px;height:96px;border-radius:50%;background:#ff3b47;color:#fff;font-size:58px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.item .tx{font-size:58px;font-weight:800;position:relative}
+.item .tx i{position:absolute;left:-6px;right:-6px;top:52%;height:9px;background:#ff3b47;border-radius:9px;transform-origin:left;transform:scaleX(0)}
+.inst{font-size:54px;font-weight:700;text-align:center;width:960px;line-height:1.2;color:#9ff0c8}
+.inst b{color:#fff}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div class="grid"></div><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 20;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+// frame 0: hook + giant 3 already moving
+add('<div class="cap">3 study habits that <span class="hl">waste</span> your time</div>', '', [[0, { y: -560, o: 1 }], [1.9, {}], [2.1, { o: 0 }]]);
+add('<div class="giant">3</div>', '', [[0, { y: 80, s: .9, r: -6, o: 1 }], [1.9, { s: 1.12, r: 4 }, 'lin'], [2.1, { o: 0, s: .6 }]]);
+add('<div class="pill">EXAM SEASON</div>', '', [[0, { y: -700, o: 1 }], [15.5, {}], [15.7, { o: 0 }]]);
+const L = [
+  ['1', 'Rereading notes', 'Close the book. <b>Recall it</b> from memory.', 2.1],
+  ['2', 'Highlighting', 'Turn each heading into a <b>question.</b>', 5.7],
+  ['3', 'Cramming', 'Spread it over <b>3 short sessions.</b>', 9.3],
+];
+L.forEach(([n, txt, ins, t0], i) => {
+  const y = -300 + i * 190;
+  const d = add(`<div class="item"><div class="n">${n}</div><div class="tx">${txt}<i></i></div></div>`, '', [[t0, { x: 900, y, o: 0 }], [t0 + .35, { x: 0, o: 1 }, 'back'], [15.4, {}], [15.6, { o: 0 }]], { shake: [t0 + 1.0, t0 + 1.25] });
+  const bar = d.querySelector('i');
+  E.hooks.push(t => { bar.style.transform = 'scaleX(' + eo((t - t0 - 0.9) / 0.35) + ')'; });
+  add(`<div class="inst">Instead: ${ins}</div>`, '', [[t0 + 1.4, { y: 520, o: 0, s: .9 }], [t0 + 1.7, { o: 1, s: 1 }, 'back'], [t0 + 3.4, {}], [t0 + 3.6, { o: 0 }]]);
+});
+say('They <span class="hl">feel</span> productive. They barely <span class="hl">stick.</span>', 'cap', 0, 480, 12.9, 15.6, 6);
+foot('Dunlosky et al. 2013, Psychological Science in the Public Interest: rereading and highlighting rated low utility', 2.1, 15.6, 790);
+payoff(15.8, { kicker: 'THE TAKEAWAY', title: 'Make your brain<br>do the work.', sub: 'Testing yourself and spacing it out<br>were rated the <b>two most useful</b> methods.', save: 'Save this for exam week' });
+render(0);
+</script></body></html>

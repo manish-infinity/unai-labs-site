@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+/* R7 Prop metaphor #2: the phone on the desk (brain drain). Warm desk, one object, moving from frame 0. */
+html,body{background:#f2e7d8}
+#bgA{background:linear-gradient(#f6ede1 0%,#efe2cf 64%,#c9a27a 64%,#b88f66 100%)}
+#stage{color:#2a2118}
+.cap{font-size:66px;font-weight:800;text-align:center;width:960px;line-height:1.12;color:#2a2118}
+.cap .hl{color:#2a2118}
+.cap .hl:not(:has(.w)){background:#ffd166;padding:0 14px;border-radius:12px}
+.cap .hl .w{background:#ffd166;padding:0 10px;border-radius:12px}
+.brand{color:#2a2118}.brand span{color:#e2574c}
+.pill{background:rgba(42,33,24,.08);border-color:rgba(42,33,24,.25);color:#2a2118}
+.foot{color:rgba(42,33,24,.7)}
+.phone{width:250px;height:500px;border-radius:44px;background:#1b1d24;box-shadow:0 30px 50px rgba(0,0,0,.3);position:relative}
+.phone:after{content:'';position:absolute;left:30px;top:40px;width:70px;height:70px;border-radius:20px;background:#2d3040;box-shadow:90px 0 0 #2d3040}
+.col{width:230px;text-align:center}
+.col .b{width:150px;height:520px;margin:0 auto;border-radius:22px;background:rgba(42,33,24,.1);position:relative;overflow:hidden}
+.col .b i{position:absolute;left:0;right:0;bottom:0;height:100%;border-radius:22px;transform-origin:bottom}
+.col .lb{font-size:42px;font-weight:800;margin-top:22px}
+.col .ic{font-size:38px;font-weight:700;color:rgba(42,33,24,.65);margin-top:6px}
+</style></head><body>
+<div id="stage"><div id="bgA"></div><div id="progress"></div></div>
+<script src="engine.js"></script><script src="bank.js"></script>
+<script>
+E.dur = 20;
+add('un<span>^</span>AI LABS', 'brand', [[0, { y: -850 }]]);
+add('<div class="pill">STUDY HACK</div>', '', [[0, { y: -700, o: 1 }], [15.5, {}], [15.7, { o: 0 }]]);
+// frame 0: phone already sliding onto the desk, face down
+add('<div class="phone"></div>', '', [[0, { x: 260, y: 360, r: 70, s: .9, o: 1 }], [1.0, { x: 0, r: 88, s: 1 }, 'out'], [5.4, {}], [5.9, { y: 1300 }, 'inout']]);
+add('<div class="cap">Phone face down. <span class="hl">Silent.</span></div>', '', [[0, { y: -470, o: 1 }], [2.6, {}], [2.8, { o: 0 }]]);
+say('It still <span class="hl">steals</span> your focus.', 'cap', 0, -470, 2.8, 5.6, 6);
+say('About 800 people took memory and reasoning tests with the phone...', 'cap', 0, -470, 5.8, 8.8, 7);
+const COLS = [['On the desk', 'lowest', .45, '#e2574c', -320], ['In a bag', 'middle', .65, '#f0a020', 0], ['Other room', 'best', .9, '#2fb67c', 320]];
+COLS.forEach(([lb, ic, h, col, x], i) => {
+  const t0 = 6.2 + i * 0.5;
+  const d = add(`<div class="col"><div class="b"><i style="background:${col}"></i></div><div class="lb">${lb}</div><div class="ic">scored ${ic}</div></div>`, '', [[t0, { x, y: 250, o: 0, s: .8 }], [t0 + .35, { o: 1, s: 1 }, 'back'], [13.2, {}], [13.4, { o: 0 }]]);
+  const ii = d.querySelector('i'); E.hooks.push(t => { ii.style.transform = 'scaleY(' + (h * eo((t - 8.8 - i * 0.5) / 0.8)) + ')'; });
+});
+say('Just having it <span class="hl">near you</span> used up attention.', 'cap', 0, -470, 8.9, 13.3, 6);
+say('Later studies are <span class="hl">mixed.</span> But this fix costs nothing.', 'cap', 0, -150, 13.4, 15.6, 7);
+foot('Ward et al. 2017, J. Assoc. for Consumer Research; replications mixed, e.g. Ruiz Pardo and Minda 2022', 5.8, 15.6, 800);
+payoff(15.8, { kicker: 'THE TAKEAWAY', title: 'Put your phone<br>in another room.', sub: 'Then study. Worst case,<br><b>you lose nothing.</b>', save: 'Send this to your study buddy' });
+render(0);
+</script></body></html>
